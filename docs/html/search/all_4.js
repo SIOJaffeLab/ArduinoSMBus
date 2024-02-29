@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['serialnumber_0',['serialNumber',['../class_arduino_s_m_bus.html#aeed8722d27576cce6ab7b52990a983b3',1,'ArduinoSMBus']]],
-  ['status_1',['status',['../class_arduino_s_m_bus.html#a879fb478f71776adb0af041aec0e966a',1,'ArduinoSMBus']]]
+  ['manufacturedate_0',['manufactureDate',['../class_arduino_s_m_bus.html#a6ef1675a70f80131484dbbc3fa0dbb45',1,'ArduinoSMBus']]],
+  ['manufacturername_1',['manufacturerName',['../class_arduino_s_m_bus.html#a75bc281cbb7d438da06e7880b304876b',1,'ArduinoSMBus']]],
+  ['manufactureyear_2',['manufactureYear',['../class_arduino_s_m_bus.html#a716d79d59c632851b84719bafa57a47f',1,'ArduinoSMBus']]]
 ];

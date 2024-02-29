@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Christopher Lee (clee@unitedconsulting.com)
+ * @brief Example arduino code to read battery data from an SMBus battery and print to serial output.
+ * @version 1.0
+ * @date 2024-02-29
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <Arduino.h>
 #include "ArduinoSMBus.h"
 
@@ -24,13 +35,29 @@ void loop() {
   Serial.println(battery.timeToFull());
   
   Serial.print("Charge: ");
-  Serial.println(battery.charge());
+  Serial.println(battery.stateofCharge());
+
+  Serial.print("SOC Error: ");
+  Serial.println(battery.SOCError());
   
   Serial.print("Time to Empty: ");
   Serial.println(battery.timeToEmpty());
-  
+
   Serial.print("Status: ");
-  Serial.println(battery.status());
+  uint16_t status = battery.status();
+  for (int i = 0; i < 16; i++) {
+    Serial.print((status >> i) & 1);
+  }
+  Serial.println();
+
+  Serial.print("Status OK: ");
+  Serial.println(battery.statusOK() ? "true" : "false");
+
+  Serial.print("Battery Charging: ");
+  Serial.println(battery.isCharging() ? "true" : "false");
+
+   Serial.print("Battery Fully Charged: ");
+  Serial.println(battery.isFullyCharged() ? "true" : "false");
   
   Serial.print("Cycle Count: ");
   Serial.println(battery.cycleCount());
@@ -43,6 +70,9 @@ void loop() {
   
   Serial.print("Manufacture Date: ");
   Serial.println(battery.manufactureDate());
+
+  Serial.print("Manufacture Year: ");
+  Serial.println(battery.manufactureYear());
   
   Serial.print("Serial Number: ");
   Serial.println(battery.serialNumber());
@@ -56,11 +86,5 @@ void loop() {
   Serial.print("Manufacturer Name: ");
   Serial.println(battery.manufacturerName());
   
-  Serial.print("Manufacturer Data: ");
-  Serial.println(battery.manufacturerData());
-  
-  Serial.print("Manufacturer Info: ");
-  Serial.println(battery.manufacturerInfo());
-
   while(1); // Stop the loop after printing once
 }

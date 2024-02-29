@@ -41,7 +41,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_arduino_s_m_bus_8h_source.html"
+"_arduino_s_m_bus_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
