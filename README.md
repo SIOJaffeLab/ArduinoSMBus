@@ -23,7 +23,7 @@ void loop() {
 ```
 
 ## Prior Art
-This library is based on the work done by Ri5ux in the Smart-Battery-SMBUS-Analyzer project. The ArduinoSMBus library simplifies the code and makes it easier to use in your own Arduino projects.
+This library is based on the work done by Ri5ux in the [Smart-Battery-SMBUS-Analyzer](https://github.com/Ri5ux/Smart-Battery-SMBUS-Analyzer) project. The ArduinoSMBus library simplifies the code and makes it easier to use in your own Arduino projects.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
