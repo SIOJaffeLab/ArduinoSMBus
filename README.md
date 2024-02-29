@@ -2,6 +2,9 @@
 
 The ArduinoSMBus library is a simple and easy-to-use Arduino library for accessing and reading data from Smart Battery devices over the SMBus (System Management Bus). It provides a set of functions to read various registers from a Smart Battery, including voltage, temperature, current, capacity, and manufacturer information.
 
+## Documentation
+Full documetnation can be found via doxygen [here.](https://duluthmachineworks.github.io/ArduinoSMBus/docs/)
+
 ## Usage
 
 To use the library, include the `ArduinoSMBus.h` file in your sketch and create an instance of the `ArduinoSMBus` class with the I2C address of your battery as an argument. You can then call the various methods of the class to read data from the battery.
