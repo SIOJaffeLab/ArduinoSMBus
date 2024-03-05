@@ -36,7 +36,7 @@ These methods are provided in the format of the SMBus specifications. Several ad
 
 At this time, this library is only capable of reading registers from the BMS, and not capable of writing them. With some additional work, writing to the BMS should be possible.
 
-Full documentation of this library can be found via doxygen [here.](https://duluthmachineworks.github.io/ArduinoSMBus/docs/)
+Full documentation of this library can be found via doxygen [here.](https://duluthmachineworks.github.io/ArduinoSMBus/docs/refman.pdf)
 
 ## Usage
 
