@@ -4,96 +4,110 @@
  * @brief Example arduino code to read battery data from an SMBus battery and print to serial output.
  * @version 1.0
  * @date 2024-02-29
- * 
+ *
  * @copyright Copyright (c) 2024
- * 
+ *
  */
 
 #include <Arduino.h>
 #include "ArduinoSMBus.h"
 
-ArduinoSMBus battery(0x0B); // replace with your battery's I2C address
+ArduinoSMBus battery(0x0B); // Replace with your battery's address
 
 void setup() {
-  Serial.begin(115200);
-}
+  Serial.begin(9600);
 
-void loop() {
-  Serial.print("Voltage: ");
-  Serial.println(battery.voltage());
-  
   Serial.print("Temperature: ");
   Serial.println(battery.temperature());
 
-  Serial.print("Temperature in C: ");
+  Serial.print("Temperature in Celsius: ");
   Serial.println(battery.temperatureC());
 
-  Serial.print("Temperature in F: ");
+  Serial.print("Temperature in Fahrenheit: ");
   Serial.println(battery.temperatureF());
-  
+
+  Serial.print("Voltage: ");
+  Serial.println(battery.voltage());
+
   Serial.print("Current: ");
   Serial.println(battery.current());
-  
-  Serial.print("Capacity: ");
-  Serial.println(battery.capacity());
-  
-  Serial.print("Time to Full: ");
-  Serial.println(battery.timeToFull());
-  
-  Serial.print("Charge: ");
-  Serial.println(battery.stateOfCharge());
 
-  Serial.print("SOC Error: ");
-  Serial.println(battery.SOCError());
-  
-  Serial.print("Time to Empty: ");
-  Serial.println(battery.timeToEmpty());
+  Serial.print("Average Current: ");
+  Serial.println(battery.averageCurrent());
 
-  Serial.print("Status: ");
-  uint16_t status = battery.status();
-  for (int i = 0; i < 16; i++) {
-    Serial.print((status >> i) & 1);
-  }
-  Serial.println();
+  Serial.print("Max Error: ");
+  Serial.println(battery.maxError());
+
+  Serial.print("Relative State Of Charge: ");
+  Serial.println(battery.relativeStateOfCharge());
+
+  Serial.print("Absolute State Of Charge: ");
+  Serial.println(battery.absoluteStateOfCharge());
+
+  Serial.print("Remaining Capacity: ");
+  Serial.println(battery.remainingCapacity());
+
+  Serial.print("Full Capacity: ");
+  Serial.println(battery.fullCapacity());
+
+  Serial.print("Run Time To Empty: ");
+  Serial.println(battery.runTimeToEmpty());
+
+  Serial.print("Average Time To Empty: ");
+  Serial.println(battery.avgTimeToEmpty());
+
+  Serial.print("Average Time To Full: ");
+  Serial.println(battery.avgTimeToFull());
+
+  Serial.print("Battery Status: ");
+  Serial.println(battery.batteryStatus());
+
+  Serial.print("Charging Current: ");
+  Serial.println(battery.chargingCurrent());
+
+  Serial.print("Charging Voltage: ");
+  Serial.println(battery.chargingVoltage());
 
   Serial.print("Status OK: ");
-  Serial.println(battery.statusOK() ? "true" : "false");
+  Serial.println(battery.statusOK());
 
-  Serial.print("Battery Charging: ");
-  Serial.println(battery.isCharging() ? "true" : "false");
+  Serial.print("Is Charging: ");
+  Serial.println(battery.isCharging());
 
-   Serial.print("Battery Fully Charged: ");
-  Serial.println(battery.isFullyCharged() ? "true" : "false");
-  
+  Serial.print("Is Fully Charged: ");
+  Serial.println(battery.isFullyCharged());
+
   Serial.print("Cycle Count: ");
   Serial.println(battery.cycleCount());
 
-  Serial.print("State of Health: ");
-  Serial.println(battery.stateOfHealth());
-  
   Serial.print("Design Capacity: ");
   Serial.println(battery.designCapacity());
-  
+
   Serial.print("Design Voltage: ");
   Serial.println(battery.designVoltage());
-  
+
   Serial.print("Manufacture Date: ");
   Serial.println(battery.manufactureDate());
 
   Serial.print("Manufacture Year: ");
   Serial.println(battery.manufactureYear());
-  
+
   Serial.print("Serial Number: ");
   Serial.println(battery.serialNumber());
-  
-  Serial.print("Device Name: ");
-  Serial.println(battery.deviceName());
-  
-  Serial.print("Device Chemistry: ");
-  Serial.println(battery.deviceChemistry());
-  
+
   Serial.print("Manufacturer Name: ");
   Serial.println(battery.manufacturerName());
-  
-  while(1); // Stop the loop after printing once
+
+  Serial.print("Device Name: ");
+  Serial.println(battery.deviceName());
+
+  Serial.print("Device Chemistry: ");
+  Serial.println(battery.deviceChemistry());
+
+  Serial.print("State Of Health: ");
+  Serial.println(battery.stateOfHealth());
+}
+
+void loop() {
+  delay(10);
 }

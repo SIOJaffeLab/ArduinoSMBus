@@ -22,12 +22,12 @@ ArduinoSMBus::ArduinoSMBus(uint8_t batteryAddress) {
 }
 
 /**
- * @brief Get the battery's voltage.
- * Returns the sum of all cell voltages, in mV.
- * @return uint16_t 
+ * @brief Set the battery's I2C address.
+ * Can be used to change the address after the object is created
+ * @param batteryAddress 
  */
-uint16_t ArduinoSMBus::voltage() {
-  return readRegister(VOLTAGE);
+void ArduinoSMBus::setBatteryAddress(uint8_t batteryAddress) {
+  _batteryAddress = batteryAddress;
 }
 
 /**
@@ -62,6 +62,17 @@ uint16_t ArduinoSMBus::temperatureF() {
 }
 
 /**
+ * @brief Get the battery's voltage.
+ * Returns the sum of all cell voltages, in mV.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::voltage() {
+  return readRegister(VOLTAGE);
+}
+
+
+
+/**
  * @brief Get the battery's current.
  * Returns the battery measured current (from the coulomb counter) in mA.
  * @return uint16_t 
@@ -71,23 +82,12 @@ uint16_t ArduinoSMBus::current() {
 }
 
 /**
- * @brief Get the battery's capacity.
- * Returns the predicted battery capacity when fully charged, in mAh.
- * For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1.
- * See TI protocol documentation for details.
+ * @brief Get the battery's average current.
+ * Returns the average current in a 1-minute rolling average, in mA.
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::capacity() {
-  return readRegister(CAPACITY);
-}
-
-/**
- * @brief Get the battery's current charge.
- * Returns the predicted remaining battery capacity as a percentage
- * @return uint16_t 
- */
-uint16_t ArduinoSMBus::stateOfCharge() {
-  return readRegister(STATE_OF_CHARGE);
+uint16_t ArduinoSMBus::averageCurrent() {
+  return readRegister(AVERAGE_CURRENT);
 }
 
 /**
@@ -95,26 +95,75 @@ uint16_t ArduinoSMBus::stateOfCharge() {
  * Returns the battery's margin of error when estimating SOC, in percent
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::SOCError() {
-  return readRegister(SOC_ERROR);
+uint16_t ArduinoSMBus::maxError() {
+  return readRegister(MAX_ERROR);
 }
 
 /**
- * @brief Get the battery's time to full.
- * Returns the predicted time to full charge, in minutes, based on average charge rate.
+ * @brief Get the battery's current relative charge.
+ * Returns the predicted remaining battery capacity as a percentage of fullChargeCapacity()
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::timeToFull() {
-  return readRegister(TIME_TO_FULL);
+uint16_t ArduinoSMBus::relativeStateOfCharge() {
+  return readRegister(REL_STATE_OF_CHARGE);
+}
+
+/**
+ * @brief Get the battery's absolute charge.
+ * Returns the predicted remaining battery capacity as a percentage of designCapacity()
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::absoluteStateOfCharge() {
+  return readRegister(ABS_STATE_OF_CHARGE);
+}
+
+/**
+ * @brief Get the battery's capacity.
+ * Returns the predicted battery capacity when fully charged, in mAh.
+ * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1.
+ * See protocol documentation for details.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::remainingCapacity() {
+  return readRegister(REM_CAPACITY);
+}
+
+/**
+ * @brief Get the battery's full capacity.
+ * Returns the predicted battery capacity when fully charged, in mAh.
+ * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1.
+ * See protocol documentation for details.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::fullCapacity() {
+  return readRegister(FULL_CAPACITY);
 }
 
 /**
  * @brief Get the battery's time to empty.
- * Returns the predicted time to empty, in minutes, based on average discharge rate.
+ * Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate.
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::timeToEmpty() {
-  return readRegister(TIME_TO_EMPTY);
+uint16_t ArduinoSMBus::runTimeToEmpty() {
+  return readRegister(RUN_TIME_TO_EMPTY);
+}
+
+/**
+ * @brief Get the battery's average time to empty.
+ * Returns the predicted time to empty, in minutes, based on 1-minute rolling average discharge rate.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::avgTimeToEmpty() {
+  return readRegister(AVG_TIME_TO_EMPTY);
+}
+
+/**
+ * @brief Get the battery's time to full.
+ * Returns the predicted time to full charge, in minutes, based on 1-minute rolling average charge rate.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::avgTimeToFull() {
+  return readRegister(AVG_TIME_TO_FULL);
 }
 
 /**
@@ -122,9 +171,9 @@ uint16_t ArduinoSMBus::timeToEmpty() {
  * Returns the battery status register, which contains various alarm conditions and other status bits.
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::status() {
+uint16_t ArduinoSMBus::batteryStatus() {
   uint8_t data[2];
-  readBlock(STATUS, data, 2);
+  readBlock(BATTERY_STATUS, data, 2);
   uint16_t status = (data[1] << 8) | data[0];
   return status;
 }
@@ -136,7 +185,7 @@ uint16_t ArduinoSMBus::status() {
  * @return bool 
  */
 bool ArduinoSMBus::statusOK() {
-  uint16_t status = this->status();
+  uint16_t status = this->batteryStatus();
   uint16_t mask = (1 << 15) | (1 << 14) | (1 << 12) | (1 << 11) | (1 << 9) | (1 << 8);
   return (status & mask) != mask; // Trigger error state if any of the specified bits are set
 }
@@ -147,7 +196,7 @@ bool ArduinoSMBus::statusOK() {
  * @return bool 
  */
 bool ArduinoSMBus::isCharging() {
-  uint16_t status = this->status();
+  uint16_t status = this->batteryStatus();
   return ((status & (1 << 6)) == 0);
 }
 
@@ -157,29 +206,18 @@ bool ArduinoSMBus::isCharging() {
  * @return bool 
  */
 bool ArduinoSMBus::isFullyCharged() {
-  uint16_t status = this->status();
+  uint16_t status = this->batteryStatus();
   return ((status & (1 << 5)) != 0);
 }
 
 /**
  * @brief  Get the battery's cycle count.
  * Returns the number of discharge cycles the battery has experienced.
+ * A cycle is defined as an amount of discharge equal to the battery's design capacity.
  * @return uint16_t 
  */
 uint16_t ArduinoSMBus::cycleCount() {
   return readRegister(CYCLE_COUNT);
-}
-
-/**
- * @brief Get the State of Health from the battery.
- * Returns the estimated health of the battery, as a percentage of design capacity
- * @return uint16_t 
- */
-uint16_t ArduinoSMBus::stateOfHealth() {
-  uint8_t data[2];
-  readBlock(STATE_OF_HEALTH, data, 2);
-  uint16_t stateOfHealth = (data[1] << 8) | data[0];
-  return stateOfHealth;
 }
 
 /**
@@ -214,12 +252,11 @@ uint16_t ArduinoSMBus::manufactureDate() {
 
 /**
  * @brief Get the manufacture year from the manufacture date.
- * This is likely incorrect. The date is stored in a format that is not human-readable.
  * @return int 
  */
 int ArduinoSMBus::manufactureYear() {
   uint16_t manufactureDate = this->manufactureDate();
-  int year = ((manufactureDate - (manufactureDate % 512)) / 512) + 1980;
+  int year = ((manufactureDate >> 9) & 0x7F) + 1980;
   return year;
 }
 
@@ -230,6 +267,18 @@ int ArduinoSMBus::manufactureYear() {
  */
 uint16_t ArduinoSMBus::serialNumber() {
   return readRegister(SERIAL_NUMBER);
+}
+
+/**
+ * @brief Get the Manufacturer Name from the battery.
+ * 
+ * @return const char* 
+ */
+const char* ArduinoSMBus::manufacturerName() {
+  static char manufacturerName[21]; // 20 characters plus null terminator
+  readBlock(MANUFACTURER_NAME, reinterpret_cast<uint8_t*>(manufacturerName), 20);
+  manufacturerName[20] = '\0'; // Null-terminate the C-string
+  return manufacturerName;
 }
 
 /**
@@ -257,16 +306,23 @@ const char* ArduinoSMBus::deviceChemistry() {
 }
 
 /**
- * @brief Get the Manufacturer Name from the battery.
- * 
- * @return const char* 
+ * @brief Get the State of Health from the battery.
+ * Returns the estimated health of the battery, as a percentage of design capacity
+ * This command is not supported by all batteries.
+ * @return uint16_t 
  */
-const char* ArduinoSMBus::manufacturerName() {
-  static char manufacturerName[21]; // 20 characters plus null terminator
-  readBlock(MANUFACTURER_NAME, reinterpret_cast<uint8_t*>(manufacturerName), 20);
-  manufacturerName[20] = '\0'; // Null-terminate the C-string
-  return manufacturerName;
+uint16_t ArduinoSMBus::stateOfHealth() {
+  uint8_t data[2];
+  readBlock(STATE_OF_HEALTH, data, 2);
+  uint16_t stateOfHealth = (data[1] << 8) | data[0];
+  return stateOfHealth;
 }
+
+
+
+
+
+
 
 /**
  * @brief Read a register from the battery.
