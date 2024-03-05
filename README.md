@@ -26,7 +26,7 @@ In general, this library works by creating an ArduinoSMBus class, which then has
 - MANUFACTURER_DATA 0x23
 - MANUFACTURER_INFO 0x25
 
-A detailed description of all of these parameters/commands can be found in the [Smart Battery Data Specification](https://duluthmachineworks.github.io/ArduinoSMBus/docs/datasheets/sbdat110.pdf).
+A detailed description of all of these parameters/commands can be found in the [Smart Battery Data Specification](https://github.com/duluthmachineworks/ArduinoSMBus/blob/main/docs/datasheets/sbdat110.pdf).
 
 These methods are provided in the format of the SMBus specifications. Several additional methods break out some useful data:
 - statusOK(): returns true if no battery status errors are present, false if any errors are present.
@@ -36,7 +36,7 @@ These methods are provided in the format of the SMBus specifications. Several ad
 
 At this time, this library is only capable of reading registers from the BMS, and not capable of writing them. With some additional work, writing to the BMS should be possible.
 
-Full documentation of this library can be found via doxygen [here.](https://duluthmachineworks.github.io/ArduinoSMBus/docs/refman.pdf)
+Full documentation of this library can be found via doxygen [here.](https://github.com/duluthmachineworks/ArduinoSMBus/blob/main/docs/refman.pdf)
 
 ## Usage
 
