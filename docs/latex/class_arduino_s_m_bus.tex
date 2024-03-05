@@ -1,0 +1,477 @@
+\doxysection{Arduino\+SMBus Class Reference}
+\hypertarget{class_arduino_s_m_bus}{}\label{class_arduino_s_m_bus}\index{ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_arduino_s_m_bus_a13842e9dd3dc931348a6d1e0f3bdf18d}{Arduino\+SMBus}} (uint8\+\_\+t battery\+Address)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus}\+:\+: \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82}{set\+Battery\+Address}} (uint8\+\_\+t battery\+Address)
+\begin{DoxyCompactList}\small\item\em Set the battery\textquotesingle{}s I2C address. Can be used to change the address after the object is created. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429}{temperature}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature. Returns the battery temperature in 0.\+1 degrees Kelvin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c}{temperatureC}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature in Celsius. Returns the battery temperature in 0.\+1 degrees Celsius. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4}{temperatureF}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature in Fahrenheit. Returns the battery temperature in 0.\+1 degrees Fahrenheit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_abc3178c7be648042be5f021ad8354130}{voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s voltage. Returns the sum of all cell voltages, in mV. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a462f1d5694330563db84584b17015192}{current}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s current. Returns the battery measured current (from the coulomb counter) in mA. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ab5b72566c5de066997c05876e024ffb7}{average\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s average current. Returns the average current in a 1-\/minute rolling average, in mA. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_af26a153705c7b40d3178ffbfdc2bf50e}{max\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s state of charge error. Returns the battery\textquotesingle{}s margin of error when estimating SOC, in percent. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c040e3ec9}{relative\+State\+Of\+Charge}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s current relative charge. Returns the predicted remaining battery capacity as a percentage of full\+Charge\+Capacity() \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798}{absolute\+State\+Of\+Charge}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s absolute charge. Returns the predicted remaining battery capacity as a percentage of \doxylink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{design\+Capacity()} \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e}{remaining\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced}{full\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0}{run\+Time\+To\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317}{avg\+Time\+To\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s average time to empty. Returns the predicted time to empty, in minutes, based on 1-\/minute rolling average discharge rate. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676698315}{avg\+Time\+To\+Full}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s time to full. Returns the predicted time to full charge, in minutes, based on 1-\/minute rolling average charge rate. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}{battery\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. \end{DoxyCompactList}\item 
+\Hypertarget{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}\label{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94} 
+uint16\+\_\+t {\bfseries charging\+Current} ()
+\item 
+\Hypertarget{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}\label{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3} 
+uint16\+\_\+t {\bfseries charging\+Voltage} ()
+\item 
+bool \mbox{\hyperlink{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762}{status\+OK}} ()
+\begin{DoxyCompactList}\small\item\em Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e}{is\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Check if the battery is charging. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b}{is\+Fully\+Charged}} ()
+\begin{DoxyCompactList}\small\item\em Check if the battery is fully charged. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112}{cycle\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery\textquotesingle{}s design capacity. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{design\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101}{design\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design voltage. Returns the nominal voltage of the battery, in mV. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45}{manufacture\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s manufacture date. Returns the date the battery was manufactured, in the following format\+: Day + Month\texorpdfstring{$\ast$}{*}32 + (Year–1980)\texorpdfstring{$\ast$}{*}512. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_arduino_s_m_bus_a716d79d59c632851b84719bafa57a47f}{manufacture\+Year}} ()
+\begin{DoxyCompactList}\small\item\em Get the manufacture year from the manufacture date. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_aeed8722d27576cce6ab7b52990a983b3}{serial\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Get the Serial Number from the battery. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_arduino_s_m_bus_a75bc281cbb7d438da06e7880b304876b}{manufacturer\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the Manufacturer Name from the battery. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_arduino_s_m_bus_ad0b0f70cbad233652eead2e81214b255}{device\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the Device Name from the battery. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_arduino_s_m_bus_a57fc6f298ae2fea71e1fda22d04f8f9b}{device\+Chemistry}} ()
+\begin{DoxyCompactList}\small\item\em Get the Device Chemistry from the battery. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49}{state\+Of\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_arduino_s_m_bus_a13842e9dd3dc931348a6d1e0f3bdf18d}\label{class_arduino_s_m_bus_a13842e9dd3dc931348a6d1e0f3bdf18d} 
+\index{ArduinoSMBus@{ArduinoSMBus}!ArduinoSMBus@{ArduinoSMBus}}
+\index{ArduinoSMBus@{ArduinoSMBus}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{ArduinoSMBus()}{ArduinoSMBus()}}
+{\footnotesize\ttfamily Arduino\+SMBus\+::\+Arduino\+SMBus (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{battery\+Address }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus}\+:\+: \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery\+Address} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798}\label{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798} 
+\index{ArduinoSMBus@{ArduinoSMBus}!absoluteStateOfCharge@{absoluteStateOfCharge}}
+\index{absoluteStateOfCharge@{absoluteStateOfCharge}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{absoluteStateOfCharge()}{absoluteStateOfCharge()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::absolute\+State\+Of\+Charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s absolute charge. Returns the predicted remaining battery capacity as a percentage of \doxylink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{design\+Capacity()} 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ab5b72566c5de066997c05876e024ffb7}\label{class_arduino_s_m_bus_ab5b72566c5de066997c05876e024ffb7} 
+\index{ArduinoSMBus@{ArduinoSMBus}!averageCurrent@{averageCurrent}}
+\index{averageCurrent@{averageCurrent}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{averageCurrent()}{averageCurrent()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::average\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s average current. Returns the average current in a 1-\/minute rolling average, in mA. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317}\label{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317} 
+\index{ArduinoSMBus@{ArduinoSMBus}!avgTimeToEmpty@{avgTimeToEmpty}}
+\index{avgTimeToEmpty@{avgTimeToEmpty}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{avgTimeToEmpty()}{avgTimeToEmpty()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::avg\+Time\+To\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s average time to empty. Returns the predicted time to empty, in minutes, based on 1-\/minute rolling average discharge rate. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676698315}\label{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676698315} 
+\index{ArduinoSMBus@{ArduinoSMBus}!avgTimeToFull@{avgTimeToFull}}
+\index{avgTimeToFull@{avgTimeToFull}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{avgTimeToFull()}{avgTimeToFull()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::avg\+Time\+To\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s time to full. Returns the predicted time to full charge, in minutes, based on 1-\/minute rolling average charge rate. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}\label{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab} 
+\index{ArduinoSMBus@{ArduinoSMBus}!batteryStatus@{batteryStatus}}
+\index{batteryStatus@{batteryStatus}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{batteryStatus()}{batteryStatus()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::battery\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a462f1d5694330563db84584b17015192}\label{class_arduino_s_m_bus_a462f1d5694330563db84584b17015192} 
+\index{ArduinoSMBus@{ArduinoSMBus}!current@{current}}
+\index{current@{current}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s current. Returns the battery measured current (from the coulomb counter) in mA. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112}\label{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112} 
+\index{ArduinoSMBus@{ArduinoSMBus}!cycleCount@{cycleCount}}
+\index{cycleCount@{cycleCount}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{cycleCount()}{cycleCount()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::cycle\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery\textquotesingle{}s design capacity. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}\label{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8} 
+\index{ArduinoSMBus@{ArduinoSMBus}!designCapacity@{designCapacity}}
+\index{designCapacity@{designCapacity}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{designCapacity()}{designCapacity()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::design\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101}\label{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101} 
+\index{ArduinoSMBus@{ArduinoSMBus}!designVoltage@{designVoltage}}
+\index{designVoltage@{designVoltage}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{designVoltage()}{designVoltage()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::design\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s design voltage. Returns the nominal voltage of the battery, in mV. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a57fc6f298ae2fea71e1fda22d04f8f9b}\label{class_arduino_s_m_bus_a57fc6f298ae2fea71e1fda22d04f8f9b} 
+\index{ArduinoSMBus@{ArduinoSMBus}!deviceChemistry@{deviceChemistry}}
+\index{deviceChemistry@{deviceChemistry}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{deviceChemistry()}{deviceChemistry()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Arduino\+SMBus\+::device\+Chemistry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Device Chemistry from the battery. 
+
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ad0b0f70cbad233652eead2e81214b255}\label{class_arduino_s_m_bus_ad0b0f70cbad233652eead2e81214b255} 
+\index{ArduinoSMBus@{ArduinoSMBus}!deviceName@{deviceName}}
+\index{deviceName@{deviceName}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{deviceName()}{deviceName()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Arduino\+SMBus\+::device\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Device Name from the battery. 
+
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced}\label{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced} 
+\index{ArduinoSMBus@{ArduinoSMBus}!fullCapacity@{fullCapacity}}
+\index{fullCapacity@{fullCapacity}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{fullCapacity()}{fullCapacity()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::full\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e}\label{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e} 
+\index{ArduinoSMBus@{ArduinoSMBus}!isCharging@{isCharging}}
+\index{isCharging@{isCharging}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{isCharging()}{isCharging()}}
+{\footnotesize\ttfamily bool Arduino\+SMBus\+::is\+Charging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the battery is charging. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b}\label{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b} 
+\index{ArduinoSMBus@{ArduinoSMBus}!isFullyCharged@{isFullyCharged}}
+\index{isFullyCharged@{isFullyCharged}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{isFullyCharged()}{isFullyCharged()}}
+{\footnotesize\ttfamily bool Arduino\+SMBus\+::is\+Fully\+Charged (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the battery is fully charged. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45}\label{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45} 
+\index{ArduinoSMBus@{ArduinoSMBus}!manufactureDate@{manufactureDate}}
+\index{manufactureDate@{manufactureDate}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{manufactureDate()}{manufactureDate()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::manufacture\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s manufacture date. Returns the date the battery was manufactured, in the following format\+: Day + Month\texorpdfstring{$\ast$}{*}32 + (Year–1980)\texorpdfstring{$\ast$}{*}512. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a75bc281cbb7d438da06e7880b304876b}\label{class_arduino_s_m_bus_a75bc281cbb7d438da06e7880b304876b} 
+\index{ArduinoSMBus@{ArduinoSMBus}!manufacturerName@{manufacturerName}}
+\index{manufacturerName@{manufacturerName}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{manufacturerName()}{manufacturerName()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Arduino\+SMBus\+::manufacturer\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Manufacturer Name from the battery. 
+
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a716d79d59c632851b84719bafa57a47f}\label{class_arduino_s_m_bus_a716d79d59c632851b84719bafa57a47f} 
+\index{ArduinoSMBus@{ArduinoSMBus}!manufactureYear@{manufactureYear}}
+\index{manufactureYear@{manufactureYear}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{manufactureYear()}{manufactureYear()}}
+{\footnotesize\ttfamily int Arduino\+SMBus\+::manufacture\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the manufacture year from the manufacture date. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_af26a153705c7b40d3178ffbfdc2bf50e}\label{class_arduino_s_m_bus_af26a153705c7b40d3178ffbfdc2bf50e} 
+\index{ArduinoSMBus@{ArduinoSMBus}!maxError@{maxError}}
+\index{maxError@{maxError}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{maxError()}{maxError()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::max\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s state of charge error. Returns the battery\textquotesingle{}s margin of error when estimating SOC, in percent. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c040e3ec9}\label{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c040e3ec9} 
+\index{ArduinoSMBus@{ArduinoSMBus}!relativeStateOfCharge@{relativeStateOfCharge}}
+\index{relativeStateOfCharge@{relativeStateOfCharge}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{relativeStateOfCharge()}{relativeStateOfCharge()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::relative\+State\+Of\+Charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s current relative charge. Returns the predicted remaining battery capacity as a percentage of full\+Charge\+Capacity() 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e}\label{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e} 
+\index{ArduinoSMBus@{ArduinoSMBus}!remainingCapacity@{remainingCapacity}}
+\index{remainingCapacity@{remainingCapacity}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{remainingCapacity()}{remainingCapacity()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::remaining\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0}\label{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0} 
+\index{ArduinoSMBus@{ArduinoSMBus}!runTimeToEmpty@{runTimeToEmpty}}
+\index{runTimeToEmpty@{runTimeToEmpty}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{runTimeToEmpty()}{runTimeToEmpty()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::run\+Time\+To\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_aeed8722d27576cce6ab7b52990a983b3}\label{class_arduino_s_m_bus_aeed8722d27576cce6ab7b52990a983b3} 
+\index{ArduinoSMBus@{ArduinoSMBus}!serialNumber@{serialNumber}}
+\index{serialNumber@{serialNumber}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{serialNumber()}{serialNumber()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::serial\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Serial Number from the battery. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82}\label{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82} 
+\index{ArduinoSMBus@{ArduinoSMBus}!setBatteryAddress@{setBatteryAddress}}
+\index{setBatteryAddress@{setBatteryAddress}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{setBatteryAddress()}{setBatteryAddress()}}
+{\footnotesize\ttfamily void Arduino\+SMBus\+::set\+Battery\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{battery\+Address }\end{DoxyParamCaption})}
+
+
+
+Set the battery\textquotesingle{}s I2C address. Can be used to change the address after the object is created. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery\+Address} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49}\label{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49} 
+\index{ArduinoSMBus@{ArduinoSMBus}!stateOfHealth@{stateOfHealth}}
+\index{stateOfHealth@{stateOfHealth}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{stateOfHealth()}{stateOfHealth()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::state\+Of\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762}\label{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762} 
+\index{ArduinoSMBus@{ArduinoSMBus}!statusOK@{statusOK}}
+\index{statusOK@{statusOK}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{statusOK()}{statusOK()}}
+{\footnotesize\ttfamily bool Arduino\+SMBus\+::status\+OK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429}\label{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429} 
+\index{ArduinoSMBus@{ArduinoSMBus}!temperature@{temperature}}
+\index{temperature@{temperature}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{temperature()}{temperature()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s temperature. Returns the battery temperature in 0.\+1 degrees Kelvin. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c}\label{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c} 
+\index{ArduinoSMBus@{ArduinoSMBus}!temperatureC@{temperatureC}}
+\index{temperatureC@{temperatureC}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{temperatureC()}{temperatureC()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::temperatureC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s temperature in Celsius. Returns the battery temperature in 0.\+1 degrees Celsius. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4}\label{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4} 
+\index{ArduinoSMBus@{ArduinoSMBus}!temperatureF@{temperatureF}}
+\index{temperatureF@{temperatureF}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{temperatureF()}{temperatureF()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::temperatureF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s temperature in Fahrenheit. Returns the battery temperature in 0.\+1 degrees Fahrenheit. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_abc3178c7be648042be5f021ad8354130}\label{class_arduino_s_m_bus_abc3178c7be648042be5f021ad8354130} 
+\index{ArduinoSMBus@{ArduinoSMBus}!voltage@{voltage}}
+\index{voltage@{voltage}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{voltage()}{voltage()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s voltage. Returns the sum of all cell voltages, in mV. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chris Lee/\+Sync/\+Personal Projects/p2024-\/005 -\/ Arduino\+SMBus/\+Arduino\+SMBus/src/\mbox{\hyperlink{_arduino_s_m_bus_8h}{Arduino\+SMBus.\+h}}\item 
+C\+:/\+Users/\+Chris Lee/\+Sync/\+Personal Projects/p2024-\/005 -\/ Arduino\+SMBus/\+Arduino\+SMBus/src/\mbox{\hyperlink{_arduino_s_m_bus_8cpp}{Arduino\+SMBus.\+cpp}}\end{DoxyCompactItemize}
