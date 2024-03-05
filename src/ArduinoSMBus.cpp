@@ -179,6 +179,25 @@ uint16_t ArduinoSMBus::batteryStatus() {
 }
 
 /**
+ * @brief Get the battery's design charging current.
+ * Returns the desired design charging current of the battery, in mA.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::chargingCurrent() {
+  return readRegister(CHARGING_CURRENT);
+}
+
+/**
+ * @brief Get the battery's design charging voltage.
+ * Returns the desired design charging voltage of the battery, in mV.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::chargingVoltage() {
+  return readRegister(CHARGING_VOLTAGE);
+}
+
+
+/**
  * @brief Check if the battery status is OK.
  * Check for any alarm conditions in the battery status register. These include bits
  * 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error
