@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__arduino_s_m_bus_8cpp" xml:lang="en-US">
+<title>C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/ArduinoSMBus.cpp File Reference</title>
+<indexterm><primary>C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/ArduinoSMBus.cpp</primary></indexterm>
+<para>
+
+<para>Function definitions for the <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link> class. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;ArduinoSMBus.h&quot;<?linebreak?></programlisting><section>
+<title>Detailed Description</title>
+
+<para>Function definitions for the <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link> class. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Christopher Lee (<link xlink:href="mailto:clee@unitedconsulting.com">clee@unitedconsulting.com</link>) </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2024-02-29</para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>Copyright (c) 2024 </para>
+</formalpara>
+</para>
+</section>
+</section>

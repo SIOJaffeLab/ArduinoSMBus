@@ -299,15 +299,19 @@ Get the Status from the battery. Returns the battery status register, which cont
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-uint16_t {\b chargingCurrent} (){\bkmkstart AAAAAAAABC}
-{\bkmkend AAAAAAAABC}
-\par
+uint16_t {\b chargingCurrent} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's design charging current. Returns the desired design charging current of the battery, in mA. }{
+}\par
+}\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-uint16_t {\b chargingVoltage} (){\bkmkstart AAAAAAAABD}
-{\bkmkend AAAAAAAABD}
-\par
+uint16_t {\b chargingVoltage} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's design charging voltage. Returns the desired design charging voltage of the battery, in mV. }{
+}\par
+}\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 bool {\b statusOK} ()\par
 {
@@ -410,8 +414,8 @@ Constructor & Destructor Documentation\par
 {\b 
 ArduinoSMBus::ArduinoSMBus (uint8_t  {\i batteryAddress})}}
 \par
-{\bkmkstart AAAAAAAABE}
-{\bkmkend AAAAAAAABE}
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -440,8 +444,8 @@ Member Function Documentation\par
 {\b 
 uint16_t ArduinoSMBus::absoluteStateOfCharge ()}}
 \par
-{\bkmkstart AAAAAAAABF}
-{\bkmkend AAAAAAAABF}
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -460,8 +464,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::averageCurrent ()}}
 \par
-{\bkmkstart AAAAAAAABG}
-{\bkmkend AAAAAAAABG}
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -480,8 +484,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::avgTimeToEmpty ()}}
 \par
-{\bkmkstart AAAAAAAABH}
-{\bkmkend AAAAAAAABH}
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -500,8 +504,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::avgTimeToFull ()}}
 \par
-{\bkmkstart AAAAAAAABI}
-{\bkmkend AAAAAAAABI}
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -520,6 +524,46 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::batteryStatus ()}}
 \par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+uint16_t \par
+}}}}
+{\xe \v chargingCurrent\:ArduinoSMBus}
+{\xe \v ArduinoSMBus\:chargingCurrent}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+uint16_t ArduinoSMBus::chargingCurrent ()}}
+\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's design charging current. Returns the desired design charging current of the battery, in mA. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+uint16_t \par
+}}}}
+{\xe \v chargingVoltage\:ArduinoSMBus}
+{\xe \v ArduinoSMBus\:chargingVoltage}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+uint16_t ArduinoSMBus::chargingVoltage ()}}
+\par
 {\bkmkstart AAAAAAAABJ}
 {\bkmkend AAAAAAAABJ}
 {
@@ -527,7 +571,7 @@ uint16_t ArduinoSMBus::batteryStatus ()}}
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. }}\par
+Get the battery's design charging voltage. Returns the desired design charging voltage of the battery, in mV. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 

@@ -37,12 +37,10 @@ uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s time to full. Returns the predicted time to full charge, in minutes, based on 1-\/minute rolling average charge rate. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}{battery\+Status}} ()
 \begin{DoxyCompactList}\small\item\em Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. \end{DoxyCompactList}\item 
-\Hypertarget{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}\label{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94} 
-uint16\+\_\+t {\bfseries charging\+Current} ()
-\item 
-\Hypertarget{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}\label{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3} 
-uint16\+\_\+t {\bfseries charging\+Voltage} ()
-\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}{charging\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design charging current. Returns the desired design charging current of the battery, in mA. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}{charging\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design charging voltage. Returns the desired design charging voltage of the battery, in mV. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762}{status\+OK}} ()
 \begin{DoxyCompactList}\small\item\em Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e}{is\+Charging}} ()
@@ -151,6 +149,32 @@ uint16\+\_\+t
 
 
 Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}\label{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94} 
+\index{ArduinoSMBus@{ArduinoSMBus}!chargingCurrent@{chargingCurrent}}
+\index{chargingCurrent@{chargingCurrent}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{chargingCurrent()}{chargingCurrent()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::charging\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s design charging current. Returns the desired design charging current of the battery, in mA. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}\label{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3} 
+\index{ArduinoSMBus@{ArduinoSMBus}!chargingVoltage@{chargingVoltage}}
+\index{chargingVoltage@{chargingVoltage}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{chargingVoltage()}{chargingVoltage()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::charging\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s design charging voltage. Returns the desired design charging voltage of the battery, in mV. 
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 

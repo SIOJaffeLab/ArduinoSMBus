@@ -1,0 +1,658 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_arduino_s_m_bus" xml:lang="en-US">
+<title>ArduinoSMBus Class Reference</title>
+<indexterm><primary>ArduinoSMBus</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_arduino_s_m_bus_1a13842e9dd3dc931348a6d1e0f3bdf18d">ArduinoSMBus</link> (uint8_t batteryAddress)</para>
+
+<para>Construct a new <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link>:: <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link> object. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_arduino_s_m_bus_1ad1db22e3ec3012246671080b7b7f2b82">setBatteryAddress</link> (uint8_t batteryAddress)</para>
+
+<para>Set the battery&apos;s I2C address. Can be used to change the address after the object is created. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1aec60bb3f821b326148553e3deaf9a429">temperature</link> ()</para>
+
+<para>Get the battery&apos;s temperature. Returns the battery temperature in 0.1 degrees Kelvin. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1ae37c41c3a9fe958330d9315e49bf553c">temperatureC</link> ()</para>
+
+<para>Get the battery&apos;s temperature in Celsius. Returns the battery temperature in 0.1 degrees Celsius. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1ab49bf0449e3086fd6b87c1b47d58d9f4">temperatureF</link> ()</para>
+
+<para>Get the battery&apos;s temperature in Fahrenheit. Returns the battery temperature in 0.1 degrees Fahrenheit. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1abc3178c7be648042be5f021ad8354130">voltage</link> ()</para>
+
+<para>Get the battery&apos;s voltage. Returns the sum of all cell voltages, in mV. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a462f1d5694330563db84584b17015192">current</link> ()</para>
+
+<para>Get the battery&apos;s current. Returns the battery measured current (from the coulomb counter) in mA. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1ab5b72566c5de066997c05876e024ffb7">averageCurrent</link> ()</para>
+
+<para>Get the battery&apos;s average current. Returns the average current in a 1-minute rolling average, in mA. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1af26a153705c7b40d3178ffbfdc2bf50e">maxError</link> ()</para>
+
+<para>Get the battery&apos;s state of charge error. Returns the battery&apos;s margin of error when estimating SOC, in percent. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a7ff27611b0d03d3294cae80c040e3ec9">relativeStateOfCharge</link> ()</para>
+
+<para>Get the battery&apos;s current relative charge. Returns the predicted remaining battery capacity as a percentage of fullChargeCapacity() </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a04e6cfb92ff6ddfb88e88f3361d11798">absoluteStateOfCharge</link> ()</para>
+
+<para>Get the battery&apos;s absolute charge. Returns the predicted remaining battery capacity as a percentage of <link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity()</link> </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a8827accf4409366aada7d23d32f1710e">remainingCapacity</link> ()</para>
+
+<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a3f145f4f0e2a1179c04b9063246e1ced">fullCapacity</link> ()</para>
+
+<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a7790a2ea29a71581c281d4412d1b3ba0">runTimeToEmpty</link> ()</para>
+
+<para>Get the battery&apos;s time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1adc9d08f9990010a04f9177aa028df317">avgTimeToEmpty</link> ()</para>
+
+<para>Get the battery&apos;s average time to empty. Returns the predicted time to empty, in minutes, based on 1-minute rolling average discharge rate. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a60fa6bb8760b6566ddfea77676698315">avgTimeToFull</link> ()</para>
+
+<para>Get the battery&apos;s time to full. Returns the predicted time to full charge, in minutes, based on 1-minute rolling average charge rate. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1acd57a2ac31ad790559e77613c175a3ab">batteryStatus</link> ()</para>
+
+<para>Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1acc351199470160724c42a55a04b37a94">chargingCurrent</link> ()</para>
+
+<para>Get the battery&apos;s design charging current. Returns the desired design charging current of the battery, in mA. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a037a1afa15af04f562756592e09354d3">chargingVoltage</link> ()</para>
+
+<para>Get the battery&apos;s design charging voltage. Returns the desired design charging voltage of the battery, in mV. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_arduino_s_m_bus_1a177ded928cfe6c73eb98e14afef31762">statusOK</link> ()</para>
+
+<para>Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_arduino_s_m_bus_1ad2639dce48c82982c2e7a5258f96ef7e">isCharging</link> ()</para>
+
+<para>Check if the battery is charging. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_arduino_s_m_bus_1a42bff30e23029750c49e45f24f395d1b">isFullyCharged</link> ()</para>
+
+<para>Check if the battery is fully charged. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a6f1f77681f39bf2b119820fb4dca7112">cycleCount</link> ()</para>
+
+<para>Get the battery&apos;s cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery&apos;s design capacity. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity</link> ()</para>
+
+<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a39dc028dd468ec0ec1b980b276006101">designVoltage</link> ()</para>
+
+<para>Get the battery&apos;s design voltage. Returns the nominal voltage of the battery, in mV. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a6ef1675a70f80131484dbbc3fa0dbb45">manufactureDate</link> ()</para>
+
+<para>Get the battery&apos;s manufacture date. Returns the date the battery was manufactured, in the following format: Day + Month*32 + (Year–1980)*512. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_arduino_s_m_bus_1a716d79d59c632851b84719bafa57a47f">manufactureYear</link> ()</para>
+
+<para>Get the manufacture year from the manufacture date. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1aeed8722d27576cce6ab7b52990a983b3">serialNumber</link> ()</para>
+
+<para>Get the Serial Number from the battery. </para>
+</listitem>
+            <listitem><para>const char * <link linkend="_class_arduino_s_m_bus_1a75bc281cbb7d438da06e7880b304876b">manufacturerName</link> ()</para>
+
+<para>Get the Manufacturer Name from the battery. </para>
+</listitem>
+            <listitem><para>const char * <link linkend="_class_arduino_s_m_bus_1ad0b0f70cbad233652eead2e81214b255">deviceName</link> ()</para>
+
+<para>Get the Device Name from the battery. </para>
+</listitem>
+            <listitem><para>const char * <link linkend="_class_arduino_s_m_bus_1a57fc6f298ae2fea71e1fda22d04f8f9b">deviceChemistry</link> ()</para>
+
+<para>Get the Device Chemistry from the battery. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</link> ()</para>
+
+<para>Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_arduino_s_m_bus_1a13842e9dd3dc931348a6d1e0f3bdf18d"/><section>
+    <title>ArduinoSMBus()</title>
+<indexterm><primary>ArduinoSMBus</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<para><computeroutput>ArduinoSMBus::ArduinoSMBus (uint8_t batteryAddress)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link>:: <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>batteryAddress</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_arduino_s_m_bus_1a04e6cfb92ff6ddfb88e88f3361d11798"/><section>
+    <title>absoluteStateOfCharge()</title>
+<indexterm><primary>absoluteStateOfCharge</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>absoluteStateOfCharge</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::absoluteStateOfCharge ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s absolute charge. Returns the predicted remaining battery capacity as a percentage of <link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity()</link> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ab5b72566c5de066997c05876e024ffb7"/><section>
+    <title>averageCurrent()</title>
+<indexterm><primary>averageCurrent</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>averageCurrent</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::averageCurrent ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s average current. Returns the average current in a 1-minute rolling average, in mA. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1adc9d08f9990010a04f9177aa028df317"/><section>
+    <title>avgTimeToEmpty()</title>
+<indexterm><primary>avgTimeToEmpty</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>avgTimeToEmpty</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::avgTimeToEmpty ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s average time to empty. Returns the predicted time to empty, in minutes, based on 1-minute rolling average discharge rate. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a60fa6bb8760b6566ddfea77676698315"/><section>
+    <title>avgTimeToFull()</title>
+<indexterm><primary>avgTimeToFull</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>avgTimeToFull</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::avgTimeToFull ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s time to full. Returns the predicted time to full charge, in minutes, based on 1-minute rolling average charge rate. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1acd57a2ac31ad790559e77613c175a3ab"/><section>
+    <title>batteryStatus()</title>
+<indexterm><primary>batteryStatus</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>batteryStatus</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::batteryStatus ( )</computeroutput></para><para>
+
+<para>Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1acc351199470160724c42a55a04b37a94"/><section>
+    <title>chargingCurrent()</title>
+<indexterm><primary>chargingCurrent</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>chargingCurrent</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::chargingCurrent ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s design charging current. Returns the desired design charging current of the battery, in mA. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a037a1afa15af04f562756592e09354d3"/><section>
+    <title>chargingVoltage()</title>
+<indexterm><primary>chargingVoltage</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>chargingVoltage</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::chargingVoltage ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s design charging voltage. Returns the desired design charging voltage of the battery, in mV. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a462f1d5694330563db84584b17015192"/><section>
+    <title>current()</title>
+<indexterm><primary>current</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>current</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::current ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s current. Returns the battery measured current (from the coulomb counter) in mA. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a6f1f77681f39bf2b119820fb4dca7112"/><section>
+    <title>cycleCount()</title>
+<indexterm><primary>cycleCount</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>cycleCount</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::cycleCount ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery&apos;s design capacity. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8"/><section>
+    <title>designCapacity()</title>
+<indexterm><primary>designCapacity</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>designCapacity</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::designCapacity ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a39dc028dd468ec0ec1b980b276006101"/><section>
+    <title>designVoltage()</title>
+<indexterm><primary>designVoltage</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>designVoltage</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::designVoltage ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s design voltage. Returns the nominal voltage of the battery, in mV. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a57fc6f298ae2fea71e1fda22d04f8f9b"/><section>
+    <title>deviceChemistry()</title>
+<indexterm><primary>deviceChemistry</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>deviceChemistry</secondary></indexterm>
+<para><computeroutput>const char * ArduinoSMBus::deviceChemistry ( )</computeroutput></para><para>
+
+<para>Get the Device Chemistry from the battery. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>const char* </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ad0b0f70cbad233652eead2e81214b255"/><section>
+    <title>deviceName()</title>
+<indexterm><primary>deviceName</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>deviceName</secondary></indexterm>
+<para><computeroutput>const char * ArduinoSMBus::deviceName ( )</computeroutput></para><para>
+
+<para>Get the Device Name from the battery. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>const char* </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a3f145f4f0e2a1179c04b9063246e1ced"/><section>
+    <title>fullCapacity()</title>
+<indexterm><primary>fullCapacity</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>fullCapacity</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::fullCapacity ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ad2639dce48c82982c2e7a5258f96ef7e"/><section>
+    <title>isCharging()</title>
+<indexterm><primary>isCharging</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>isCharging</secondary></indexterm>
+<para><computeroutput>bool ArduinoSMBus::isCharging ( )</computeroutput></para><para>
+
+<para>Check if the battery is charging. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>bool </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a42bff30e23029750c49e45f24f395d1b"/><section>
+    <title>isFullyCharged()</title>
+<indexterm><primary>isFullyCharged</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>isFullyCharged</secondary></indexterm>
+<para><computeroutput>bool ArduinoSMBus::isFullyCharged ( )</computeroutput></para><para>
+
+<para>Check if the battery is fully charged. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>bool </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a6ef1675a70f80131484dbbc3fa0dbb45"/><section>
+    <title>manufactureDate()</title>
+<indexterm><primary>manufactureDate</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>manufactureDate</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::manufactureDate ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s manufacture date. Returns the date the battery was manufactured, in the following format: Day + Month*32 + (Year–1980)*512. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a75bc281cbb7d438da06e7880b304876b"/><section>
+    <title>manufacturerName()</title>
+<indexterm><primary>manufacturerName</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>manufacturerName</secondary></indexterm>
+<para><computeroutput>const char * ArduinoSMBus::manufacturerName ( )</computeroutput></para><para>
+
+<para>Get the Manufacturer Name from the battery. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>const char* </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a716d79d59c632851b84719bafa57a47f"/><section>
+    <title>manufactureYear()</title>
+<indexterm><primary>manufactureYear</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>manufactureYear</secondary></indexterm>
+<para><computeroutput>int ArduinoSMBus::manufactureYear ( )</computeroutput></para><para>
+
+<para>Get the manufacture year from the manufacture date. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>int </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1af26a153705c7b40d3178ffbfdc2bf50e"/><section>
+    <title>maxError()</title>
+<indexterm><primary>maxError</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>maxError</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::maxError ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s state of charge error. Returns the battery&apos;s margin of error when estimating SOC, in percent. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a7ff27611b0d03d3294cae80c040e3ec9"/><section>
+    <title>relativeStateOfCharge()</title>
+<indexterm><primary>relativeStateOfCharge</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>relativeStateOfCharge</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::relativeStateOfCharge ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s current relative charge. Returns the predicted remaining battery capacity as a percentage of fullChargeCapacity() </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a8827accf4409366aada7d23d32f1710e"/><section>
+    <title>remainingCapacity()</title>
+<indexterm><primary>remainingCapacity</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>remainingCapacity</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::remainingCapacity ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a7790a2ea29a71581c281d4412d1b3ba0"/><section>
+    <title>runTimeToEmpty()</title>
+<indexterm><primary>runTimeToEmpty</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>runTimeToEmpty</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::runTimeToEmpty ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1aeed8722d27576cce6ab7b52990a983b3"/><section>
+    <title>serialNumber()</title>
+<indexterm><primary>serialNumber</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>serialNumber</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::serialNumber ( )</computeroutput></para><para>
+
+<para>Get the Serial Number from the battery. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ad1db22e3ec3012246671080b7b7f2b82"/><section>
+    <title>setBatteryAddress()</title>
+<indexterm><primary>setBatteryAddress</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>setBatteryAddress</secondary></indexterm>
+<para><computeroutput>void ArduinoSMBus::setBatteryAddress (uint8_t batteryAddress)</computeroutput></para><para>
+
+<para>Set the battery&apos;s I2C address. Can be used to change the address after the object is created. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>batteryAddress</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1aa2b6bd959a7a1ee0b40ae0be14387c49"/><section>
+    <title>stateOfHealth()</title>
+<indexterm><primary>stateOfHealth</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>stateOfHealth</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::stateOfHealth ( )</computeroutput></para><para>
+
+<para>Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a177ded928cfe6c73eb98e14afef31762"/><section>
+    <title>statusOK()</title>
+<indexterm><primary>statusOK</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>statusOK</secondary></indexterm>
+<para><computeroutput>bool ArduinoSMBus::statusOK ( )</computeroutput></para><para>
+
+<para>Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>bool </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1aec60bb3f821b326148553e3deaf9a429"/><section>
+    <title>temperature()</title>
+<indexterm><primary>temperature</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>temperature</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::temperature ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s temperature. Returns the battery temperature in 0.1 degrees Kelvin. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ae37c41c3a9fe958330d9315e49bf553c"/><section>
+    <title>temperatureC()</title>
+<indexterm><primary>temperatureC</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>temperatureC</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::temperatureC ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s temperature in Celsius. Returns the battery temperature in 0.1 degrees Celsius. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ab49bf0449e3086fd6b87c1b47d58d9f4"/><section>
+    <title>temperatureF()</title>
+<indexterm><primary>temperatureF</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>temperatureF</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::temperatureF ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s temperature in Fahrenheit. Returns the battery temperature in 0.1 degrees Fahrenheit. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1abc3178c7be648042be5f021ad8354130"/><section>
+    <title>voltage()</title>
+<indexterm><primary>voltage</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>voltage</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::voltage ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s voltage. Returns the sum of all cell voltages, in mV. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/<link linkend="__arduino_s_m_bus_8h">ArduinoSMBus.h</link>C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/<link linkend="__arduino_s_m_bus_8cpp">ArduinoSMBus.cpp</link></section>
+</section>
