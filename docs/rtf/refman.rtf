@@ -143,7 +143,10 @@ Class List\par \pard\plain
 {
 \par
 \pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
-{\b {\b ArduinoSMBus} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABB \\*MERGEFORMAT}{\fldrslt pagenum}}
+{\b {\b ArduinoSMBus} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABJ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b BatteryMode} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+A struct to hold various battery mode flags })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACU \\*MERGEFORMAT}{\fldrslt pagenum}}
 \par
 \par}
 \pard\plain \sect\sbkpage
@@ -163,6 +166,9 @@ Function definitions for the {\b ArduinoSMBus} class })} \tab {\field\fldedit {\
 {\b C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/{\b ArduinoSMBus.h} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 Function declarations for the {\b ArduinoSMBus} class })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
 \par
+{\b C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/{\b main.cpp} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Example arduino code to read battery data from an SMBus battery and print to serial output })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
 \par}
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
@@ -172,8 +178,8 @@ Class Documentation{\tc \v Class Documentation}
 ArduinoSMBus Class Reference\par \pard\plain 
 {\tc\tcl2 \v ArduinoSMBus}
 {\xe \v ArduinoSMBus}
-{\bkmkstart AAAAAAAABB}
-{\bkmkend AAAAAAAABB}
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Public Member Functions\par
 \pard\plain 
@@ -194,10 +200,31 @@ Set the battery's I2C address. Can be used to change the address after the objec
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+uint16_t {\b remainingCapacityAlarm} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's remaining capacity alarm. Returns the battery's remaining capacity alarm threshold value, in mAh. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+uint16_t {\b remainingTimeAlarm} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's remaining time alarm. Returns the battery's remaining time alarm threshold value, in minutes. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b BatteryMode} {\b batteryMode} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's mode. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 uint16_t {\b temperature} ()\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's temperature. Returns the battery temperature in 0.1 degrees Kelvin. }{
+Get the battery's temperature. Returns the battery temperature in Kelvin. }{
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -260,14 +287,14 @@ Get the battery's absolute charge. Returns the predicted remaining battery capac
 uint16_t {\b remainingCapacity} ()\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. }{
+Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the {\b BatteryMode()} register (0x03) is set that way See protocol documentation for details. }{
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 uint16_t {\b fullCapacity} ()\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. }{
+Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the {\b BatteryMode()} register (0x03) is set that way See protocol documentation for details. }{
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -344,7 +371,7 @@ Get the battery's cycle count. Returns the number of discharge cycles the batter
 uint16_t {\b designCapacity} ()\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. }{
+Get the battery's design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the {\b BatteryMode()} register (0x03) is set to CAPM 1. See TI protocol documentation for details. }{
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -404,6 +431,17 @@ Get the State of Health from the battery. Returns the estimated health of the ba
 }\par
 }\par}
 }
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+{\b BatteryMode} {\b battery_mode}{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+\par
+}
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Constructor & Destructor Documentation\par
@@ -414,8 +452,8 @@ Constructor & Destructor Documentation\par
 {\b 
 ArduinoSMBus::ArduinoSMBus (uint8_t  {\i batteryAddress})}}
 \par
-{\bkmkstart AAAAAAAABC}
-{\bkmkend AAAAAAAABC}
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -444,8 +482,8 @@ Member Function Documentation\par
 {\b 
 uint16_t ArduinoSMBus::absoluteStateOfCharge ()}}
 \par
-{\bkmkstart AAAAAAAABD}
-{\bkmkend AAAAAAAABD}
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -464,8 +502,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::averageCurrent ()}}
 \par
-{\bkmkstart AAAAAAAABE}
-{\bkmkend AAAAAAAABE}
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -484,8 +522,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::avgTimeToEmpty ()}}
 \par
-{\bkmkstart AAAAAAAABF}
-{\bkmkend AAAAAAAABF}
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -504,8 +542,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::avgTimeToFull ()}}
 \par
-{\bkmkstart AAAAAAAABG}
-{\bkmkend AAAAAAAABG}
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -518,14 +556,51 @@ Get the battery's time to full. Returns the predicted time to full charge, in mi
 Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
 uint16_t \par
 }}}}
+{\xe \v batteryMode\:ArduinoSMBus}
+{\xe \v ArduinoSMBus\:batteryMode}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b BatteryMode} ArduinoSMBus::batteryMode ()}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's mode. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This method reads the battery's mode register, which contains various settings and status bits. It then creates a {\b BatteryMode} struct and sets its fields based on the bits in the mode.\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+{\b BatteryMode} A struct containing the following fields:{
+\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+internal_charge_controller: bit 0 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+primary_battery_support: bit 1 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+condition_flag: bit 7 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+charge_controller_enabled: bit 8 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+primary_battery: bit 9 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+alarm_mode: bit 13 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+charger_mode: bit 14 of the mode register\par
+\pard\plain \s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+capacity_mode: bit 15 of the mode register \par}
+}}}}
 {\xe \v batteryStatus\:ArduinoSMBus}
 {\xe \v ArduinoSMBus\:batteryStatus}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
 {\b 
 uint16_t ArduinoSMBus::batteryStatus ()}}
 \par
-{\bkmkstart AAAAAAAABH}
-{\bkmkend AAAAAAAABH}
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -544,8 +619,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::chargingCurrent ()}}
 \par
-{\bkmkstart AAAAAAAABI}
-{\bkmkend AAAAAAAABI}
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -564,8 +639,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::chargingVoltage ()}}
 \par
-{\bkmkstart AAAAAAAABJ}
-{\bkmkend AAAAAAAABJ}
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -584,8 +659,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::current ()}}
 \par
-{\bkmkstart AAAAAAAABK}
-{\bkmkend AAAAAAAABK}
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -604,8 +679,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::cycleCount ()}}
 \par
-{\bkmkstart AAAAAAAABL}
-{\bkmkend AAAAAAAABL}
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -624,14 +699,14 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::designCapacity ()}}
 \par
-{\bkmkstart AAAAAAAABM}
-{\bkmkend AAAAAAAABM}
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. }}\par
+Get the battery's design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the {\b BatteryMode()} register (0x03) is set to CAPM 1. See TI protocol documentation for details. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -644,8 +719,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::designVoltage ()}}
 \par
-{\bkmkstart AAAAAAAABN}
-{\bkmkend AAAAAAAABN}
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -664,8 +739,8 @@ uint16_t \par
 {\b 
 const char * ArduinoSMBus::deviceChemistry ()}}
 \par
-{\bkmkstart AAAAAAAABO}
-{\bkmkend AAAAAAAABO}
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -684,8 +759,8 @@ const char* \par
 {\b 
 const char * ArduinoSMBus::deviceName ()}}
 \par
-{\bkmkstart AAAAAAAABP}
-{\bkmkend AAAAAAAABP}
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -704,14 +779,14 @@ const char* \par
 {\b 
 uint16_t ArduinoSMBus::fullCapacity ()}}
 \par
-{\bkmkstart AAAAAAAABQ}
-{\bkmkend AAAAAAAABQ}
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. }}\par
+Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the {\b BatteryMode()} register (0x03) is set that way See protocol documentation for details. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -724,8 +799,8 @@ uint16_t \par
 {\b 
 bool ArduinoSMBus::isCharging ()}}
 \par
-{\bkmkstart AAAAAAAABR}
-{\bkmkend AAAAAAAABR}
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -744,8 +819,8 @@ bool \par
 {\b 
 bool ArduinoSMBus::isFullyCharged ()}}
 \par
-{\bkmkstart AAAAAAAABS}
-{\bkmkend AAAAAAAABS}
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -764,8 +839,8 @@ bool \par
 {\b 
 uint16_t ArduinoSMBus::manufactureDate ()}}
 \par
-{\bkmkstart AAAAAAAABT}
-{\bkmkend AAAAAAAABT}
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -784,8 +859,8 @@ uint16_t \par
 {\b 
 const char * ArduinoSMBus::manufacturerName ()}}
 \par
-{\bkmkstart AAAAAAAABU}
-{\bkmkend AAAAAAAABU}
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -804,8 +879,8 @@ const char* \par
 {\b 
 int ArduinoSMBus::manufactureYear ()}}
 \par
-{\bkmkstart AAAAAAAABV}
-{\bkmkend AAAAAAAABV}
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -824,8 +899,8 @@ int \par
 {\b 
 uint16_t ArduinoSMBus::maxError ()}}
 \par
-{\bkmkstart AAAAAAAABW}
-{\bkmkend AAAAAAAABW}
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -844,8 +919,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::relativeStateOfCharge ()}}
 \par
-{\bkmkstart AAAAAAAABX}
-{\bkmkend AAAAAAAABX}
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -864,14 +939,54 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::remainingCapacity ()}}
 \par
-{\bkmkstart AAAAAAAABY}
-{\bkmkend AAAAAAAABY}
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. }}\par
+Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the {\b BatteryMode()} register (0x03) is set that way See protocol documentation for details. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+uint16_t \par
+}}}}
+{\xe \v remainingCapacityAlarm\:ArduinoSMBus}
+{\xe \v ArduinoSMBus\:remainingCapacityAlarm}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+uint16_t ArduinoSMBus::remainingCapacityAlarm ()}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's remaining capacity alarm. Returns the battery's remaining capacity alarm threshold value, in mAh. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+uint16_t \par
+}}}}
+{\xe \v remainingTimeAlarm\:ArduinoSMBus}
+{\xe \v ArduinoSMBus\:remainingTimeAlarm}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+uint16_t ArduinoSMBus::remainingTimeAlarm ()}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Get the battery's remaining time alarm. Returns the battery's remaining time alarm threshold value, in minutes. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -884,8 +999,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::runTimeToEmpty ()}}
 \par
-{\bkmkstart AAAAAAAABZ}
-{\bkmkend AAAAAAAABZ}
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -904,8 +1019,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::serialNumber ()}}
 \par
-{\bkmkstart AAAAAAAACA}
-{\bkmkend AAAAAAAACA}
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -924,8 +1039,8 @@ uint16_t \par
 {\b 
 void ArduinoSMBus::setBatteryAddress (uint8_t  {\i batteryAddress})}}
 \par
-{\bkmkstart AAAAAAAACB}
-{\bkmkend AAAAAAAACB}
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -950,8 +1065,8 @@ Parameters\par}
 {\b 
 uint16_t ArduinoSMBus::stateOfHealth ()}}
 \par
-{\bkmkstart AAAAAAAACC}
-{\bkmkend AAAAAAAACC}
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -970,8 +1085,8 @@ uint16_t \par
 {\b 
 bool ArduinoSMBus::statusOK ()}}
 \par
-{\bkmkstart AAAAAAAACD}
-{\bkmkend AAAAAAAACD}
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -990,14 +1105,14 @@ bool \par
 {\b 
 uint16_t ArduinoSMBus::temperature ()}}
 \par
-{\bkmkstart AAAAAAAACE}
-{\bkmkend AAAAAAAACE}
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-Get the battery's temperature. Returns the battery temperature in 0.1 degrees Kelvin. }}\par
+Get the battery's temperature. Returns the battery temperature in Kelvin. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -1010,8 +1125,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::temperatureC ()}}
 \par
-{\bkmkstart AAAAAAAACF}
-{\bkmkend AAAAAAAACF}
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -1030,8 +1145,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::temperatureF ()}}
 \par
-{\bkmkstart AAAAAAAACG}
-{\bkmkend AAAAAAAACG}
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -1050,8 +1165,8 @@ uint16_t \par
 {\b 
 uint16_t ArduinoSMBus::voltage ()}}
 \par
-{\bkmkstart AAAAAAAACH}
-{\bkmkend AAAAAAAACH}
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -1070,6 +1185,240 @@ The documentation for this class was generated from the following files:{\par
 C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/{\b ArduinoSMBus.h}\par
 \pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/{\b ArduinoSMBus.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+BatteryMode Struct Reference\par \pard\plain 
+{\tc\tcl2 \v BatteryMode}
+{\xe \v BatteryMode}
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+A struct to hold various battery mode flags. }}\par
+{
+{\f2 #include <ArduinoSMBus.h>}}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b internal_charge_controller}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the internal charge controller is supported. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b primary_battery_support}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the primary battery support is supported. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b condition_flag}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the condition flag. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b charge_controller_enabled}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the charge controller is enabled. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b primary_battery}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the primary battery is enabled. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b alarm_mode}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the alarm mode. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b charger_mode}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the charger mode. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b capacity_mode}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the capacity mode. }{
+}\par
+}\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+A struct to hold various battery mode flags. \par
+}
+
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This struct holds various flags that represent the battery mode. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v alarm_mode\:BatteryMode}
+{\xe \v BatteryMode\:alarm_mode}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::alarm_mode}}
+\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the alarm mode. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+True - enable alarmWarning broadcasts to host. False - disable alarmWarning broadcasts to host. \par
+}}
+{\xe \v capacity_mode\:BatteryMode}
+{\xe \v BatteryMode\:capacity_mode}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::capacity_mode}}
+\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the capacity mode. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+True - report in mA or mAh. False - report in 10mW or 10mWh. \par
+}}
+{\xe \v charge_controller_enabled\:BatteryMode}
+{\xe \v BatteryMode\:charge_controller_enabled}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::charge_controller_enabled}}
+\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the charge controller is enabled. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This flag is true if the charge controller is enabled, and false otherwise. \par
+}}
+{\xe \v charger_mode\:BatteryMode}
+{\xe \v BatteryMode\:charger_mode}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::charger_mode}}
+\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the charger mode. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+True - enable chargingCurrent and chargingVoltage broadcasts to host. False - disable chargingCurrent and chargingVoltage broadcasts to host. \par
+}}
+{\xe \v condition_flag\:BatteryMode}
+{\xe \v BatteryMode\:condition_flag}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::condition_flag}}
+\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates the condition flag. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+False if condition is ok, true if battery conditioning cycle is needed \par
+}}
+{\xe \v internal_charge_controller\:BatteryMode}
+{\xe \v BatteryMode\:internal_charge_controller}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::internal_charge_controller}}
+\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the internal charge controller is supported. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This flag is true if the internal charge controller is supported, and false otherwise. \par
+}}
+{\xe \v primary_battery\:BatteryMode}
+{\xe \v BatteryMode\:primary_battery}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::primary_battery}}
+\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the primary battery is enabled. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This flag is true if the primary battery is enabled, and false otherwise. \par
+}}
+{\xe \v primary_battery_support\:BatteryMode}
+{\xe \v BatteryMode\:primary_battery_support}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool BatteryMode::primary_battery_support}}
+\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Indicates if the primary battery support is supported. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This flag is true if the primary battery support is supported, and false otherwise. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/{\b ArduinoSMBus.h}\par
 }
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
@@ -1134,6 +1483,10 @@ Classes\par
 
 {
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+struct {\b BatteryMode}{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+A struct to hold various battery mode flags. }}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 class {\b ArduinoSMBus}}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Macros\par
@@ -1142,123 +1495,143 @@ Macros\par
 {
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b TEMPERATURE}\~ 0x08{\bkmkstart AAAAAAAAAD}
+#define {\b MANUFACTURER_ACCESS}\~ 0x00{\bkmkstart AAAAAAAAAD}
 {\bkmkend AAAAAAAAAD}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b VOLTAGE}\~ 0x09{\bkmkstart AAAAAAAAAE}
+#define {\b REMAINING_CAPACITY_ALARM}\~ 0x01{\bkmkstart AAAAAAAAAE}
 {\bkmkend AAAAAAAAAE}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b CURRENT}\~ 0x0a{\bkmkstart AAAAAAAAAF}
+#define {\b REMAINING_TIME_ALARM}\~ 0x02{\bkmkstart AAAAAAAAAF}
 {\bkmkend AAAAAAAAAF}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b AVERAGE_CURRENT}\~ 0x0b{\bkmkstart AAAAAAAAAG}
+#define {\b BATTERY_MODE}\~ 0x03{\bkmkstart AAAAAAAAAG}
 {\bkmkend AAAAAAAAAG}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b MAX_ERROR}\~ 0x0c{\bkmkstart AAAAAAAAAH}
+#define {\b TEMPERATURE}\~ 0x08{\bkmkstart AAAAAAAAAH}
 {\bkmkend AAAAAAAAAH}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b REL_STATE_OF_CHARGE}\~ 0x0d{\bkmkstart AAAAAAAAAI}
+#define {\b VOLTAGE}\~ 0x09{\bkmkstart AAAAAAAAAI}
 {\bkmkend AAAAAAAAAI}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b ABS_STATE_OF_CHARGE}\~ 0x0e{\bkmkstart AAAAAAAAAJ}
+#define {\b CURRENT}\~ 0x0a{\bkmkstart AAAAAAAAAJ}
 {\bkmkend AAAAAAAAAJ}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b REM_CAPACITY}\~ 0x0f{\bkmkstart AAAAAAAAAK}
+#define {\b AVERAGE_CURRENT}\~ 0x0b{\bkmkstart AAAAAAAAAK}
 {\bkmkend AAAAAAAAAK}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b FULL_CAPACITY}\~ 0x10{\bkmkstart AAAAAAAAAL}
+#define {\b MAX_ERROR}\~ 0x0c{\bkmkstart AAAAAAAAAL}
 {\bkmkend AAAAAAAAAL}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b RUN_TIME_TO_EMPTY}\~ 0x11{\bkmkstart AAAAAAAAAM}
+#define {\b REL_STATE_OF_CHARGE}\~ 0x0d{\bkmkstart AAAAAAAAAM}
 {\bkmkend AAAAAAAAAM}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b AVG_TIME_TO_EMPTY}\~ 0x12{\bkmkstart AAAAAAAAAN}
+#define {\b ABS_STATE_OF_CHARGE}\~ 0x0e{\bkmkstart AAAAAAAAAN}
 {\bkmkend AAAAAAAAAN}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b AVG_TIME_TO_FULL}\~ 0x13{\bkmkstart AAAAAAAAAO}
+#define {\b REM_CAPACITY}\~ 0x0f{\bkmkstart AAAAAAAAAO}
 {\bkmkend AAAAAAAAAO}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b BATTERY_STATUS}\~ 0x16{\bkmkstart AAAAAAAAAP}
+#define {\b FULL_CAPACITY}\~ 0x10{\bkmkstart AAAAAAAAAP}
 {\bkmkend AAAAAAAAAP}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b CHARGING_CURRENT}\~ 0x14{\bkmkstart AAAAAAAAAQ}
+#define {\b RUN_TIME_TO_EMPTY}\~ 0x11{\bkmkstart AAAAAAAAAQ}
 {\bkmkend AAAAAAAAAQ}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b CHARGING_VOLTAGE}\~ 0x15{\bkmkstart AAAAAAAAAR}
+#define {\b AVG_TIME_TO_EMPTY}\~ 0x12{\bkmkstart AAAAAAAAAR}
 {\bkmkend AAAAAAAAAR}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b CYCLE_COUNT}\~ 0x17{\bkmkstart AAAAAAAAAS}
+#define {\b AVG_TIME_TO_FULL}\~ 0x13{\bkmkstart AAAAAAAAAS}
 {\bkmkend AAAAAAAAAS}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b DESIGN_CAPACITY}\~ 0x18{\bkmkstart AAAAAAAAAT}
+#define {\b BATTERY_STATUS}\~ 0x16{\bkmkstart AAAAAAAAAT}
 {\bkmkend AAAAAAAAAT}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b DESIGN_VOLTAGE}\~ 0x19{\bkmkstart AAAAAAAAAU}
+#define {\b CHARGING_CURRENT}\~ 0x14{\bkmkstart AAAAAAAAAU}
 {\bkmkend AAAAAAAAAU}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b MANUFACTURE_DATE}\~ 0x1b{\bkmkstart AAAAAAAAAV}
+#define {\b CHARGING_VOLTAGE}\~ 0x15{\bkmkstart AAAAAAAAAV}
 {\bkmkend AAAAAAAAAV}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b SERIAL_NUMBER}\~ 0x1c{\bkmkstart AAAAAAAAAW}
+#define {\b CYCLE_COUNT}\~ 0x17{\bkmkstart AAAAAAAAAW}
 {\bkmkend AAAAAAAAAW}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b MANUFACTURER_NAME}\~ 0x20{\bkmkstart AAAAAAAAAX}
+#define {\b DESIGN_CAPACITY}\~ 0x18{\bkmkstart AAAAAAAAAX}
 {\bkmkend AAAAAAAAAX}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b DEVICE_NAME}\~ 0x21{\bkmkstart AAAAAAAAAY}
+#define {\b DESIGN_VOLTAGE}\~ 0x19{\bkmkstart AAAAAAAAAY}
 {\bkmkend AAAAAAAAAY}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b DEVICE_CHEMISTRY}\~ 0x22{\bkmkstart AAAAAAAAAZ}
+#define {\b MANUFACTURE_DATE}\~ 0x1b{\bkmkstart AAAAAAAAAZ}
 {\bkmkend AAAAAAAAAZ}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-#define {\b STATE_OF_HEALTH}\~ 0x4f{\bkmkstart AAAAAAAABA}
+#define {\b SERIAL_NUMBER}\~ 0x1c{\bkmkstart AAAAAAAABA}
 {\bkmkend AAAAAAAABA}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b MANUFACTURER_NAME}\~ 0x20{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b DEVICE_NAME}\~ 0x21{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b DEVICE_CHEMISTRY}\~ 0x22{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b STATE_OF_HEALTH}\~ 0x4f{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
 \par
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
@@ -1303,75 +1676,171 @@ Go to the documentation of this file.\par
 16 {\cf21 #include <Wire.h>}\par
 17 \par
 18 {\cf20 //Usable Commands}\par
-19 {\cf21 #define TEMPERATURE 0x08}\par
-20 {\cf21 #define VOLTAGE 0x09}\par
-21 {\cf21 #define CURRENT 0x0a}\par
-22 {\cf21 #define AVERAGE_CURRENT 0x0b}\par
-23 {\cf21 #define MAX_ERROR 0x0c}\par
-24 {\cf21 #define REL_STATE_OF_CHARGE 0x0d}\par
-25 {\cf21 #define ABS_STATE_OF_CHARGE 0x0e}\par
-26 {\cf21 #define REM_CAPACITY 0x0f}\par
-27 {\cf21 #define FULL_CAPACITY 0x10}\par
-28 {\cf21 #define RUN_TIME_TO_EMPTY 0x11}\par
-29 {\cf21 #define AVG_TIME_TO_EMPTY 0x12}\par
-30 {\cf21 #define AVG_TIME_TO_FULL 0x13}\par
-31 {\cf21 #define BATTERY_STATUS 0x16}\par
-32 {\cf21 #define CHARGING_CURRENT 0x14}\par
-33 {\cf21 #define CHARGING_VOLTAGE 0x15}\par
-34 {\cf21 #define CYCLE_COUNT 0x17}\par
-35 {\cf21 #define DESIGN_CAPACITY 0x18}\par
-36 {\cf21 #define DESIGN_VOLTAGE 0x19}\par
-37 {\cf21 #define MANUFACTURE_DATE 0x1b}\par
-38 {\cf21 #define SERIAL_NUMBER 0x1c}\par
-39 {\cf21 #define MANUFACTURER_NAME 0x20}\par
-40 {\cf21 #define DEVICE_NAME 0x21}\par
-41 {\cf21 #define DEVICE_CHEMISTRY 0x22}\par
-42 {\cf21 #define STATE_OF_HEALTH 0x4f}\par
-43 \par
-44 {\cf17 class }ArduinoSMBus \{\par
-45 {\cf17 public}:\par
-46   ArduinoSMBus(uint8_t batteryAddress);\par
-47   {\cf18 void} setBatteryAddress(uint8_t batteryAddress);\par
-48 \par
-49   uint16_t temperature();\par
-50   uint16_t temperatureC();\par
-51   uint16_t temperatureF();\par
-52   uint16_t voltage();\par
-53   uint16_t current();\par
-54   uint16_t averageCurrent();\par
-55   uint16_t maxError();\par
-56   uint16_t relativeStateOfCharge();\par
-57   uint16_t absoluteStateOfCharge();\par
-58   uint16_t remainingCapacity();\par
-59   uint16_t fullCapacity();\par
-60   uint16_t runTimeToEmpty();\par
-61   uint16_t avgTimeToEmpty();\par
-62   uint16_t avgTimeToFull();\par
-63   uint16_t batteryStatus();\par
-64   uint16_t chargingCurrent();\par
-65   uint16_t chargingVoltage();\par
-66   {\cf18 bool} statusOK();\par
-67   {\cf18 bool} isCharging();\par
-68   {\cf18 bool} isFullyCharged();\par
-69   uint16_t cycleCount();\par
-70   uint16_t designCapacity();\par
-71   uint16_t designVoltage();\par
-72   uint16_t manufactureDate();\par
-73   {\cf18 int} manufactureYear();\par
-74   uint16_t serialNumber();\par
-75   {\cf17 const} {\cf18 char}* manufacturerName();\par
-76   {\cf17 const} {\cf18 char}* deviceName();\par
-77   {\cf17 const} {\cf18 char}* deviceChemistry();\par
-78   uint16_t stateOfHealth();\par
-79 \par
-80 {\cf17 private}:\par
-81   uint8_t _batteryAddress;\par
-82   uint16_t readRegister(uint8_t reg);\par
-83   {\cf18 void} readBlock(uint8_t reg, uint8_t* data, uint8_t len);\par
-84 \};\par
-85 \par
-86 {\cf21 #endif}\par
+19 {\cf21 #define MANUFACTURER_ACCESS 0x00}\par
+20 {\cf21 #define REMAINING_CAPACITY_ALARM 0x01}\par
+21 {\cf21 #define REMAINING_TIME_ALARM 0x02}\par
+22 {\cf21 #define BATTERY_MODE 0x03}\par
+23 {\cf21 #define TEMPERATURE 0x08}\par
+24 {\cf21 #define VOLTAGE 0x09}\par
+25 {\cf21 #define CURRENT 0x0a}\par
+26 {\cf21 #define AVERAGE_CURRENT 0x0b}\par
+27 {\cf21 #define MAX_ERROR 0x0c}\par
+28 {\cf21 #define REL_STATE_OF_CHARGE 0x0d}\par
+29 {\cf21 #define ABS_STATE_OF_CHARGE 0x0e}\par
+30 {\cf21 #define REM_CAPACITY 0x0f}\par
+31 {\cf21 #define FULL_CAPACITY 0x10}\par
+32 {\cf21 #define RUN_TIME_TO_EMPTY 0x11}\par
+33 {\cf21 #define AVG_TIME_TO_EMPTY 0x12}\par
+34 {\cf21 #define AVG_TIME_TO_FULL 0x13}\par
+35 {\cf21 #define BATTERY_STATUS 0x16}\par
+36 {\cf21 #define CHARGING_CURRENT 0x14}\par
+37 {\cf21 #define CHARGING_VOLTAGE 0x15}\par
+38 {\cf21 #define CYCLE_COUNT 0x17}\par
+39 {\cf21 #define DESIGN_CAPACITY 0x18}\par
+40 {\cf21 #define DESIGN_VOLTAGE 0x19}\par
+41 {\cf21 #define MANUFACTURE_DATE 0x1b}\par
+42 {\cf21 #define SERIAL_NUMBER 0x1c}\par
+43 {\cf21 #define MANUFACTURER_NAME 0x20}\par
+44 {\cf21 #define DEVICE_NAME 0x21}\par
+45 {\cf21 #define DEVICE_CHEMISTRY 0x22}\par
+46 {\cf21 #define STATE_OF_HEALTH 0x4f}\par
+47 \par
+54 {\cf17 struct }BatteryMode \{\par
+60   {\cf18 bool} internal_charge_controller;\par
+61 \par
+67   {\cf18 bool} primary_battery_support;\par
+68 \par
+74   {\cf18 bool} condition_flag;\par
+75 \par
+81   {\cf18 bool} charge_controller_enabled;\par
+82 \par
+88   {\cf18 bool} primary_battery;\par
+89 \par
+96   {\cf18 bool} alarm_mode;\par
+97 \par
+104   {\cf18 bool} charger_mode;\par
+105 \par
+112   {\cf18 bool} capacity_mode;\par
+113 \};\par
+114 \par
+115 {\cf17 class }ArduinoSMBus \{\par
+116 {\cf17 public}:\par
+117  \par
+118 \par
+119   BatteryMode battery_mode;\par
+120 \par
+121   ArduinoSMBus(uint8_t batteryAddress);\par
+122   {\cf18 void} setBatteryAddress(uint8_t batteryAddress);\par
+123 \par
+124   uint16_t remainingCapacityAlarm();\par
+125   uint16_t remainingTimeAlarm();\par
+126   BatteryMode batteryMode();\par
+127   uint16_t temperature();\par
+128   uint16_t temperatureC();\par
+129   uint16_t temperatureF();\par
+130   uint16_t voltage();\par
+131   uint16_t current();\par
+132   uint16_t averageCurrent();\par
+133   uint16_t maxError();\par
+134   uint16_t relativeStateOfCharge();\par
+135   uint16_t absoluteStateOfCharge();\par
+136   uint16_t remainingCapacity();\par
+137   uint16_t fullCapacity();\par
+138   uint16_t runTimeToEmpty();\par
+139   uint16_t avgTimeToEmpty();\par
+140   uint16_t avgTimeToFull();\par
+141   uint16_t batteryStatus();\par
+142   uint16_t chargingCurrent();\par
+143   uint16_t chargingVoltage();\par
+144   {\cf18 bool} statusOK();\par
+145   {\cf18 bool} isCharging();\par
+146   {\cf18 bool} isFullyCharged();\par
+147   uint16_t cycleCount();\par
+148   uint16_t designCapacity();\par
+149   uint16_t designVoltage();\par
+150   uint16_t manufactureDate();\par
+151   {\cf18 int} manufactureYear();\par
+152   uint16_t serialNumber();\par
+153   {\cf17 const} {\cf18 char}* manufacturerName();\par
+154   {\cf17 const} {\cf18 char}* deviceName();\par
+155   {\cf17 const} {\cf18 char}* deviceChemistry();\par
+156   uint16_t stateOfHealth();\par
+157 \par
+158 {\cf17 private}:\par
+159   uint8_t _batteryAddress;\par
+160   uint16_t readRegister(uint8_t reg);\par
+161   {\cf18 void} readBlock(uint8_t reg, uint8_t* data, uint8_t len);\par
+162 \};\par
+163 \par
+164 {\cf21 #endif}\par
 }
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/main.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/main.cpp}
+{\xe \v C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/main.cpp}
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Example arduino code to read battery data from an SMBus battery and print to serial output. }}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <Arduino.h>}\par
+{\f2 #include "ArduinoSMBus.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+void {\b setup} (){\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+void {\b loop} (){\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+{\b ArduinoSMBus} {\b battery} (0x0B){\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Example arduino code to read battery data from an SMBus battery and print to serial output. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Author\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+Christopher Lee ({\f2 clee@unitedconsulting.com}) \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Version\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+1.0 \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Date\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+2024-02-29\par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Copyright\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+Copyright (c) 2024 \par
+}}}}
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 

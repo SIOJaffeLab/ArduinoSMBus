@@ -10,6 +10,10 @@
 <programlisting linenumbering="unnumbered">#include &lt;Arduino.h&gt;<?linebreak?>#include &lt;Wire.h&gt;<?linebreak?></programlisting><simplesect>
     <title>Classes    </title>
         <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_battery_mode">BatteryMode</link></para>
+
+<para>A struct to hold various battery mode flags. </para>
+</listitem>
             <listitem><para>class <link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link></para>
 </listitem>
         </itemizedlist>
@@ -17,6 +21,14 @@
 <simplesect>
     <title>Macros    </title>
         <itemizedlist>
+            <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1a713dcaf8e5f80c274ce303a5307f4435"/>#define <emphasis role="strong">MANUFACTURER_ACCESS</emphasis>&#160;&#160;&#160;0x00</para>
+</listitem>
+            <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1a0f33c3a5eefbf49f4a504d8e099d7b2e"/>#define <emphasis role="strong">REMAINING_CAPACITY_ALARM</emphasis>&#160;&#160;&#160;0x01</para>
+</listitem>
+            <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1a5c52cbbd7b42bf2844d16734424105f7"/>#define <emphasis role="strong">REMAINING_TIME_ALARM</emphasis>&#160;&#160;&#160;0x02</para>
+</listitem>
+            <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1a34f25beca32cdcc6af97dcb537f012c3"/>#define <emphasis role="strong">BATTERY_MODE</emphasis>&#160;&#160;&#160;0x03</para>
+</listitem>
             <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1af4e8dcb1c210baad2e179d49669eabff"/>#define <emphasis role="strong">TEMPERATURE</emphasis>&#160;&#160;&#160;0x08</para>
 </listitem>
             <listitem><para><anchor xml:id="__arduino_s_m_bus_8h_1a95f77a4b46f8270143622e8f7de8faa7"/>#define <emphasis role="strong">VOLTAGE</emphasis>&#160;&#160;&#160;0x09</para>

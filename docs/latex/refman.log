@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.5)  5 MAR 2024 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.5)  5 MAR 2024 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,177 +962,193 @@ LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 9.
 
-Underfull \hbox (badness 1092) in paragraph at lines 27--27
+Underfull \hbox (badness 1092) in paragraph at lines 33--33
 []\T1/phv/m/sl/9 Get the bat-tery\TS1/phv/m/sl/9 '\T1/phv/m/sl/9 s ab-so-lute c
 harge. Re-turns the pre-dicted re-main-ing bat-tery ca-pac-ity as a per-cent-ag
 e of
  []
 
-[5]
+[5] [6]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 72.
+(Font)              scaled to size 10.79993pt on input line 84.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 77.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 77
+(Font)              scaled to size 7.19995pt on input line 89.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 89
 .
- (C:\Users\Chris Lee\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+
+(C:\Users\Chris Lee\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 77.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 77.
- [6]
-Underfull \hbox (badness 10000) detected at line 101
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 89.
+
+Underfull \hbox (badness 10000) detected at line 113
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 114
+Underfull \hbox (badness 10000) detected at line 126
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 127
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 140
+Underfull \hbox (badness 10000) detected at line 139
 [][][]
  []
 
 [7]
-Underfull \hbox (badness 10000) detected at line 153
+Underfull \hbox (badness 10000) detected at line 152
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 166
+Underfull \hbox (badness 10000) detected at line 167
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 179
+Underfull \hbox (badness 10000) detected at line 190
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 192
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 205
+Underfull \hbox (badness 10000) detected at line 203
 [][][]
  []
 
 [8]
-Underfull \hbox (badness 10000) detected at line 218
+Underfull \hbox (badness 10000) detected at line 216
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 231
+Underfull \hbox (badness 10000) detected at line 229
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 244
+Underfull \hbox (badness 10000) detected at line 242
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 257
+Underfull \hbox (badness 10000) detected at line 255
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 268
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 281
 [][][]
  []
 
 [9]
-Underfull \hbox (badness 10000) detected at line 270
+Underfull \hbox (badness 10000) detected at line 294
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 283
+Underfull \hbox (badness 10000) detected at line 307
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 296
+Underfull \hbox (badness 10000) detected at line 320
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 309
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 322
+Underfull \hbox (badness 10000) detected at line 333
 [][][]
  []
 
 [10]
-Underfull \hbox (badness 10000) detected at line 335
+Underfull \hbox (badness 10000) detected at line 346
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 348
+Underfull \hbox (badness 10000) detected at line 359
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 361
+Underfull \hbox (badness 10000) detected at line 372
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 374
+Underfull \hbox (badness 10000) detected at line 385
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 398
 [][][]
  []
 
 [11]
-Underfull \hbox (badness 10000) detected at line 387
+Underfull \hbox (badness 10000) detected at line 411
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 400
+Underfull \hbox (badness 10000) detected at line 424
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 428
+Underfull \hbox (badness 10000) detected at line 437
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 450
 [][][]
  []
 
 [12]
-Underfull \hbox (badness 10000) detected at line 441
+Underfull \hbox (badness 10000) detected at line 463
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 454
+Underfull \hbox (badness 10000) detected at line 491
+[][][]
+ []
+
+[13]
+Underfull \hbox (badness 10000) detected at line 504
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 467
+Underfull \hbox (badness 10000) detected at line 517
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 480
+Underfull \hbox (badness 10000) detected at line 530
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 493
+Underfull \hbox (badness 10000) detected at line 543
 [][][]
  []
 
-) [13] [14
+
+Underfull \hbox (badness 10000) detected at line 556
+[][][]
+ []
+
+) (struct_battery_mode.tex [14] [15] [16]) [17] [18
 
 ]
 Chapter 4.
@@ -1166,45 +1182,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
-[15]
-Underfull \hbox (badness 10000) detected at line 95
+[19]
+Underfull \hbox (badness 10000) detected at line 109
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 98
+Underfull \hbox (badness 10000) detected at line 112
+[][][]
+ []
+
+[20]
+Underfull \hbox (badness 10000) detected at line 115
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 101
+Underfull \hbox (badness 10000) detected at line 118
+[][][]
+ []
+
+) (_arduino_s_m_bus_8h_source.tex [21]) (main_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 104
+Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
 
-) (_arduino_s_m_bus_8h_source.tex [16]) [17] [18
+
+Underfull \hbox (badness 10000) detected at line 36
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 39
+[][][]
+ []
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 22.16548pt, for example:
+(fancyhdr)                \setlength{\headheight}{22.16548pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-10.16548pt}.
+
+[23] [24
 
 ] (refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
 
-Overfull \hbox (36.31697pt too wide) in paragraph at lines 52--54
+Overfull \hbox (36.31697pt too wide) in paragraph at lines 68--70
 \T1/phv/m/n/10 Ar-duinoSM-Bus/ArduinoSMBus/src/ArduinoSMBus.cpp,
  []
 
 
-Overfull \hbox (26.8131pt too wide) in paragraph at lines 54--56
+Overfull \hbox (26.8131pt too wide) in paragraph at lines 70--72
 \T1/phv/m/n/10 Ar-duinoSM-Bus/ArduinoSMBus/src/ArduinoSMBus.h,
  []
 
-[19
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+\T1/phv/m/n/10 Ar-duinoSM-Bus/ArduinoSMBus/src/main.cpp,
+ []
+
+[25
 
 
-] [20
+] [26
 
 ]) (refman.aux)
  ***********
@@ -1212,16 +1267,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 879EE0BFCC9E51183F9779842207C70F;9915.
+(rerunfilecheck)             Checksum: 2A83A8DF96A5FBEC0D626C1FEBC1E02E;13701.
  ) 
 Here is how much of TeX's memory you used:
- 18080 strings out of 474485
- 298228 string characters out of 5741811
- 1948542 words of memory out of 5000000
- 39888 multiletter control sequences out of 15000+600000
+ 18181 strings out of 474485
+ 301629 string characters out of 5741811
+ 1950542 words of memory out of 5000000
+ 39938 multiletter control sequences out of 15000+600000
  614528 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,16n,117p,867b,736s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,867b,661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Chris Lee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmmi10.pfb><C:/Users/Chris Lee/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmmi7.pfb><C:/Users/Chris Lee/AppData/Local/Programs/MiKTeX/fo
@@ -1236,9 +1291,9 @@ vetic/uhvb8a.pfb><C:/Users/Chris Lee/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/helvetic/uhvb8ac.pfb><C:/Users/Chris Lee/AppData/Local/Programs/MiKTeX/font
 s/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Chris Lee/AppData/Local/Programs/MiKT
 eX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (24 pages, 234611 bytes).
+Output written on refman.pdf (30 pages, 274122 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 377 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 860 PDF objects out of 1000 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

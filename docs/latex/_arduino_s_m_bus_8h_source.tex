@@ -10,73 +10,102 @@
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \textcolor{comment}{//Usable\ Commands}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TEMPERATURE\ 0x08}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ VOLTAGE\ 0x09}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ CURRENT\ 0x0a}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ AVERAGE\_CURRENT\ 0x0b}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MAX\_ERROR\ 0x0c}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ REL\_STATE\_OF\_CHARGE\ 0x0d}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ABS\_STATE\_OF\_CHARGE\ 0x0e}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ REM\_CAPACITY\ 0x0f}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ FULL\_CAPACITY\ 0x10}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ RUN\_TIME\_TO\_EMPTY\ 0x11}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ AVG\_TIME\_TO\_EMPTY\ 0x12}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ AVG\_TIME\_TO\_FULL\ 0x13}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BATTERY\_STATUS\ 0x16}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ CHARGING\_CURRENT\ 0x14}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ CHARGING\_VOLTAGE\ 0x15}}
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ CYCLE\_COUNT\ 0x17}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ DESIGN\_CAPACITY\ 0x18}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ DESIGN\_VOLTAGE\ 0x19}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MANUFACTURE\_DATE\ 0x1b}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SERIAL\_NUMBER\ 0x1c}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MANUFACTURER\_NAME\ 0x20}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DEVICE\_NAME\ 0x21}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ DEVICE\_CHEMISTRY\ 0x22}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ STATE\_OF\_HEALTH\ 0x4f}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arduino_s_m_bus}{ArduinoSMBus}}\ \{}
-\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{class_arduino_s_m_bus_a13842e9dd3dc931348a6d1e0f3bdf18d}{ArduinoSMBus}}(uint8\_t\ batteryAddress);}
-\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82}{setBatteryAddress}}(uint8\_t\ batteryAddress);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429}{temperature}}();}
-\DoxyCodeLine{00050\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c}{temperatureC}}();}
-\DoxyCodeLine{00051\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4}{temperatureF}}();}
-\DoxyCodeLine{00052\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_abc3178c7be648042be5f021ad8354130}{voltage}}();}
-\DoxyCodeLine{00053\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a462f1d5694330563db84584b17015192}{current}}();}
-\DoxyCodeLine{00054\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ab5b72566c5de066997c05876e024ffb7}{averageCurrent}}();}
-\DoxyCodeLine{00055\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_af26a153705c7b40d3178ffbfdc2bf50e}{maxError}}();}
-\DoxyCodeLine{00056\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c040e3ec9}{relativeStateOfCharge}}();}
-\DoxyCodeLine{00057\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798}{absoluteStateOfCharge}}();}
-\DoxyCodeLine{00058\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e}{remainingCapacity}}();}
-\DoxyCodeLine{00059\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced}{fullCapacity}}();}
-\DoxyCodeLine{00060\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0}{runTimeToEmpty}}();}
-\DoxyCodeLine{00061\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317}{avgTimeToEmpty}}();}
-\DoxyCodeLine{00062\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676698315}{avgTimeToFull}}();}
-\DoxyCodeLine{00063\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}{batteryStatus}}();}
-\DoxyCodeLine{00064\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}{chargingCurrent}}();}
-\DoxyCodeLine{00065\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}{chargingVoltage}}();}
-\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762}{statusOK}}();}
-\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e}{isCharging}}();}
-\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b}{isFullyCharged}}();}
-\DoxyCodeLine{00069\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112}{cycleCount}}();}
-\DoxyCodeLine{00070\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{designCapacity}}();}
-\DoxyCodeLine{00071\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101}{designVoltage}}();}
-\DoxyCodeLine{00072\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45}{manufactureDate}}();}
-\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arduino_s_m_bus_a716d79d59c632851b84719bafa57a47f}{manufactureYear}}();}
-\DoxyCodeLine{00074\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aeed8722d27576cce6ab7b52990a983b3}{serialNumber}}();}
-\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_a75bc281cbb7d438da06e7880b304876b}{manufacturerName}}();}
-\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_ad0b0f70cbad233652eead2e81214b255}{deviceName}}();}
-\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_a57fc6f298ae2fea71e1fda22d04f8f9b}{deviceChemistry}}();}
-\DoxyCodeLine{00078\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49}{stateOfHealth}}();}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00081\ \ \ uint8\_t\ \_batteryAddress;}
-\DoxyCodeLine{00082\ \ \ uint16\_t\ readRegister(uint8\_t\ reg);}
-\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ readBlock(uint8\_t\ reg,\ uint8\_t*\ data,\ uint8\_t\ len);}
-\DoxyCodeLine{00084\ \};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ MANUFACTURER\_ACCESS\ 0x00}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ REMAINING\_CAPACITY\_ALARM\ 0x01}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ REMAINING\_TIME\_ALARM\ 0x02}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BATTERY\_MODE\ 0x03}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ TEMPERATURE\ 0x08}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ VOLTAGE\ 0x09}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ CURRENT\ 0x0a}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ AVERAGE\_CURRENT\ 0x0b}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MAX\_ERROR\ 0x0c}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ REL\_STATE\_OF\_CHARGE\ 0x0d}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ABS\_STATE\_OF\_CHARGE\ 0x0e}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ REM\_CAPACITY\ 0x0f}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ FULL\_CAPACITY\ 0x10}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ RUN\_TIME\_TO\_EMPTY\ 0x11}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ AVG\_TIME\_TO\_EMPTY\ 0x12}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ AVG\_TIME\_TO\_FULL\ 0x13}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BATTERY\_STATUS\ 0x16}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ CHARGING\_CURRENT\ 0x14}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ CHARGING\_VOLTAGE\ 0x15}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ CYCLE\_COUNT\ 0x17}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ DESIGN\_CAPACITY\ 0x18}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DESIGN\_VOLTAGE\ 0x19}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MANUFACTURE\_DATE\ 0x1b}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SERIAL\_NUMBER\ 0x1c}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MANUFACTURER\_NAME\ 0x20}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ DEVICE\_NAME\ 0x21}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DEVICE\_CHEMISTRY\ 0x22}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ STATE\_OF\_HEALTH\ 0x4f}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_battery_mode}{BatteryMode}}\ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18}{internal\_charge\_controller}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_a499d80e723cddb451fb76255097adf79}{primary\_battery\_support}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce}{condition\_flag}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_aef51574bfce388b478c8783e91a9907a}{charge\_controller\_enabled}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60}{primary\_battery}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_a99317f2ce2fc66a142056fe97d93461e}{alarm\_mode}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce}{charger\_mode}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323}{capacity\_mode}};}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arduino_s_m_bus}{ArduinoSMBus}}\ \{}
+\DoxyCodeLine{00116\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{struct_battery_mode}{BatteryMode}}\ battery\_mode;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{class_arduino_s_m_bus_a13842e9dd3dc931348a6d1e0f3bdf18d}{ArduinoSMBus}}(uint8\_t\ batteryAddress);}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82}{setBatteryAddress}}(uint8\_t\ batteryAddress);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ac6b97cbc1c77f08867fb430c5af0dc6f}{remainingCapacityAlarm}}();}
+\DoxyCodeLine{00125\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a9f21788d0c8b8ebb43ef85b4a2f61c59}{remainingTimeAlarm}}();}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{struct_battery_mode}{BatteryMode}}\ \mbox{\hyperlink{class_arduino_s_m_bus_aee8395abb19e0e60504e2dda473085d3}{batteryMode}}();}
+\DoxyCodeLine{00127\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429}{temperature}}();}
+\DoxyCodeLine{00128\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c}{temperatureC}}();}
+\DoxyCodeLine{00129\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4}{temperatureF}}();}
+\DoxyCodeLine{00130\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_abc3178c7be648042be5f021ad8354130}{voltage}}();}
+\DoxyCodeLine{00131\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a462f1d5694330563db84584b17015192}{current}}();}
+\DoxyCodeLine{00132\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_ab5b72566c5de066997c05876e024ffb7}{averageCurrent}}();}
+\DoxyCodeLine{00133\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_af26a153705c7b40d3178ffbfdc2bf50e}{maxError}}();}
+\DoxyCodeLine{00134\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c040e3ec9}{relativeStateOfCharge}}();}
+\DoxyCodeLine{00135\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798}{absoluteStateOfCharge}}();}
+\DoxyCodeLine{00136\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e}{remainingCapacity}}();}
+\DoxyCodeLine{00137\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced}{fullCapacity}}();}
+\DoxyCodeLine{00138\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0}{runTimeToEmpty}}();}
+\DoxyCodeLine{00139\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317}{avgTimeToEmpty}}();}
+\DoxyCodeLine{00140\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a60fa6bb8760b6566ddfea77676698315}{avgTimeToFull}}();}
+\DoxyCodeLine{00141\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}{batteryStatus}}();}
+\DoxyCodeLine{00142\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_acc351199470160724c42a55a04b37a94}{chargingCurrent}}();}
+\DoxyCodeLine{00143\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a037a1afa15af04f562756592e09354d3}{chargingVoltage}}();}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_a177ded928cfe6c73eb98e14afef31762}{statusOK}}();}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_ad2639dce48c82982c2e7a5258f96ef7e}{isCharging}}();}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b}{isFullyCharged}}();}
+\DoxyCodeLine{00147\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112}{cycleCount}}();}
+\DoxyCodeLine{00148\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{designCapacity}}();}
+\DoxyCodeLine{00149\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101}{designVoltage}}();}
+\DoxyCodeLine{00150\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45}{manufactureDate}}();}
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arduino_s_m_bus_a716d79d59c632851b84719bafa57a47f}{manufactureYear}}();}
+\DoxyCodeLine{00152\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aeed8722d27576cce6ab7b52990a983b3}{serialNumber}}();}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_a75bc281cbb7d438da06e7880b304876b}{manufacturerName}}();}
+\DoxyCodeLine{00154\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_ad0b0f70cbad233652eead2e81214b255}{deviceName}}();}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_arduino_s_m_bus_a57fc6f298ae2fea71e1fda22d04f8f9b}{deviceChemistry}}();}
+\DoxyCodeLine{00156\ \ \ uint16\_t\ \mbox{\hyperlink{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49}{stateOfHealth}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ uint8\_t\ \_batteryAddress;}
+\DoxyCodeLine{00160\ \ \ uint16\_t\ readRegister(uint8\_t\ reg);}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{void}\ readBlock(uint8\_t\ reg,\ uint8\_t*\ data,\ uint8\_t\ len);}
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

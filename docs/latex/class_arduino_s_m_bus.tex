@@ -7,8 +7,14 @@
 \begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus}\+:\+: \doxylink{class_arduino_s_m_bus}{Arduino\+SMBus} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_arduino_s_m_bus_ad1db22e3ec3012246671080b7b7f2b82}{set\+Battery\+Address}} (uint8\+\_\+t battery\+Address)
 \begin{DoxyCompactList}\small\item\em Set the battery\textquotesingle{}s I2C address. Can be used to change the address after the object is created. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ac6b97cbc1c77f08867fb430c5af0dc6f}{remaining\+Capacity\+Alarm}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s remaining capacity alarm. Returns the battery\textquotesingle{}s remaining capacity alarm threshold value, in m\+Ah. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a9f21788d0c8b8ebb43ef85b4a2f61c59}{remaining\+Time\+Alarm}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s remaining time alarm. Returns the battery\textquotesingle{}s remaining time alarm threshold value, in minutes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_battery_mode}{Battery\+Mode}} \mbox{\hyperlink{class_arduino_s_m_bus_aee8395abb19e0e60504e2dda473085d3}{battery\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s mode. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_aec60bb3f821b326148553e3deaf9a429}{temperature}} ()
-\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature. Returns the battery temperature in 0.\+1 degrees Kelvin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature. Returns the battery temperature in Kelvin. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ae37c41c3a9fe958330d9315e49bf553c}{temperatureC}} ()
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s temperature in Celsius. Returns the battery temperature in 0.\+1 degrees Celsius. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_ab49bf0449e3086fd6b87c1b47d58d9f4}{temperatureF}} ()
@@ -26,9 +32,9 @@ uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a7ff27611b0d03d3294cae80c04
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a04e6cfb92ff6ddfb88e88f3361d11798}{absolute\+State\+Of\+Charge}} ()
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s absolute charge. Returns the predicted remaining battery capacity as a percentage of \doxylink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{design\+Capacity()} \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a8827accf4409366aada7d23d32f1710e}{remaining\+Capacity}} ()
-\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set that way See protocol documentation for details. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a3f145f4f0e2a1179c04b9063246e1ced}{full\+Capacity}} ()
-\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set that way See protocol documentation for details. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a7790a2ea29a71581c281d4412d1b3ba0}{run\+Time\+To\+Empty}} ()
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_adc9d08f9990010a04f9177aa028df317}{avg\+Time\+To\+Empty}} ()
@@ -50,7 +56,7 @@ bool \mbox{\hyperlink{class_arduino_s_m_bus_a42bff30e23029750c49e45f24f395d1b}{i
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a6f1f77681f39bf2b119820fb4dca7112}{cycle\+Count}} ()
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery\textquotesingle{}s design capacity. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a905028ef538fcf6b505d906339f59cf8}{design\+Capacity}} ()
-\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set to CAPM 1. See TI protocol documentation for details. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a39dc028dd468ec0ec1b980b276006101}{design\+Voltage}} ()
 \begin{DoxyCompactList}\small\item\em Get the battery\textquotesingle{}s design voltage. Returns the nominal voltage of the battery, in mV. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_a6ef1675a70f80131484dbbc3fa0dbb45}{manufacture\+Date}} ()
@@ -67,6 +73,12 @@ const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_arduino_s_m_bus_a57
 \begin{DoxyCompactList}\small\item\em Get the Device Chemistry from the battery. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{class_arduino_s_m_bus_aa2b6bd959a7a1ee0b40ae0be14387c49}{state\+Of\+Health}} ()
 \begin{DoxyCompactList}\small\item\em Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_arduino_s_m_bus_a3ff3540fb45cb343bcf640a73425a223}\label{class_arduino_s_m_bus_a3ff3540fb45cb343bcf640a73425a223} 
+\mbox{\hyperlink{struct_battery_mode}{Battery\+Mode}} {\bfseries battery\+\_\+mode}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -139,6 +151,31 @@ Get the battery\textquotesingle{}s time to full. Returns the predicted time to f
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_aee8395abb19e0e60504e2dda473085d3}\label{class_arduino_s_m_bus_aee8395abb19e0e60504e2dda473085d3} 
+\index{ArduinoSMBus@{ArduinoSMBus}!batteryMode@{batteryMode}}
+\index{batteryMode@{batteryMode}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{batteryMode()}{batteryMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_battery_mode}{Battery\+Mode}} Arduino\+SMBus\+::battery\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s mode. 
+
+This method reads the battery\textquotesingle{}s mode register, which contains various settings and status bits. It then creates a \doxylink{struct_battery_mode}{Battery\+Mode} struct and sets its fields based on the bits in the mode.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_battery_mode}{Battery\+Mode} A struct containing the following fields\+:
+\begin{DoxyItemize}
+\item internal\+\_\+charge\+\_\+controller\+: bit 0 of the mode register
+\item primary\+\_\+battery\+\_\+support\+: bit 1 of the mode register
+\item condition\+\_\+flag\+: bit 7 of the mode register
+\item charge\+\_\+controller\+\_\+enabled\+: bit 8 of the mode register
+\item primary\+\_\+battery\+: bit 9 of the mode register
+\item alarm\+\_\+mode\+: bit 13 of the mode register
+\item charger\+\_\+mode\+: bit 14 of the mode register
+\item capacity\+\_\+mode\+: bit 15 of the mode register 
+\end{DoxyItemize}
 \end{DoxyReturn}
 \Hypertarget{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab}\label{class_arduino_s_m_bus_acd57a2ac31ad790559e77613c175a3ab} 
 \index{ArduinoSMBus@{ArduinoSMBus}!batteryStatus@{batteryStatus}}
@@ -213,7 +250,7 @@ uint16\+\_\+t
 
 
 
-Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. 
+Get the battery\textquotesingle{}s design capacity. Returns the theoretical maximum capacity of the battery, in m\+Ah. For some batteries, this may be in 10 m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set to CAPM 1. See TI protocol documentation for details. 
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 
@@ -265,7 +302,7 @@ const char\texorpdfstring{$\ast$}{*}
 
 
 
-Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. 
+Get the battery\textquotesingle{}s full capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set that way See protocol documentation for details. 
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 
@@ -369,7 +406,33 @@ uint16\+\_\+t
 
 
 
-Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the Battery\+Mode() register (0x03) is set to CAPM 1. See protocol documentation for details. 
+Get the battery\textquotesingle{}s capacity. Returns the predicted battery capacity when fully charged, in m\+Ah. For some batteries, this may be in 10s of m\+Wh, if the \doxylink{struct_battery_mode}{Battery\+Mode()} register (0x03) is set that way See protocol documentation for details. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_ac6b97cbc1c77f08867fb430c5af0dc6f}\label{class_arduino_s_m_bus_ac6b97cbc1c77f08867fb430c5af0dc6f} 
+\index{ArduinoSMBus@{ArduinoSMBus}!remainingCapacityAlarm@{remainingCapacityAlarm}}
+\index{remainingCapacityAlarm@{remainingCapacityAlarm}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{remainingCapacityAlarm()}{remainingCapacityAlarm()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::remaining\+Capacity\+Alarm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s remaining capacity alarm. Returns the battery\textquotesingle{}s remaining capacity alarm threshold value, in m\+Ah. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_arduino_s_m_bus_a9f21788d0c8b8ebb43ef85b4a2f61c59}\label{class_arduino_s_m_bus_a9f21788d0c8b8ebb43ef85b4a2f61c59} 
+\index{ArduinoSMBus@{ArduinoSMBus}!remainingTimeAlarm@{remainingTimeAlarm}}
+\index{remainingTimeAlarm@{remainingTimeAlarm}!ArduinoSMBus@{ArduinoSMBus}}
+\doxysubsubsection{\texorpdfstring{remainingTimeAlarm()}{remainingTimeAlarm()}}
+{\footnotesize\ttfamily uint16\+\_\+t Arduino\+SMBus\+::remaining\+Time\+Alarm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the battery\textquotesingle{}s remaining time alarm. Returns the battery\textquotesingle{}s remaining time alarm threshold value, in minutes. 
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 
@@ -449,7 +512,7 @@ bool
 
 
 
-Get the battery\textquotesingle{}s temperature. Returns the battery temperature in 0.\+1 degrees Kelvin. 
+Get the battery\textquotesingle{}s temperature. Returns the battery temperature in Kelvin. 
 
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t 

@@ -6,12 +6,14 @@
 <chapter>
     <title>Class Documentation</title>
     <xi:include href="class_arduino_s_m_bus.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_battery_mode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <chapter>
     <title>File Documentation</title>
     <xi:include href="_arduino_s_m_bus_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="_arduino_s_m_bus_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="_arduino_s_m_bus_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <index/>
 </book>

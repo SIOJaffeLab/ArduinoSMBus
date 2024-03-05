@@ -2,39 +2,44 @@
 
   \item {absoluteStateOfCharge}
     \subitem {ArduinoSMBus}, \hyperpage{7}
+  \item {alarm\_mode}
+    \subitem {BatteryMode}, \hyperpage{16}
   \item {ArduinoSMBus}, \hyperpage{5}
     \subitem {absoluteStateOfCharge}, \hyperpage{7}
     \subitem {ArduinoSMBus}, \hyperpage{7}
     \subitem {averageCurrent}, \hyperpage{7}
     \subitem {avgTimeToEmpty}, \hyperpage{7}
     \subitem {avgTimeToFull}, \hyperpage{7}
+    \subitem {batteryMode}, \hyperpage{8}
     \subitem {batteryStatus}, \hyperpage{8}
     \subitem {chargingCurrent}, \hyperpage{8}
     \subitem {chargingVoltage}, \hyperpage{8}
-    \subitem {current}, \hyperpage{8}
-    \subitem {cycleCount}, \hyperpage{8}
+    \subitem {current}, \hyperpage{9}
+    \subitem {cycleCount}, \hyperpage{9}
     \subitem {designCapacity}, \hyperpage{9}
     \subitem {designVoltage}, \hyperpage{9}
-    \subitem {deviceChemistry}, \hyperpage{9}
-    \subitem {deviceName}, \hyperpage{9}
+    \subitem {deviceChemistry}, \hyperpage{10}
+    \subitem {deviceName}, \hyperpage{10}
     \subitem {fullCapacity}, \hyperpage{10}
     \subitem {isCharging}, \hyperpage{10}
     \subitem {isFullyCharged}, \hyperpage{10}
-    \subitem {manufactureDate}, \hyperpage{10}
-    \subitem {manufacturerName}, \hyperpage{10}
+    \subitem {manufactureDate}, \hyperpage{11}
+    \subitem {manufacturerName}, \hyperpage{11}
     \subitem {manufactureYear}, \hyperpage{11}
     \subitem {maxError}, \hyperpage{11}
     \subitem {relativeStateOfCharge}, \hyperpage{11}
-    \subitem {remainingCapacity}, \hyperpage{11}
-    \subitem {runTimeToEmpty}, \hyperpage{11}
-    \subitem {serialNumber}, \hyperpage{12}
-    \subitem {setBatteryAddress}, \hyperpage{12}
-    \subitem {stateOfHealth}, \hyperpage{12}
-    \subitem {statusOK}, \hyperpage{12}
-    \subitem {temperature}, \hyperpage{13}
-    \subitem {temperatureC}, \hyperpage{13}
-    \subitem {temperatureF}, \hyperpage{13}
-    \subitem {voltage}, \hyperpage{13}
+    \subitem {remainingCapacity}, \hyperpage{12}
+    \subitem {remainingCapacityAlarm}, \hyperpage{12}
+    \subitem {remainingTimeAlarm}, \hyperpage{12}
+    \subitem {runTimeToEmpty}, \hyperpage{12}
+    \subitem {serialNumber}, \hyperpage{13}
+    \subitem {setBatteryAddress}, \hyperpage{13}
+    \subitem {stateOfHealth}, \hyperpage{13}
+    \subitem {statusOK}, \hyperpage{13}
+    \subitem {temperature}, \hyperpage{14}
+    \subitem {temperatureC}, \hyperpage{14}
+    \subitem {temperatureF}, \hyperpage{14}
+    \subitem {voltage}, \hyperpage{14}
   \item {averageCurrent}
     \subitem {ArduinoSMBus}, \hyperpage{7}
   \item {avgTimeToEmpty}
@@ -44,23 +49,44 @@
 
   \indexspace
 
+  \item {BatteryMode}, \hyperpage{15}
+    \subitem {alarm\_mode}, \hyperpage{16}
+    \subitem {capacity\_mode}, \hyperpage{16}
+    \subitem {charge\_controller\_enabled}, \hyperpage{16}
+    \subitem {charger\_mode}, \hyperpage{16}
+    \subitem {condition\_flag}, \hyperpage{16}
+    \subitem {internal\_charge\_controller}, \hyperpage{16}
+    \subitem {primary\_battery}, \hyperpage{16}
+    \subitem {primary\_battery\_support}, \hyperpage{17}
+  \item {batteryMode}
+    \subitem {ArduinoSMBus}, \hyperpage{8}
   \item {batteryStatus}
     \subitem {ArduinoSMBus}, \hyperpage{8}
 
   \indexspace
 
   \item {C:/Users/Chris Lee/Sync/Personal Projects/p2024-\/005 -\/ ArduinoSMBus/ArduinoSMBus/src/ArduinoSMBus.cpp}, 
-		\hyperpage{15}
+		\hyperpage{19}
   \item {C:/Users/Chris Lee/Sync/Personal Projects/p2024-\/005 -\/ ArduinoSMBus/ArduinoSMBus/src/ArduinoSMBus.h}, 
-		\hyperpage{16, 17}
+		\hyperpage{20, 21}
+  \item {C:/Users/Chris Lee/Sync/Personal Projects/p2024-\/005 -\/ ArduinoSMBus/ArduinoSMBus/src/main.cpp}, 
+		\hyperpage{22}
+  \item {capacity\_mode}
+    \subitem {BatteryMode}, \hyperpage{16}
+  \item {charge\_controller\_enabled}
+    \subitem {BatteryMode}, \hyperpage{16}
+  \item {charger\_mode}
+    \subitem {BatteryMode}, \hyperpage{16}
   \item {chargingCurrent}
     \subitem {ArduinoSMBus}, \hyperpage{8}
   \item {chargingVoltage}
     \subitem {ArduinoSMBus}, \hyperpage{8}
+  \item {condition\_flag}
+    \subitem {BatteryMode}, \hyperpage{16}
   \item {current}
-    \subitem {ArduinoSMBus}, \hyperpage{8}
+    \subitem {ArduinoSMBus}, \hyperpage{9}
   \item {cycleCount}
-    \subitem {ArduinoSMBus}, \hyperpage{8}
+    \subitem {ArduinoSMBus}, \hyperpage{9}
 
   \indexspace
 
@@ -69,9 +95,9 @@
   \item {designVoltage}
     \subitem {ArduinoSMBus}, \hyperpage{9}
   \item {deviceChemistry}
-    \subitem {ArduinoSMBus}, \hyperpage{9}
+    \subitem {ArduinoSMBus}, \hyperpage{10}
   \item {deviceName}
-    \subitem {ArduinoSMBus}, \hyperpage{9}
+    \subitem {ArduinoSMBus}, \hyperpage{10}
 
   \indexspace
 
@@ -80,6 +106,8 @@
 
   \indexspace
 
+  \item {internal\_charge\_controller}
+    \subitem {BatteryMode}, \hyperpage{16}
   \item {isCharging}
     \subitem {ArduinoSMBus}, \hyperpage{10}
   \item {isFullyCharged}
@@ -88,9 +116,9 @@
   \indexspace
 
   \item {manufactureDate}
-    \subitem {ArduinoSMBus}, \hyperpage{10}
+    \subitem {ArduinoSMBus}, \hyperpage{11}
   \item {manufacturerName}
-    \subitem {ArduinoSMBus}, \hyperpage{10}
+    \subitem {ArduinoSMBus}, \hyperpage{11}
   \item {manufactureYear}
     \subitem {ArduinoSMBus}, \hyperpage{11}
   \item {maxError}
@@ -98,36 +126,47 @@
 
   \indexspace
 
+  \item {primary\_battery}
+    \subitem {BatteryMode}, \hyperpage{16}
+  \item {primary\_battery\_support}
+    \subitem {BatteryMode}, \hyperpage{17}
+
+  \indexspace
+
   \item {relativeStateOfCharge}
     \subitem {ArduinoSMBus}, \hyperpage{11}
   \item {remainingCapacity}
-    \subitem {ArduinoSMBus}, \hyperpage{11}
+    \subitem {ArduinoSMBus}, \hyperpage{12}
+  \item {remainingCapacityAlarm}
+    \subitem {ArduinoSMBus}, \hyperpage{12}
+  \item {remainingTimeAlarm}
+    \subitem {ArduinoSMBus}, \hyperpage{12}
   \item {runTimeToEmpty}
-    \subitem {ArduinoSMBus}, \hyperpage{11}
+    \subitem {ArduinoSMBus}, \hyperpage{12}
 
   \indexspace
 
   \item {serialNumber}
-    \subitem {ArduinoSMBus}, \hyperpage{12}
+    \subitem {ArduinoSMBus}, \hyperpage{13}
   \item {setBatteryAddress}
-    \subitem {ArduinoSMBus}, \hyperpage{12}
+    \subitem {ArduinoSMBus}, \hyperpage{13}
   \item {stateOfHealth}
-    \subitem {ArduinoSMBus}, \hyperpage{12}
+    \subitem {ArduinoSMBus}, \hyperpage{13}
   \item {statusOK}
-    \subitem {ArduinoSMBus}, \hyperpage{12}
+    \subitem {ArduinoSMBus}, \hyperpage{13}
 
   \indexspace
 
   \item {temperature}
-    \subitem {ArduinoSMBus}, \hyperpage{13}
+    \subitem {ArduinoSMBus}, \hyperpage{14}
   \item {temperatureC}
-    \subitem {ArduinoSMBus}, \hyperpage{13}
+    \subitem {ArduinoSMBus}, \hyperpage{14}
   \item {temperatureF}
-    \subitem {ArduinoSMBus}, \hyperpage{13}
+    \subitem {ArduinoSMBus}, \hyperpage{14}
 
   \indexspace
 
   \item {voltage}
-    \subitem {ArduinoSMBus}, \hyperpage{13}
+    \subitem {ArduinoSMBus}, \hyperpage{14}
 
 \end{theindex}

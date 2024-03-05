@@ -13,9 +13,21 @@
 
 <para>Set the battery&apos;s I2C address. Can be used to change the address after the object is created. </para>
 </listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1ac6b97cbc1c77f08867fb430c5af0dc6f">remainingCapacityAlarm</link> ()</para>
+
+<para>Get the battery&apos;s remaining capacity alarm. Returns the battery&apos;s remaining capacity alarm threshold value, in mAh. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a9f21788d0c8b8ebb43ef85b4a2f61c59">remainingTimeAlarm</link> ()</para>
+
+<para>Get the battery&apos;s remaining time alarm. Returns the battery&apos;s remaining time alarm threshold value, in minutes. </para>
+</listitem>
+            <listitem><para><link linkend="_struct_battery_mode">BatteryMode</link> <link linkend="_class_arduino_s_m_bus_1aee8395abb19e0e60504e2dda473085d3">batteryMode</link> ()</para>
+
+<para>Get the battery&apos;s mode. </para>
+</listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1aec60bb3f821b326148553e3deaf9a429">temperature</link> ()</para>
 
-<para>Get the battery&apos;s temperature. Returns the battery temperature in 0.1 degrees Kelvin. </para>
+<para>Get the battery&apos;s temperature. Returns the battery temperature in Kelvin. </para>
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1ae37c41c3a9fe958330d9315e49bf553c">temperatureC</link> ()</para>
 
@@ -51,11 +63,11 @@
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a8827accf4409366aada7d23d32f1710e">remainingCapacity</link> ()</para>
 
-<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set that way See protocol documentation for details. </para>
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a3f145f4f0e2a1179c04b9063246e1ced">fullCapacity</link> ()</para>
 
-<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set that way See protocol documentation for details. </para>
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a7790a2ea29a71581c281d4412d1b3ba0">runTimeToEmpty</link> ()</para>
 
@@ -99,7 +111,7 @@
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity</link> ()</para>
 
-<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
+<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
 </listitem>
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1a39dc028dd468ec0ec1b980b276006101">designVoltage</link> ()</para>
 
@@ -132,6 +144,13 @@
             <listitem><para>uint16_t <link linkend="_class_arduino_s_m_bus_1aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</link> ()</para>
 
 <para>Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_arduino_s_m_bus_1a3ff3540fb45cb343bcf640a73425a223"/><link linkend="_struct_battery_mode">BatteryMode</link> <emphasis role="strong">battery_mode</emphasis></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -231,6 +250,41 @@ Parameters</title>
 </formalpara>
 </para>
 </section>
+<anchor xml:id="_class_arduino_s_m_bus_1aee8395abb19e0e60504e2dda473085d3"/><section>
+    <title>batteryMode()</title>
+<indexterm><primary>batteryMode</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>batteryMode</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_battery_mode">BatteryMode</link> ArduinoSMBus::batteryMode ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s mode. </para>
+</para>
+
+<para>This method reads the battery&apos;s mode register, which contains various settings and status bits. It then creates a <link linkend="_struct_battery_mode">BatteryMode</link> struct and sets its fields based on the bits in the mode.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_struct_battery_mode">BatteryMode</link> A struct containing the following fields:<itemizedlist>
+<listitem>
+<para>internal_charge_controller: bit 0 of the mode register</para>
+</listitem><listitem>
+<para>primary_battery_support: bit 1 of the mode register</para>
+</listitem><listitem>
+<para>condition_flag: bit 7 of the mode register</para>
+</listitem><listitem>
+<para>charge_controller_enabled: bit 8 of the mode register</para>
+</listitem><listitem>
+<para>primary_battery: bit 9 of the mode register</para>
+</listitem><listitem>
+<para>alarm_mode: bit 13 of the mode register</para>
+</listitem><listitem>
+<para>charger_mode: bit 14 of the mode register</para>
+</listitem><listitem>
+<para>capacity_mode: bit 15 of the mode register </para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_arduino_s_m_bus_1acd57a2ac31ad790559e77613c175a3ab"/><section>
     <title>batteryStatus()</title>
 <indexterm><primary>batteryStatus</primary><secondary>ArduinoSMBus</secondary></indexterm>
@@ -312,7 +366,7 @@ Parameters</title>
 <indexterm><primary>ArduinoSMBus</primary><secondary>designCapacity</secondary></indexterm>
 <para><computeroutput>uint16_t ArduinoSMBus::designCapacity ( )</computeroutput></para><para>
 
-<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
+<para>Get the battery&apos;s design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set to CAPM 1. See TI protocol documentation for details. </para>
 </para>
 
 <para><formalpara><title>Returns</title>
@@ -372,7 +426,7 @@ Parameters</title>
 <indexterm><primary>ArduinoSMBus</primary><secondary>fullCapacity</secondary></indexterm>
 <para><computeroutput>uint16_t ArduinoSMBus::fullCapacity ( )</computeroutput></para><para>
 
-<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+<para>Get the battery&apos;s full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set that way See protocol documentation for details. </para>
 </para>
 
 <para><formalpara><title>Returns</title>
@@ -492,7 +546,37 @@ Parameters</title>
 <indexterm><primary>ArduinoSMBus</primary><secondary>remainingCapacity</secondary></indexterm>
 <para><computeroutput>uint16_t ArduinoSMBus::remainingCapacity ( )</computeroutput></para><para>
 
-<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </para>
+<para>Get the battery&apos;s capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the <link linkend="_struct_battery_mode">BatteryMode()</link> register (0x03) is set that way See protocol documentation for details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1ac6b97cbc1c77f08867fb430c5af0dc6f"/><section>
+    <title>remainingCapacityAlarm()</title>
+<indexterm><primary>remainingCapacityAlarm</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>remainingCapacityAlarm</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::remainingCapacityAlarm ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s remaining capacity alarm. Returns the battery&apos;s remaining capacity alarm threshold value, in mAh. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_arduino_s_m_bus_1a9f21788d0c8b8ebb43ef85b4a2f61c59"/><section>
+    <title>remainingTimeAlarm()</title>
+<indexterm><primary>remainingTimeAlarm</primary><secondary>ArduinoSMBus</secondary></indexterm>
+<indexterm><primary>ArduinoSMBus</primary><secondary>remainingTimeAlarm</secondary></indexterm>
+<para><computeroutput>uint16_t ArduinoSMBus::remainingTimeAlarm ( )</computeroutput></para><para>
+
+<para>Get the battery&apos;s remaining time alarm. Returns the battery&apos;s remaining time alarm threshold value, in minutes. </para>
 </para>
 
 <para><formalpara><title>Returns</title>
@@ -598,7 +682,7 @@ Parameters</title>
 <indexterm><primary>ArduinoSMBus</primary><secondary>temperature</secondary></indexterm>
 <para><computeroutput>uint16_t ArduinoSMBus::temperature ( )</computeroutput></para><para>
 
-<para>Get the battery&apos;s temperature. Returns the battery temperature in 0.1 degrees Kelvin. </para>
+<para>Get the battery&apos;s temperature. Returns the battery temperature in Kelvin. </para>
 </para>
 
 <para><formalpara><title>Returns</title>

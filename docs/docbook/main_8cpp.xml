@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cpp" xml:lang="en-US">
+<title>C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/main.cpp File Reference</title>
+<indexterm><primary>C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/main.cpp</primary></indexterm>
+<para>
+
+<para>Example arduino code to read battery data from an SMBus battery and print to serial output. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;Arduino.h&gt;<?linebreak?>#include &quot;ArduinoSMBus.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d"/>void <emphasis role="strong">setup</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8cpp_1afe461d27b9c48d5921c00d521181f12f"/>void <emphasis role="strong">loop</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8cpp_1ad7e4863e20850ca42329d795ba148d93"/><link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link> <emphasis role="strong">battery</emphasis> (0x0B)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Example arduino code to read battery data from an SMBus battery and print to serial output. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Christopher Lee (<link xlink:href="mailto:clee@unitedconsulting.com">clee@unitedconsulting.com</link>) </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2024-02-29</para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>Copyright (c) 2024 </para>
+</formalpara>
+</para>
+</section>
+</section>

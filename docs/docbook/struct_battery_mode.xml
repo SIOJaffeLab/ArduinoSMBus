@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_battery_mode" xml:lang="en-US">
+<title>BatteryMode Struct Reference</title>
+<indexterm><primary>BatteryMode</primary></indexterm>
+<para>
+
+<para>A struct to hold various battery mode flags. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ArduinoSMBus.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1a04e6aedd30cddfe87b90317c21c44f18">internal_charge_controller</link></para>
+
+<para>Indicates if the internal charge controller is supported. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1a499d80e723cddb451fb76255097adf79">primary_battery_support</link></para>
+
+<para>Indicates if the primary battery support is supported. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1a5fc81acfd1080b343a2a1f5f35f326ce">condition_flag</link></para>
+
+<para>Indicates the condition flag. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1aef51574bfce388b478c8783e91a9907a">charge_controller_enabled</link></para>
+
+<para>Indicates if the charge controller is enabled. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1aa02bd0122e4e6cd74d6022ba365ebb60">primary_battery</link></para>
+
+<para>Indicates if the primary battery is enabled. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1a99317f2ce2fc66a142056fe97d93461e">alarm_mode</link></para>
+
+<para>Indicates the alarm mode. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1a8051fbffeebeffa0ef8371b5ef505cce">charger_mode</link></para>
+
+<para>Indicates the charger mode. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_battery_mode_1af0e4a9c984129e7adc8fd95a86b73323">capacity_mode</link></para>
+
+<para>Indicates the capacity mode. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A struct to hold various battery mode flags. </para>
+
+
+
+<para>This struct holds various flags that represent the battery mode. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_battery_mode_1a99317f2ce2fc66a142056fe97d93461e"/><section>
+    <title>alarm_mode</title>
+<indexterm><primary>alarm_mode</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>alarm_mode</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::alarm_mode</computeroutput></para><para>
+
+<para>Indicates the alarm mode. </para>
+</para>
+
+<para>True - enable alarmWarning broadcasts to host. False - disable alarmWarning broadcasts to host. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1af0e4a9c984129e7adc8fd95a86b73323"/><section>
+    <title>capacity_mode</title>
+<indexterm><primary>capacity_mode</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>capacity_mode</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::capacity_mode</computeroutput></para><para>
+
+<para>Indicates the capacity mode. </para>
+</para>
+
+<para>True - report in mA or mAh. False - report in 10mW or 10mWh. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1aef51574bfce388b478c8783e91a9907a"/><section>
+    <title>charge_controller_enabled</title>
+<indexterm><primary>charge_controller_enabled</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>charge_controller_enabled</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::charge_controller_enabled</computeroutput></para><para>
+
+<para>Indicates if the charge controller is enabled. </para>
+</para>
+
+<para>This flag is true if the charge controller is enabled, and false otherwise. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1a8051fbffeebeffa0ef8371b5ef505cce"/><section>
+    <title>charger_mode</title>
+<indexterm><primary>charger_mode</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>charger_mode</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::charger_mode</computeroutput></para><para>
+
+<para>Indicates the charger mode. </para>
+</para>
+
+<para>True - enable chargingCurrent and chargingVoltage broadcasts to host. False - disable chargingCurrent and chargingVoltage broadcasts to host. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1a5fc81acfd1080b343a2a1f5f35f326ce"/><section>
+    <title>condition_flag</title>
+<indexterm><primary>condition_flag</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>condition_flag</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::condition_flag</computeroutput></para><para>
+
+<para>Indicates the condition flag. </para>
+</para>
+
+<para>False if condition is ok, true if battery conditioning cycle is needed </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1a04e6aedd30cddfe87b90317c21c44f18"/><section>
+    <title>internal_charge_controller</title>
+<indexterm><primary>internal_charge_controller</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>internal_charge_controller</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::internal_charge_controller</computeroutput></para><para>
+
+<para>Indicates if the internal charge controller is supported. </para>
+</para>
+
+<para>This flag is true if the internal charge controller is supported, and false otherwise. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1aa02bd0122e4e6cd74d6022ba365ebb60"/><section>
+    <title>primary_battery</title>
+<indexterm><primary>primary_battery</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>primary_battery</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::primary_battery</computeroutput></para><para>
+
+<para>Indicates if the primary battery is enabled. </para>
+</para>
+
+<para>This flag is true if the primary battery is enabled, and false otherwise. </para>
+</section>
+<anchor xml:id="_struct_battery_mode_1a499d80e723cddb451fb76255097adf79"/><section>
+    <title>primary_battery_support</title>
+<indexterm><primary>primary_battery_support</primary><secondary>BatteryMode</secondary></indexterm>
+<indexterm><primary>BatteryMode</primary><secondary>primary_battery_support</secondary></indexterm>
+<para><computeroutput>bool BatteryMode::primary_battery_support</computeroutput></para><para>
+
+<para>Indicates if the primary battery support is supported. </para>
+</para>
+
+<para>This flag is true if the primary battery support is supported, and false otherwise. </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+C:/Users/Chris Lee/Sync/Personal Projects/p2024-005 - ArduinoSMBus/ArduinoSMBus/src/<link linkend="__arduino_s_m_bus_8h">ArduinoSMBus.h</link></section>
+</section>

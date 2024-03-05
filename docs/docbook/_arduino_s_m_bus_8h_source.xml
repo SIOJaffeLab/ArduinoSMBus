@@ -10,72 +10,101 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 16 <emphasis role="preprocessor">#include&#32;&lt;Wire.h&gt;</emphasis>
 17 
 18 <emphasis role="comment">//Usable&#32;Commands</emphasis>
-19 <emphasis role="preprocessor">#define&#32;TEMPERATURE&#32;0x08</emphasis>
-20 <emphasis role="preprocessor">#define&#32;VOLTAGE&#32;0x09</emphasis>
-21 <emphasis role="preprocessor">#define&#32;CURRENT&#32;0x0a</emphasis>
-22 <emphasis role="preprocessor">#define&#32;AVERAGE_CURRENT&#32;0x0b</emphasis>
-23 <emphasis role="preprocessor">#define&#32;MAX_ERROR&#32;0x0c</emphasis>
-24 <emphasis role="preprocessor">#define&#32;REL_STATE_OF_CHARGE&#32;0x0d</emphasis>
-25 <emphasis role="preprocessor">#define&#32;ABS_STATE_OF_CHARGE&#32;0x0e</emphasis>
-26 <emphasis role="preprocessor">#define&#32;REM_CAPACITY&#32;0x0f</emphasis>
-27 <emphasis role="preprocessor">#define&#32;FULL_CAPACITY&#32;0x10</emphasis>
-28 <emphasis role="preprocessor">#define&#32;RUN_TIME_TO_EMPTY&#32;0x11</emphasis>
-29 <emphasis role="preprocessor">#define&#32;AVG_TIME_TO_EMPTY&#32;0x12</emphasis>
-30 <emphasis role="preprocessor">#define&#32;AVG_TIME_TO_FULL&#32;0x13</emphasis>
-31 <emphasis role="preprocessor">#define&#32;BATTERY_STATUS&#32;0x16</emphasis>
-32 <emphasis role="preprocessor">#define&#32;CHARGING_CURRENT&#32;0x14</emphasis>
-33 <emphasis role="preprocessor">#define&#32;CHARGING_VOLTAGE&#32;0x15</emphasis>
-34 <emphasis role="preprocessor">#define&#32;CYCLE_COUNT&#32;0x17</emphasis>
-35 <emphasis role="preprocessor">#define&#32;DESIGN_CAPACITY&#32;0x18</emphasis>
-36 <emphasis role="preprocessor">#define&#32;DESIGN_VOLTAGE&#32;0x19</emphasis>
-37 <emphasis role="preprocessor">#define&#32;MANUFACTURE_DATE&#32;0x1b</emphasis>
-38 <emphasis role="preprocessor">#define&#32;SERIAL_NUMBER&#32;0x1c</emphasis>
-39 <emphasis role="preprocessor">#define&#32;MANUFACTURER_NAME&#32;0x20</emphasis>
-40 <emphasis role="preprocessor">#define&#32;DEVICE_NAME&#32;0x21</emphasis>
-41 <emphasis role="preprocessor">#define&#32;DEVICE_CHEMISTRY&#32;0x22</emphasis>
-42 <emphasis role="preprocessor">#define&#32;STATE_OF_HEALTH&#32;0x4f</emphasis>
-43 
-44 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link>&#32;{
-45 <emphasis role="keyword">public</emphasis>:
-46 &#32;&#32;<link linkend="_class_arduino_s_m_bus_1a13842e9dd3dc931348a6d1e0f3bdf18d">ArduinoSMBus</link>(uint8_t&#32;batteryAddress);
-47 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1ad1db22e3ec3012246671080b7b7f2b82">setBatteryAddress</link>(uint8_t&#32;batteryAddress);
-48 
-49 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aec60bb3f821b326148553e3deaf9a429">temperature</link>();
-50 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ae37c41c3a9fe958330d9315e49bf553c">temperatureC</link>();
-51 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ab49bf0449e3086fd6b87c1b47d58d9f4">temperatureF</link>();
-52 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1abc3178c7be648042be5f021ad8354130">voltage</link>();
-53 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a462f1d5694330563db84584b17015192">current</link>();
-54 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ab5b72566c5de066997c05876e024ffb7">averageCurrent</link>();
-55 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1af26a153705c7b40d3178ffbfdc2bf50e">maxError</link>();
-56 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a7ff27611b0d03d3294cae80c040e3ec9">relativeStateOfCharge</link>();
-57 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a04e6cfb92ff6ddfb88e88f3361d11798">absoluteStateOfCharge</link>();
-58 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a8827accf4409366aada7d23d32f1710e">remainingCapacity</link>();
-59 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a3f145f4f0e2a1179c04b9063246e1ced">fullCapacity</link>();
-60 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a7790a2ea29a71581c281d4412d1b3ba0">runTimeToEmpty</link>();
-61 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1adc9d08f9990010a04f9177aa028df317">avgTimeToEmpty</link>();
-62 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a60fa6bb8760b6566ddfea77676698315">avgTimeToFull</link>();
-63 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1acd57a2ac31ad790559e77613c175a3ab">batteryStatus</link>();
-64 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1acc351199470160724c42a55a04b37a94">chargingCurrent</link>();
-65 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a037a1afa15af04f562756592e09354d3">chargingVoltage</link>();
-66 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a177ded928cfe6c73eb98e14afef31762">statusOK</link>();
-67 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1ad2639dce48c82982c2e7a5258f96ef7e">isCharging</link>();
-68 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a42bff30e23029750c49e45f24f395d1b">isFullyCharged</link>();
-69 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a6f1f77681f39bf2b119820fb4dca7112">cycleCount</link>();
-70 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity</link>();
-71 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a39dc028dd468ec0ec1b980b276006101">designVoltage</link>();
-72 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a6ef1675a70f80131484dbbc3fa0dbb45">manufactureDate</link>();
-73 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a716d79d59c632851b84719bafa57a47f">manufactureYear</link>();
-74 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aeed8722d27576cce6ab7b52990a983b3">serialNumber</link>();
-75 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1a75bc281cbb7d438da06e7880b304876b">manufacturerName</link>();
-76 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1ad0b0f70cbad233652eead2e81214b255">deviceName</link>();
-77 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1a57fc6f298ae2fea71e1fda22d04f8f9b">deviceChemistry</link>();
-78 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</link>();
-79 
-80 <emphasis role="keyword">private</emphasis>:
-81 &#32;&#32;uint8_t&#32;_batteryAddress;
-82 &#32;&#32;uint16_t&#32;readRegister(uint8_t&#32;reg);
-83 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;readBlock(uint8_t&#32;reg,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len);
-84 };
-85 
-86 <emphasis role="preprocessor">#endif</emphasis>
+19 <emphasis role="preprocessor">#define&#32;MANUFACTURER_ACCESS&#32;0x00</emphasis>
+20 <emphasis role="preprocessor">#define&#32;REMAINING_CAPACITY_ALARM&#32;0x01</emphasis>
+21 <emphasis role="preprocessor">#define&#32;REMAINING_TIME_ALARM&#32;0x02</emphasis>
+22 <emphasis role="preprocessor">#define&#32;BATTERY_MODE&#32;0x03</emphasis>
+23 <emphasis role="preprocessor">#define&#32;TEMPERATURE&#32;0x08</emphasis>
+24 <emphasis role="preprocessor">#define&#32;VOLTAGE&#32;0x09</emphasis>
+25 <emphasis role="preprocessor">#define&#32;CURRENT&#32;0x0a</emphasis>
+26 <emphasis role="preprocessor">#define&#32;AVERAGE_CURRENT&#32;0x0b</emphasis>
+27 <emphasis role="preprocessor">#define&#32;MAX_ERROR&#32;0x0c</emphasis>
+28 <emphasis role="preprocessor">#define&#32;REL_STATE_OF_CHARGE&#32;0x0d</emphasis>
+29 <emphasis role="preprocessor">#define&#32;ABS_STATE_OF_CHARGE&#32;0x0e</emphasis>
+30 <emphasis role="preprocessor">#define&#32;REM_CAPACITY&#32;0x0f</emphasis>
+31 <emphasis role="preprocessor">#define&#32;FULL_CAPACITY&#32;0x10</emphasis>
+32 <emphasis role="preprocessor">#define&#32;RUN_TIME_TO_EMPTY&#32;0x11</emphasis>
+33 <emphasis role="preprocessor">#define&#32;AVG_TIME_TO_EMPTY&#32;0x12</emphasis>
+34 <emphasis role="preprocessor">#define&#32;AVG_TIME_TO_FULL&#32;0x13</emphasis>
+35 <emphasis role="preprocessor">#define&#32;BATTERY_STATUS&#32;0x16</emphasis>
+36 <emphasis role="preprocessor">#define&#32;CHARGING_CURRENT&#32;0x14</emphasis>
+37 <emphasis role="preprocessor">#define&#32;CHARGING_VOLTAGE&#32;0x15</emphasis>
+38 <emphasis role="preprocessor">#define&#32;CYCLE_COUNT&#32;0x17</emphasis>
+39 <emphasis role="preprocessor">#define&#32;DESIGN_CAPACITY&#32;0x18</emphasis>
+40 <emphasis role="preprocessor">#define&#32;DESIGN_VOLTAGE&#32;0x19</emphasis>
+41 <emphasis role="preprocessor">#define&#32;MANUFACTURE_DATE&#32;0x1b</emphasis>
+42 <emphasis role="preprocessor">#define&#32;SERIAL_NUMBER&#32;0x1c</emphasis>
+43 <emphasis role="preprocessor">#define&#32;MANUFACTURER_NAME&#32;0x20</emphasis>
+44 <emphasis role="preprocessor">#define&#32;DEVICE_NAME&#32;0x21</emphasis>
+45 <emphasis role="preprocessor">#define&#32;DEVICE_CHEMISTRY&#32;0x22</emphasis>
+46 <emphasis role="preprocessor">#define&#32;STATE_OF_HEALTH&#32;0x4f</emphasis>
+47 
+54 <emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_battery_mode">BatteryMode</link>&#32;{
+60 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1a04e6aedd30cddfe87b90317c21c44f18">internal_charge_controller</link>;
+61 
+67 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1a499d80e723cddb451fb76255097adf79">primary_battery_support</link>;
+68 
+74 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1a5fc81acfd1080b343a2a1f5f35f326ce">condition_flag</link>;
+75 
+81 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1aef51574bfce388b478c8783e91a9907a">charge_controller_enabled</link>;
+82 
+88 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1aa02bd0122e4e6cd74d6022ba365ebb60">primary_battery</link>;
+89 
+96 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1a99317f2ce2fc66a142056fe97d93461e">alarm_mode</link>;
+97 
+104 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1a8051fbffeebeffa0ef8371b5ef505cce">charger_mode</link>;
+105 
+112 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_battery_mode_1af0e4a9c984129e7adc8fd95a86b73323">capacity_mode</link>;
+113 };
+114 
+115 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_arduino_s_m_bus">ArduinoSMBus</link>&#32;{
+116 <emphasis role="keyword">public</emphasis>:
+117 &#32;
+118 
+119 &#32;&#32;<link linkend="_struct_battery_mode">BatteryMode</link>&#32;battery_mode;
+120 
+121 &#32;&#32;<link linkend="_class_arduino_s_m_bus_1a13842e9dd3dc931348a6d1e0f3bdf18d">ArduinoSMBus</link>(uint8_t&#32;batteryAddress);
+122 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1ad1db22e3ec3012246671080b7b7f2b82">setBatteryAddress</link>(uint8_t&#32;batteryAddress);
+123 
+124 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ac6b97cbc1c77f08867fb430c5af0dc6f">remainingCapacityAlarm</link>();
+125 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a9f21788d0c8b8ebb43ef85b4a2f61c59">remainingTimeAlarm</link>();
+126 &#32;&#32;<link linkend="_struct_battery_mode">BatteryMode</link>&#32;<link linkend="_class_arduino_s_m_bus_1aee8395abb19e0e60504e2dda473085d3">batteryMode</link>();
+127 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aec60bb3f821b326148553e3deaf9a429">temperature</link>();
+128 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ae37c41c3a9fe958330d9315e49bf553c">temperatureC</link>();
+129 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ab49bf0449e3086fd6b87c1b47d58d9f4">temperatureF</link>();
+130 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1abc3178c7be648042be5f021ad8354130">voltage</link>();
+131 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a462f1d5694330563db84584b17015192">current</link>();
+132 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1ab5b72566c5de066997c05876e024ffb7">averageCurrent</link>();
+133 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1af26a153705c7b40d3178ffbfdc2bf50e">maxError</link>();
+134 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a7ff27611b0d03d3294cae80c040e3ec9">relativeStateOfCharge</link>();
+135 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a04e6cfb92ff6ddfb88e88f3361d11798">absoluteStateOfCharge</link>();
+136 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a8827accf4409366aada7d23d32f1710e">remainingCapacity</link>();
+137 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a3f145f4f0e2a1179c04b9063246e1ced">fullCapacity</link>();
+138 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a7790a2ea29a71581c281d4412d1b3ba0">runTimeToEmpty</link>();
+139 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1adc9d08f9990010a04f9177aa028df317">avgTimeToEmpty</link>();
+140 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a60fa6bb8760b6566ddfea77676698315">avgTimeToFull</link>();
+141 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1acd57a2ac31ad790559e77613c175a3ab">batteryStatus</link>();
+142 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1acc351199470160724c42a55a04b37a94">chargingCurrent</link>();
+143 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a037a1afa15af04f562756592e09354d3">chargingVoltage</link>();
+144 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a177ded928cfe6c73eb98e14afef31762">statusOK</link>();
+145 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1ad2639dce48c82982c2e7a5258f96ef7e">isCharging</link>();
+146 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a42bff30e23029750c49e45f24f395d1b">isFullyCharged</link>();
+147 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a6f1f77681f39bf2b119820fb4dca7112">cycleCount</link>();
+148 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a905028ef538fcf6b505d906339f59cf8">designCapacity</link>();
+149 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a39dc028dd468ec0ec1b980b276006101">designVoltage</link>();
+150 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1a6ef1675a70f80131484dbbc3fa0dbb45">manufactureDate</link>();
+151 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_arduino_s_m_bus_1a716d79d59c632851b84719bafa57a47f">manufactureYear</link>();
+152 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aeed8722d27576cce6ab7b52990a983b3">serialNumber</link>();
+153 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1a75bc281cbb7d438da06e7880b304876b">manufacturerName</link>();
+154 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1ad0b0f70cbad233652eead2e81214b255">deviceName</link>();
+155 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_arduino_s_m_bus_1a57fc6f298ae2fea71e1fda22d04f8f9b">deviceChemistry</link>();
+156 &#32;&#32;uint16_t&#32;<link linkend="_class_arduino_s_m_bus_1aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</link>();
+157 
+158 <emphasis role="keyword">private</emphasis>:
+159 &#32;&#32;uint8_t&#32;_batteryAddress;
+160 &#32;&#32;uint16_t&#32;readRegister(uint8_t&#32;reg);
+161 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;readBlock(uint8_t&#32;reg,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len);
+162 };
+163 
+164 <emphasis role="preprocessor">#endif</emphasis>
 </programlisting></section>
