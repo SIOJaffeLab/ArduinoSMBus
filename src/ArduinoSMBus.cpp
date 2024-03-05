@@ -31,8 +31,61 @@ void ArduinoSMBus::setBatteryAddress(uint8_t batteryAddress) {
 }
 
 /**
+ * @brief Get the battery's remaining capacity alarm.
+ * Returns the battery's remaining capacity alarm threshold value, in mAh.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::remainingCapacityAlarm() {
+  return readRegister(REMAINING_CAPACITY_ALARM);
+}
+
+/**
+ * @brief Get the battery's remaining time alarm.
+ * Returns the battery's remaining time alarm threshold value, in minutes.
+ * @return uint16_t 
+ */
+uint16_t ArduinoSMBus::remainingTimeAlarm() {
+  return readRegister(REMAINING_TIME_ALARM);
+}
+
+/**
+ * @brief Get the battery's mode.
+ * 
+ * This method reads the battery's mode register, which contains various settings and status bits.
+ * It then creates a BatteryMode struct and sets its fields based on the bits in the mode.
+ * 
+ * @return BatteryMode A struct containing the following fields:
+ * - internal_charge_controller: bit 0 of the mode register
+ * - primary_battery_support: bit 1 of the mode register
+ * - condition_flag: bit 7 of the mode register
+ * - charge_controller_enabled: bit 8 of the mode register
+ * - primary_battery: bit 9 of the mode register
+ * - alarm_mode: bit 13 of the mode register
+ * - charger_mode: bit 14 of the mode register
+ * - capacity_mode: bit 15 of the mode register
+ */
+BatteryMode ArduinoSMBus::batteryMode() {
+  // Read the battery mode from the device...
+  uint16_t mode = readRegister(BATTERY_MODE);
+
+  // Create a BatteryMode struct and set its fields based on the mode
+  BatteryMode batteryMode;
+  batteryMode.internal_charge_controller = mode & 0x0001;
+  batteryMode.primary_battery_support = (mode >> 1) & 0x0001;
+  batteryMode.condition_flag = (mode >> 7) & 0x0001;
+  batteryMode.charge_controller_enabled = (mode >> 8) & 0x0001;
+  batteryMode.primary_battery = (mode >> 9) & 0x0001;
+  batteryMode.alarm_mode = (mode >> 13) & 0x0001;
+  batteryMode.charger_mode = (mode >> 14) & 0x0001;
+  batteryMode.capacity_mode = (mode >> 15) & 0x0001;
+
+  // Return the struct
+  return batteryMode;
+}
+
+/**
  * @brief Get the battery's temperature.
- * Returns the battery temperature in 0.1 degrees Kelvin.
+ * Returns the battery temperature in Kelvin.
  * @return uint16_t 
  */
 uint16_t ArduinoSMBus::temperature() {
@@ -120,7 +173,7 @@ uint16_t ArduinoSMBus::absoluteStateOfCharge() {
 /**
  * @brief Get the battery's capacity.
  * Returns the predicted battery capacity when fully charged, in mAh.
- * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1.
+ * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set that way
  * See protocol documentation for details.
  * @return uint16_t 
  */
@@ -131,7 +184,7 @@ uint16_t ArduinoSMBus::remainingCapacity() {
 /**
  * @brief Get the battery's full capacity.
  * Returns the predicted battery capacity when fully charged, in mAh.
- * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1.
+ * For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set that way
  * See protocol documentation for details.
  * @return uint16_t 
  */

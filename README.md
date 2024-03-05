@@ -59,6 +59,8 @@ void loop() {
   // ... and so on for the other methods
 }
 ```
+## Roadmap
+This project's goal is to provide a generally complete implementation of the Smart Battery Data Specification for use with arduino. Currently, the majority of the available smart battery read commands are supported. 
 
 ## Prior Art
 This library is based on the work done by Ri5ux in the [Smart-Battery-SMBUS-Analyzer](https://github.com/Ri5ux/Smart-Battery-SMBUS-Analyzer) project. The ArduinoSMBus library simplifies the code and makes it easier to use in your own Arduino projects.

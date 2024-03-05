@@ -17,6 +17,39 @@ ArduinoSMBus battery(0x0B); // Replace with your battery's address
 void setup() {
   Serial.begin(9600);
 
+  Serial.print("Remaining Capacity Alarm: ");
+  Serial.println(battery.remainingCapacityAlarm());
+
+  Serial.print("Remaining Time Alarm: ");
+  Serial.println(battery.remainingTimeAlarm());
+
+  Serial.print("Battery Modes:");
+  BatteryMode mode = battery.batteryMode();
+
+  Serial.print("\tInternal Charge Controller: ");
+  Serial.println(mode.internal_charge_controller ? "Enabled" : "Disabled");
+
+  Serial.print("\tPrimary Battery Support: ");
+  Serial.println(mode.primary_battery_support ? "Enabled" : "Disabled");
+
+  Serial.print("\tCondition Flag: ");
+  Serial.println(mode.condition_flag ? "Set" : "Not Set");
+
+  Serial.print("\tCharge Controller Enabled: ");
+  Serial.println(mode.charge_controller_enabled ? "Enabled" : "Disabled");
+
+  Serial.print("\tPrimary Battery: ");
+  Serial.println(mode.primary_battery ? "Enabled" : "Disabled");
+
+  Serial.print("\tAlarm Mode: ");
+  Serial.println(mode.alarm_mode ? "Set" : "Not Set");
+
+  Serial.print("\tCharger Mode: ");
+  Serial.println(mode.charger_mode ? "Set" : "Not Set");
+
+  Serial.print("\tCapacity Mode: ");
+  Serial.println(mode.capacity_mode ? "Set" : "Not Set");
+
   Serial.print("Temperature: ");
   Serial.println(battery.temperature());
 

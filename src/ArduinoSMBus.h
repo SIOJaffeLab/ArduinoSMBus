@@ -16,6 +16,10 @@
 #include <Wire.h>
 
 //Usable Commands
+#define MANUFACTURER_ACCESS 0x00
+#define REMAINING_CAPACITY_ALARM 0x01
+#define REMAINING_TIME_ALARM 0x02
+#define BATTERY_MODE 0x03
 #define TEMPERATURE 0x08
 #define VOLTAGE 0x09
 #define CURRENT 0x0a
@@ -41,11 +45,85 @@
 #define DEVICE_CHEMISTRY 0x22
 #define STATE_OF_HEALTH 0x4f
 
+ /**
+ * @struct BatteryMode
+ * @brief A struct to hold various battery mode flags.
+ * 
+ * This struct holds various flags that represent the battery mode.
+ */
+struct BatteryMode {
+  /**
+   * @brief Indicates if the internal charge controller is supported.
+   * 
+   * This flag is true if the internal charge controller is supported, and false otherwise.
+   */
+  bool internal_charge_controller;
+
+  /**
+   * @brief Indicates if the primary battery support is supported.
+   * 
+   * This flag is true if the primary battery support is supported, and false otherwise.
+   */
+  bool primary_battery_support;
+
+  /**
+   * @brief Indicates the condition flag.
+   * 
+   * False if condition is ok, true if battery conditioning cycle is needed
+   */
+  bool condition_flag;
+
+  /**
+   * @brief Indicates if the charge controller is enabled.
+   * 
+   * This flag is true if the charge controller is enabled, and false otherwise.
+   */
+  bool charge_controller_enabled;
+
+  /**
+   * @brief Indicates if the primary battery is enabled.
+   * 
+   * This flag is true if the primary battery is enabled, and false otherwise.
+   */
+  bool primary_battery;
+
+  /**
+   * @brief Indicates the alarm mode.
+   * 
+   * True - enable alarmWarning broadcasts to host.
+   * False - disable alarmWarning broadcasts to host.
+   */
+  bool alarm_mode;
+
+  /**
+   * @brief Indicates the charger mode.
+   * 
+   * True - enable chargingCurrent and chargingVoltage broadcasts to host.
+   * False - disable chargingCurrent and chargingVoltage broadcasts to host.
+   */
+  bool charger_mode;
+
+  /**
+   * @brief Indicates the capacity mode.
+   * 
+   * True - report in mA or mAh.
+   * False - report in 10mW or 10mWh.
+   */
+  bool capacity_mode;
+};
+
 class ArduinoSMBus {
 public:
+ 
+
+  BatteryMode battery_mode;
+
   ArduinoSMBus(uint8_t batteryAddress);
   void setBatteryAddress(uint8_t batteryAddress);
 
+  uint16_t remainingCapacityAlarm();
+  uint16_t remainingTimeAlarm();
+  BatteryMode batteryMode();
   uint16_t temperature();
   uint16_t temperatureC();
   uint16_t temperatureF();
