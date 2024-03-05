@@ -1,0 +1,46 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus Class Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Constructor \& Destructor Documentation}{6}{subsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}ArduinoSMBus()}{6}{subsubsection.3.1.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Member Function Documentation}{7}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}absoluteStateOfCharge()}{7}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}averageCurrent()}{7}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}avgTimeToEmpty()}{7}{subsubsection.3.1.2.3}%
+\contentsline {subsubsection}{\numberline {3.1.2.4}avgTimeToFull()}{7}{subsubsection.3.1.2.4}%
+\contentsline {subsubsection}{\numberline {3.1.2.5}batteryStatus()}{8}{subsubsection.3.1.2.5}%
+\contentsline {subsubsection}{\numberline {3.1.2.6}current()}{8}{subsubsection.3.1.2.6}%
+\contentsline {subsubsection}{\numberline {3.1.2.7}cycleCount()}{8}{subsubsection.3.1.2.7}%
+\contentsline {subsubsection}{\numberline {3.1.2.8}designCapacity()}{8}{subsubsection.3.1.2.8}%
+\contentsline {subsubsection}{\numberline {3.1.2.9}designVoltage()}{9}{subsubsection.3.1.2.9}%
+\contentsline {subsubsection}{\numberline {3.1.2.10}deviceChemistry()}{9}{subsubsection.3.1.2.10}%
+\contentsline {subsubsection}{\numberline {3.1.2.11}deviceName()}{9}{subsubsection.3.1.2.11}%
+\contentsline {subsubsection}{\numberline {3.1.2.12}fullCapacity()}{9}{subsubsection.3.1.2.12}%
+\contentsline {subsubsection}{\numberline {3.1.2.13}isCharging()}{9}{subsubsection.3.1.2.13}%
+\contentsline {subsubsection}{\numberline {3.1.2.14}isFullyCharged()}{10}{subsubsection.3.1.2.14}%
+\contentsline {subsubsection}{\numberline {3.1.2.15}manufactureDate()}{10}{subsubsection.3.1.2.15}%
+\contentsline {subsubsection}{\numberline {3.1.2.16}manufacturerName()}{10}{subsubsection.3.1.2.16}%
+\contentsline {subsubsection}{\numberline {3.1.2.17}manufactureYear()}{10}{subsubsection.3.1.2.17}%
+\contentsline {subsubsection}{\numberline {3.1.2.18}maxError()}{10}{subsubsection.3.1.2.18}%
+\contentsline {subsubsection}{\numberline {3.1.2.19}relativeStateOfCharge()}{11}{subsubsection.3.1.2.19}%
+\contentsline {subsubsection}{\numberline {3.1.2.20}remainingCapacity()}{11}{subsubsection.3.1.2.20}%
+\contentsline {subsubsection}{\numberline {3.1.2.21}runTimeToEmpty()}{11}{subsubsection.3.1.2.21}%
+\contentsline {subsubsection}{\numberline {3.1.2.22}serialNumber()}{11}{subsubsection.3.1.2.22}%
+\contentsline {subsubsection}{\numberline {3.1.2.23}setBatteryAddress()}{11}{subsubsection.3.1.2.23}%
+\contentsline {subsubsection}{\numberline {3.1.2.24}stateOfHealth()}{12}{subsubsection.3.1.2.24}%
+\contentsline {subsubsection}{\numberline {3.1.2.25}statusOK()}{12}{subsubsection.3.1.2.25}%
+\contentsline {subsubsection}{\numberline {3.1.2.26}temperature()}{12}{subsubsection.3.1.2.26}%
+\contentsline {subsubsection}{\numberline {3.1.2.27}temperatureC()}{12}{subsubsection.3.1.2.27}%
+\contentsline {subsubsection}{\numberline {3.1.2.28}temperatureF()}{13}{subsubsection.3.1.2.28}%
+\contentsline {subsubsection}{\numberline {3.1.2.29}voltage()}{13}{subsubsection.3.1.2.29}%
+\contentsline {chapter}{\numberline {4}File Documentation}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chris Lee/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sync/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Personal Projects/p2024-\/005 -\/ Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus.cpp File Reference}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{15}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Chris Lee/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sync/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Personal Projects/p2024-\/005 -\/ Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus.h File Reference}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{16}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Arduino\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SMBus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{17}{section.4.3}%
+\contentsline {chapter}{Index}{19}{section*.4}%
