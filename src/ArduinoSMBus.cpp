@@ -86,7 +86,7 @@ uint16_t ArduinoSMBus::capacity() {
  * Returns the predicted remaining battery capacity as a percentage
  * @return uint16_t 
  */
-uint16_t ArduinoSMBus::stateofCharge() {
+uint16_t ArduinoSMBus::stateOfCharge() {
   return readRegister(STATE_OF_CHARGE);
 }
 

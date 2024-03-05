@@ -46,7 +46,7 @@ public:
   uint16_t current();
   uint16_t capacity();
   uint16_t timeToFull();
-  uint16_t stateofCharge();
+  uint16_t stateOfCharge();
   uint16_t SOCError();
   uint16_t timeToEmpty();
   uint16_t status();

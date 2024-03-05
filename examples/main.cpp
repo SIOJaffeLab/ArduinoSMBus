@@ -24,6 +24,12 @@ void loop() {
   
   Serial.print("Temperature: ");
   Serial.println(battery.temperature());
+
+  Serial.print("Temperature in C: ");
+  Serial.println(battery.temperatureC());
+
+  Serial.print("Temperature in F: ");
+  Serial.println(battery.temperatureF());
   
   Serial.print("Current: ");
   Serial.println(battery.current());
@@ -35,7 +41,7 @@ void loop() {
   Serial.println(battery.timeToFull());
   
   Serial.print("Charge: ");
-  Serial.println(battery.stateofCharge());
+  Serial.println(battery.stateOfCharge());
 
   Serial.print("SOC Error: ");
   Serial.println(battery.SOCError());
@@ -61,6 +67,9 @@ void loop() {
   
   Serial.print("Cycle Count: ");
   Serial.println(battery.cycleCount());
+
+  Serial.print("State of Health: ");
+  Serial.println(battery.stateOfHealth());
   
   Serial.print("Design Capacity: ");
   Serial.println(battery.designCapacity());
