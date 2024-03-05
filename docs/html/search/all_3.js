@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ischarging_0',['isCharging',['../class_arduino_s_m_bus.html#ad2639dce48c82982c2e7a5258f96ef7e',1,'ArduinoSMBus']]],
-  ['isfullycharged_1',['isFullyCharged',['../class_arduino_s_m_bus.html#a42bff30e23029750c49e45f24f395d1b',1,'ArduinoSMBus']]]
+  ['designcapacity_0',['designCapacity',['../class_arduino_s_m_bus.html#a905028ef538fcf6b505d906339f59cf8',1,'ArduinoSMBus']]],
+  ['designvoltage_1',['designVoltage',['../class_arduino_s_m_bus.html#a39dc028dd468ec0ec1b980b276006101',1,'ArduinoSMBus']]],
+  ['devicechemistry_2',['deviceChemistry',['../class_arduino_s_m_bus.html#a57fc6f298ae2fea71e1fda22d04f8f9b',1,'ArduinoSMBus']]],
+  ['devicename_3',['deviceName',['../class_arduino_s_m_bus.html#ad0b0f70cbad233652eead2e81214b255',1,'ArduinoSMBus']]]
 ];

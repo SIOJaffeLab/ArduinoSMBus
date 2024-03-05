@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a13842e9dd3dc931348a6d1e0f3bdf18d" id="r_a13842e9dd3dc931348a6d1e0f3bdf18d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13842e9dd3dc931348a6d1e0f3bdf18d">ArduinoSMBus</a> (uint8_t batteryAddress)</td></tr>
 <tr class="memdesc:a13842e9dd3dc931348a6d1e0f3bdf18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_arduino_s_m_bus.html">ArduinoSMBus</a>:: <a class="el" href="class_arduino_s_m_bus.html">ArduinoSMBus</a> object.  <br /></td></tr>
 <tr class="separator:a13842e9dd3dc931348a6d1e0f3bdf18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc3178c7be648042be5f021ad8354130" id="r_abc3178c7be648042be5f021ad8354130"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3178c7be648042be5f021ad8354130">voltage</a> ()</td></tr>
-<tr class="memdesc:abc3178c7be648042be5f021ad8354130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's voltage. Returns the sum of all cell voltages, in mV.  <br /></td></tr>
-<tr class="separator:abc3178c7be648042be5f021ad8354130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1db22e3ec3012246671080b7b7f2b82" id="r_ad1db22e3ec3012246671080b7b7f2b82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1db22e3ec3012246671080b7b7f2b82">setBatteryAddress</a> (uint8_t batteryAddress)</td></tr>
+<tr class="memdesc:ad1db22e3ec3012246671080b7b7f2b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the battery's I2C address. Can be used to change the address after the object is created.  <br /></td></tr>
+<tr class="separator:ad1db22e3ec3012246671080b7b7f2b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec60bb3f821b326148553e3deaf9a429" id="r_aec60bb3f821b326148553e3deaf9a429"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec60bb3f821b326148553e3deaf9a429">temperature</a> ()</td></tr>
 <tr class="memdesc:aec60bb3f821b326148553e3deaf9a429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's temperature. Returns the battery temperature in 0.1 degrees Kelvin.  <br /></td></tr>
 <tr class="separator:aec60bb3f821b326148553e3deaf9a429"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,27 +116,48 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab49bf0449e3086fd6b87c1b47d58d9f4" id="r_ab49bf0449e3086fd6b87c1b47d58d9f4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab49bf0449e3086fd6b87c1b47d58d9f4">temperatureF</a> ()</td></tr>
 <tr class="memdesc:ab49bf0449e3086fd6b87c1b47d58d9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's temperature in Fahrenheit. Returns the battery temperature in 0.1 degrees Fahrenheit.  <br /></td></tr>
 <tr class="separator:ab49bf0449e3086fd6b87c1b47d58d9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3178c7be648042be5f021ad8354130" id="r_abc3178c7be648042be5f021ad8354130"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3178c7be648042be5f021ad8354130">voltage</a> ()</td></tr>
+<tr class="memdesc:abc3178c7be648042be5f021ad8354130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's voltage. Returns the sum of all cell voltages, in mV.  <br /></td></tr>
+<tr class="separator:abc3178c7be648042be5f021ad8354130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a462f1d5694330563db84584b17015192" id="r_a462f1d5694330563db84584b17015192"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a462f1d5694330563db84584b17015192">current</a> ()</td></tr>
 <tr class="memdesc:a462f1d5694330563db84584b17015192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's current. Returns the battery measured current (from the coulomb counter) in mA.  <br /></td></tr>
 <tr class="separator:a462f1d5694330563db84584b17015192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add0422416f25bd88462822578a8dcc51" id="r_add0422416f25bd88462822578a8dcc51"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add0422416f25bd88462822578a8dcc51">capacity</a> ()</td></tr>
-<tr class="memdesc:add0422416f25bd88462822578a8dcc51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details.  <br /></td></tr>
-<tr class="separator:add0422416f25bd88462822578a8dcc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78fd5d8756a3a519102e1a97f7670f42" id="r_a78fd5d8756a3a519102e1a97f7670f42"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78fd5d8756a3a519102e1a97f7670f42">timeToFull</a> ()</td></tr>
-<tr class="memdesc:a78fd5d8756a3a519102e1a97f7670f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's time to full. Returns the predicted time to full charge, in minutes, based on average charge rate.  <br /></td></tr>
-<tr class="separator:a78fd5d8756a3a519102e1a97f7670f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d237ec09ce04c7f947eef7a650b9ffc" id="r_a2d237ec09ce04c7f947eef7a650b9ffc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d237ec09ce04c7f947eef7a650b9ffc">stateOfCharge</a> ()</td></tr>
-<tr class="memdesc:a2d237ec09ce04c7f947eef7a650b9ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's current charge. Returns the predicted remaining battery capacity as a percentage.  <br /></td></tr>
-<tr class="separator:a2d237ec09ce04c7f947eef7a650b9ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a583753e6bdd5b19ef0b729c8eda0304f" id="r_a583753e6bdd5b19ef0b729c8eda0304f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a583753e6bdd5b19ef0b729c8eda0304f">SOCError</a> ()</td></tr>
-<tr class="memdesc:a583753e6bdd5b19ef0b729c8eda0304f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's state of charge error. Returns the battery's margin of error when estimating SOC, in percent.  <br /></td></tr>
-<tr class="separator:a583753e6bdd5b19ef0b729c8eda0304f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a534233258d4a91b5db2145860af18457" id="r_a534233258d4a91b5db2145860af18457"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a534233258d4a91b5db2145860af18457">timeToEmpty</a> ()</td></tr>
-<tr class="memdesc:a534233258d4a91b5db2145860af18457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's time to empty. Returns the predicted time to empty, in minutes, based on average discharge rate.  <br /></td></tr>
-<tr class="separator:a534233258d4a91b5db2145860af18457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879fb478f71776adb0af041aec0e966a" id="r_a879fb478f71776adb0af041aec0e966a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a879fb478f71776adb0af041aec0e966a">status</a> ()</td></tr>
-<tr class="memdesc:a879fb478f71776adb0af041aec0e966a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits.  <br /></td></tr>
-<tr class="separator:a879fb478f71776adb0af041aec0e966a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b72566c5de066997c05876e024ffb7" id="r_ab5b72566c5de066997c05876e024ffb7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5b72566c5de066997c05876e024ffb7">averageCurrent</a> ()</td></tr>
+<tr class="memdesc:ab5b72566c5de066997c05876e024ffb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's average current. Returns the average current in a 1-minute rolling average, in mA.  <br /></td></tr>
+<tr class="separator:ab5b72566c5de066997c05876e024ffb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af26a153705c7b40d3178ffbfdc2bf50e" id="r_af26a153705c7b40d3178ffbfdc2bf50e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af26a153705c7b40d3178ffbfdc2bf50e">maxError</a> ()</td></tr>
+<tr class="memdesc:af26a153705c7b40d3178ffbfdc2bf50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's state of charge error. Returns the battery's margin of error when estimating SOC, in percent.  <br /></td></tr>
+<tr class="separator:af26a153705c7b40d3178ffbfdc2bf50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff27611b0d03d3294cae80c040e3ec9" id="r_a7ff27611b0d03d3294cae80c040e3ec9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ff27611b0d03d3294cae80c040e3ec9">relativeStateOfCharge</a> ()</td></tr>
+<tr class="memdesc:a7ff27611b0d03d3294cae80c040e3ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's current relative charge. Returns the predicted remaining battery capacity as a percentage of fullChargeCapacity()  <br /></td></tr>
+<tr class="separator:a7ff27611b0d03d3294cae80c040e3ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e6cfb92ff6ddfb88e88f3361d11798" id="r_a04e6cfb92ff6ddfb88e88f3361d11798"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04e6cfb92ff6ddfb88e88f3361d11798">absoluteStateOfCharge</a> ()</td></tr>
+<tr class="memdesc:a04e6cfb92ff6ddfb88e88f3361d11798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's absolute charge. Returns the predicted remaining battery capacity as a percentage of <a class="el" href="#a905028ef538fcf6b505d906339f59cf8" title="Get the battery&#39;s design capacity. Returns the theoretical maximum capacity of the battery,...">designCapacity()</a>  <br /></td></tr>
+<tr class="separator:a04e6cfb92ff6ddfb88e88f3361d11798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8827accf4409366aada7d23d32f1710e" id="r_a8827accf4409366aada7d23d32f1710e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8827accf4409366aada7d23d32f1710e">remainingCapacity</a> ()</td></tr>
+<tr class="memdesc:a8827accf4409366aada7d23d32f1710e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details.  <br /></td></tr>
+<tr class="separator:a8827accf4409366aada7d23d32f1710e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f145f4f0e2a1179c04b9063246e1ced" id="r_a3f145f4f0e2a1179c04b9063246e1ced"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f145f4f0e2a1179c04b9063246e1ced">fullCapacity</a> ()</td></tr>
+<tr class="memdesc:a3f145f4f0e2a1179c04b9063246e1ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details.  <br /></td></tr>
+<tr class="separator:a3f145f4f0e2a1179c04b9063246e1ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7790a2ea29a71581c281d4412d1b3ba0" id="r_a7790a2ea29a71581c281d4412d1b3ba0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7790a2ea29a71581c281d4412d1b3ba0">runTimeToEmpty</a> ()</td></tr>
+<tr class="memdesc:a7790a2ea29a71581c281d4412d1b3ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate.  <br /></td></tr>
+<tr class="separator:a7790a2ea29a71581c281d4412d1b3ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9d08f9990010a04f9177aa028df317" id="r_adc9d08f9990010a04f9177aa028df317"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9d08f9990010a04f9177aa028df317">avgTimeToEmpty</a> ()</td></tr>
+<tr class="memdesc:adc9d08f9990010a04f9177aa028df317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's average time to empty. Returns the predicted time to empty, in minutes, based on 1-minute rolling average discharge rate.  <br /></td></tr>
+<tr class="separator:adc9d08f9990010a04f9177aa028df317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60fa6bb8760b6566ddfea77676698315" id="r_a60fa6bb8760b6566ddfea77676698315"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60fa6bb8760b6566ddfea77676698315">avgTimeToFull</a> ()</td></tr>
+<tr class="memdesc:a60fa6bb8760b6566ddfea77676698315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's time to full. Returns the predicted time to full charge, in minutes, based on 1-minute rolling average charge rate.  <br /></td></tr>
+<tr class="separator:a60fa6bb8760b6566ddfea77676698315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd57a2ac31ad790559e77613c175a3ab" id="r_acd57a2ac31ad790559e77613c175a3ab"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd57a2ac31ad790559e77613c175a3ab">batteryStatus</a> ()</td></tr>
+<tr class="memdesc:acd57a2ac31ad790559e77613c175a3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits.  <br /></td></tr>
+<tr class="separator:acd57a2ac31ad790559e77613c175a3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc351199470160724c42a55a04b37a94" id="r_acc351199470160724c42a55a04b37a94"><td class="memItemLeft" align="right" valign="top"><a id="acc351199470160724c42a55a04b37a94" name="acc351199470160724c42a55a04b37a94"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>chargingCurrent</b> ()</td></tr>
+<tr class="separator:acc351199470160724c42a55a04b37a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a037a1afa15af04f562756592e09354d3" id="r_a037a1afa15af04f562756592e09354d3"><td class="memItemLeft" align="right" valign="top"><a id="a037a1afa15af04f562756592e09354d3" name="a037a1afa15af04f562756592e09354d3"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>chargingVoltage</b> ()</td></tr>
+<tr class="separator:a037a1afa15af04f562756592e09354d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177ded928cfe6c73eb98e14afef31762" id="r_a177ded928cfe6c73eb98e14afef31762"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a177ded928cfe6c73eb98e14afef31762">statusOK</a> ()</td></tr>
 <tr class="memdesc:a177ded928cfe6c73eb98e14afef31762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the battery status is OK. Check for any alarm conditions in the battery status register. These include bits 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error.  <br /></td></tr>
 <tr class="separator:a177ded928cfe6c73eb98e14afef31762"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,11 +168,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a42bff30e23029750c49e45f24f395d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the battery is fully charged.  <br /></td></tr>
 <tr class="separator:a42bff30e23029750c49e45f24f395d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f1f77681f39bf2b119820fb4dca7112" id="r_a6f1f77681f39bf2b119820fb4dca7112"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f1f77681f39bf2b119820fb4dca7112">cycleCount</a> ()</td></tr>
-<tr class="memdesc:a6f1f77681f39bf2b119820fb4dca7112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's cycle count. Returns the number of discharge cycles the battery has experienced.  <br /></td></tr>
+<tr class="memdesc:a6f1f77681f39bf2b119820fb4dca7112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery's design capacity.  <br /></td></tr>
 <tr class="separator:a6f1f77681f39bf2b119820fb4dca7112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2b6bd959a7a1ee0b40ae0be14387c49" id="r_aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</a> ()</td></tr>
-<tr class="memdesc:aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity.  <br /></td></tr>
-<tr class="separator:aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a905028ef538fcf6b505d906339f59cf8" id="r_a905028ef538fcf6b505d906339f59cf8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a905028ef538fcf6b505d906339f59cf8">designCapacity</a> ()</td></tr>
 <tr class="memdesc:a905028ef538fcf6b505d906339f59cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's design capacity. Returns the theoretical maximum capacity of the battery, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details.  <br /></td></tr>
 <tr class="separator:a905028ef538fcf6b505d906339f59cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,20 +180,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6ef1675a70f80131484dbbc3fa0dbb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the battery's manufacture date. Returns the date the battery was manufactured, in the following format: Day + Month*32 + (Year–1980)*512.  <br /></td></tr>
 <tr class="separator:a6ef1675a70f80131484dbbc3fa0dbb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a716d79d59c632851b84719bafa57a47f" id="r_a716d79d59c632851b84719bafa57a47f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a716d79d59c632851b84719bafa57a47f">manufactureYear</a> ()</td></tr>
-<tr class="memdesc:a716d79d59c632851b84719bafa57a47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the manufacture year from the manufacture date. This is likely incorrect. The date is stored in a format that is not human-readable.  <br /></td></tr>
+<tr class="memdesc:a716d79d59c632851b84719bafa57a47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the manufacture year from the manufacture date.  <br /></td></tr>
 <tr class="separator:a716d79d59c632851b84719bafa57a47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed8722d27576cce6ab7b52990a983b3" id="r_aeed8722d27576cce6ab7b52990a983b3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeed8722d27576cce6ab7b52990a983b3">serialNumber</a> ()</td></tr>
 <tr class="memdesc:aeed8722d27576cce6ab7b52990a983b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Serial Number from the battery.  <br /></td></tr>
 <tr class="separator:aeed8722d27576cce6ab7b52990a983b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75bc281cbb7d438da06e7880b304876b" id="r_a75bc281cbb7d438da06e7880b304876b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75bc281cbb7d438da06e7880b304876b">manufacturerName</a> ()</td></tr>
+<tr class="memdesc:a75bc281cbb7d438da06e7880b304876b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Manufacturer Name from the battery.  <br /></td></tr>
+<tr class="separator:a75bc281cbb7d438da06e7880b304876b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0b0f70cbad233652eead2e81214b255" id="r_ad0b0f70cbad233652eead2e81214b255"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0b0f70cbad233652eead2e81214b255">deviceName</a> ()</td></tr>
 <tr class="memdesc:ad0b0f70cbad233652eead2e81214b255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Device Name from the battery.  <br /></td></tr>
 <tr class="separator:ad0b0f70cbad233652eead2e81214b255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57fc6f298ae2fea71e1fda22d04f8f9b" id="r_a57fc6f298ae2fea71e1fda22d04f8f9b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57fc6f298ae2fea71e1fda22d04f8f9b">deviceChemistry</a> ()</td></tr>
 <tr class="memdesc:a57fc6f298ae2fea71e1fda22d04f8f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Device Chemistry from the battery.  <br /></td></tr>
 <tr class="separator:a57fc6f298ae2fea71e1fda22d04f8f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75bc281cbb7d438da06e7880b304876b" id="r_a75bc281cbb7d438da06e7880b304876b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75bc281cbb7d438da06e7880b304876b">manufacturerName</a> ()</td></tr>
-<tr class="memdesc:a75bc281cbb7d438da06e7880b304876b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Manufacturer Name from the battery.  <br /></td></tr>
-<tr class="separator:a75bc281cbb7d438da06e7880b304876b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b6bd959a7a1ee0b40ae0be14387c49" id="r_aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2b6bd959a7a1ee0b40ae0be14387c49">stateOfHealth</a> ()</td></tr>
+<tr class="memdesc:aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries.  <br /></td></tr>
+<tr class="separator:aa2b6bd959a7a1ee0b40ae0be14387c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a13842e9dd3dc931348a6d1e0f3bdf18d" name="a13842e9dd3dc931348a6d1e0f3bdf18d"></a>
@@ -204,14 +225,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="add0422416f25bd88462822578a8dcc51" name="add0422416f25bd88462822578a8dcc51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add0422416f25bd88462822578a8dcc51">&#9670;&#160;</a></span>capacity()</h2>
+<a id="a04e6cfb92ff6ddfb88e88f3361d11798" name="a04e6cfb92ff6ddfb88e88f3361d11798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e6cfb92ff6ddfb88e88f3361d11798">&#9670;&#160;</a></span>absoluteStateOfCharge()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t ArduinoSMBus::capacity </td>
+          <td class="memname">uint16_t ArduinoSMBus::absoluteStateOfCharge </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -219,7 +240,87 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10 mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See TI protocol documentation for details. </p>
+<p>Get the battery's absolute charge. Returns the predicted remaining battery capacity as a percentage of <a class="el" href="#a905028ef538fcf6b505d906339f59cf8" title="Get the battery&#39;s design capacity. Returns the theoretical maximum capacity of the battery,...">designCapacity()</a> </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="ab5b72566c5de066997c05876e024ffb7" name="ab5b72566c5de066997c05876e024ffb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b72566c5de066997c05876e024ffb7">&#9670;&#160;</a></span>averageCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::averageCurrent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's average current. Returns the average current in a 1-minute rolling average, in mA. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="adc9d08f9990010a04f9177aa028df317" name="adc9d08f9990010a04f9177aa028df317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9d08f9990010a04f9177aa028df317">&#9670;&#160;</a></span>avgTimeToEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::avgTimeToEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's average time to empty. Returns the predicted time to empty, in minutes, based on 1-minute rolling average discharge rate. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="a60fa6bb8760b6566ddfea77676698315" name="a60fa6bb8760b6566ddfea77676698315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60fa6bb8760b6566ddfea77676698315">&#9670;&#160;</a></span>avgTimeToFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::avgTimeToFull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's time to full. Returns the predicted time to full charge, in minutes, based on 1-minute rolling average charge rate. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="acd57a2ac31ad790559e77613c175a3ab" name="acd57a2ac31ad790559e77613c175a3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd57a2ac31ad790559e77613c175a3ab">&#9670;&#160;</a></span>batteryStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::batteryStatus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>
@@ -259,7 +360,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the battery's cycle count. Returns the number of discharge cycles the battery has experienced. </p>
+<p>Get the battery's cycle count. Returns the number of discharge cycles the battery has experienced. A cycle is defined as an amount of discharge equal to the battery's design capacity. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>
@@ -341,6 +442,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the Device Name from the battery. </p>
 <dl class="section return"><dt>Returns</dt><dd>const char* </dd></dl>
+
+</div>
+</div>
+<a id="a3f145f4f0e2a1179c04b9063246e1ced" name="a3f145f4f0e2a1179c04b9063246e1ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f145f4f0e2a1179c04b9063246e1ced">&#9670;&#160;</a></span>fullCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::fullCapacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's full capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>
 </div>
@@ -439,8 +560,88 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the manufacture year from the manufacture date. This is likely incorrect. The date is stored in a format that is not human-readable. </p>
+<p>Get the manufacture year from the manufacture date. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="af26a153705c7b40d3178ffbfdc2bf50e" name="af26a153705c7b40d3178ffbfdc2bf50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af26a153705c7b40d3178ffbfdc2bf50e">&#9670;&#160;</a></span>maxError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::maxError </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's state of charge error. Returns the battery's margin of error when estimating SOC, in percent. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="a7ff27611b0d03d3294cae80c040e3ec9" name="a7ff27611b0d03d3294cae80c040e3ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff27611b0d03d3294cae80c040e3ec9">&#9670;&#160;</a></span>relativeStateOfCharge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::relativeStateOfCharge </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's current relative charge. Returns the predicted remaining battery capacity as a percentage of fullChargeCapacity() </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="a8827accf4409366aada7d23d32f1710e" name="a8827accf4409366aada7d23d32f1710e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8827accf4409366aada7d23d32f1710e">&#9670;&#160;</a></span>remainingCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::remainingCapacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's capacity. Returns the predicted battery capacity when fully charged, in mAh. For some batteries, this may be in 10s of mWh, if the BatteryMode() register (0x03) is set to CAPM 1. See protocol documentation for details. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="a7790a2ea29a71581c281d4412d1b3ba0" name="a7790a2ea29a71581c281d4412d1b3ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7790a2ea29a71581c281d4412d1b3ba0">&#9670;&#160;</a></span>runTimeToEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ArduinoSMBus::runTimeToEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the battery's time to empty. Returns the predicted time to empty, in minutes, based on current instantaneous discharge rate. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>
 </div>
@@ -464,43 +665,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a583753e6bdd5b19ef0b729c8eda0304f" name="a583753e6bdd5b19ef0b729c8eda0304f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a583753e6bdd5b19ef0b729c8eda0304f">&#9670;&#160;</a></span>SOCError()</h2>
+<a id="ad1db22e3ec3012246671080b7b7f2b82" name="ad1db22e3ec3012246671080b7b7f2b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1db22e3ec3012246671080b7b7f2b82">&#9670;&#160;</a></span>setBatteryAddress()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t ArduinoSMBus::SOCError </td>
+          <td class="memname">void ArduinoSMBus::setBatteryAddress </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>batteryAddress</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the battery's state of charge error. Returns the battery's margin of error when estimating SOC, in percent. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
-
-</div>
-</div>
-<a id="a2d237ec09ce04c7f947eef7a650b9ffc" name="a2d237ec09ce04c7f947eef7a650b9ffc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d237ec09ce04c7f947eef7a650b9ffc">&#9670;&#160;</a></span>stateOfCharge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ArduinoSMBus::stateOfCharge </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the battery's current charge. Returns the predicted remaining battery capacity as a percentage. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+<p>Set the battery's I2C address. Can be used to change the address after the object is created. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">batteryAddress</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -519,27 +705,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
-
-</div>
-</div>
-<a id="a879fb478f71776adb0af041aec0e966a" name="a879fb478f71776adb0af041aec0e966a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a879fb478f71776adb0af041aec0e966a">&#9670;&#160;</a></span>status()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ArduinoSMBus::status </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the Status from the battery. Returns the battery status register, which contains various alarm conditions and other status bits. </p>
+<p>Get the State of Health from the battery. Returns the estimated health of the battery, as a percentage of design capacity This command is not supported by all batteries. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>
@@ -620,46 +786,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the battery's temperature in Fahrenheit. Returns the battery temperature in 0.1 degrees Fahrenheit. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
-
-</div>
-</div>
-<a id="a534233258d4a91b5db2145860af18457" name="a534233258d4a91b5db2145860af18457"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a534233258d4a91b5db2145860af18457">&#9670;&#160;</a></span>timeToEmpty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ArduinoSMBus::timeToEmpty </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the battery's time to empty. Returns the predicted time to empty, in minutes, based on average discharge rate. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
-
-</div>
-</div>
-<a id="a78fd5d8756a3a519102e1a97f7670f42" name="a78fd5d8756a3a519102e1a97f7670f42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78fd5d8756a3a519102e1a97f7670f42">&#9670;&#160;</a></span>timeToFull()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ArduinoSMBus::timeToFull </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the battery's time to full. Returns the predicted time to full charge, in minutes, based on average charge rate. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>

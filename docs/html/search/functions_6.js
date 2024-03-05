@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['temperature_0',['temperature',['../class_arduino_s_m_bus.html#aec60bb3f821b326148553e3deaf9a429',1,'ArduinoSMBus']]],
-  ['temperaturec_1',['temperatureC',['../class_arduino_s_m_bus.html#ae37c41c3a9fe958330d9315e49bf553c',1,'ArduinoSMBus']]],
-  ['temperaturef_2',['temperatureF',['../class_arduino_s_m_bus.html#ab49bf0449e3086fd6b87c1b47d58d9f4',1,'ArduinoSMBus']]],
-  ['timetoempty_3',['timeToEmpty',['../class_arduino_s_m_bus.html#a534233258d4a91b5db2145860af18457',1,'ArduinoSMBus']]],
-  ['timetofull_4',['timeToFull',['../class_arduino_s_m_bus.html#a78fd5d8756a3a519102e1a97f7670f42',1,'ArduinoSMBus']]]
+  ['manufacturedate_0',['manufactureDate',['../class_arduino_s_m_bus.html#a6ef1675a70f80131484dbbc3fa0dbb45',1,'ArduinoSMBus']]],
+  ['manufacturername_1',['manufacturerName',['../class_arduino_s_m_bus.html#a75bc281cbb7d438da06e7880b304876b',1,'ArduinoSMBus']]],
+  ['manufactureyear_2',['manufactureYear',['../class_arduino_s_m_bus.html#a716d79d59c632851b84719bafa57a47f',1,'ArduinoSMBus']]],
+  ['maxerror_3',['maxError',['../class_arduino_s_m_bus.html#af26a153705c7b40d3178ffbfdc2bf50e',1,'ArduinoSMBus']]]
 ];
