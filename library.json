@@ -5,13 +5,18 @@
     "keywords": [
       "Arduino",
       "SMBus",
-      "Smart Battery"
+      "Smart Battery",
+      "Smart BMS",
+      "BMS",
+      "Battery Management System",
+      "Battery"
     ],
     "authors": [
       {
         "name": "Chris Lee",
         "email": "chris@duluthmachineworks.com",
-        "url": "http://duluthmachineworks.com"
+        "url": "http://duluthmachineworks.com",
+        "maintainer": true
       }
     ],
     "repository": {
