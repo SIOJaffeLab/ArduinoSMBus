@@ -28,10 +28,8 @@ In general, this library works by creating an ArduinoSMBus class, which then has
 
 A detailed description of all of these parameters/commands can be found in the [Smart Battery Data Specification](https://github.com/duluthmachineworks/ArduinoSMBus/blob/main/docs/datasheets/sbdat110.pdf).
 
-These methods are provided in the format of the SMBus specifications. Several additional methods break out some useful data:
+These methods are provided in the format of the SMBus specifications. Two additional methods break out some useful data:
 - statusOK(): returns true if no battery status errors are present, false if any errors are present.
-- isCharging(): returns true if the battery is charging
-- isFullyCharged(): returns true if the battery is fully charged
 - manufactureYear(): returns an int of the year of manufacture. This is extracted from the stacked integer format of manufactureDate().
 
 At this time, this library is only capable of reading registers from the BMS, and not capable of writing them. With some additional work, writing to the BMS should be possible.

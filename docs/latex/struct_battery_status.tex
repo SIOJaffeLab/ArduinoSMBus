@@ -1,0 +1,107 @@
+\doxysection{Battery\+Status Struct Reference}
+\hypertarget{struct_battery_status}{}\label{struct_battery_status}\index{BatteryStatus@{BatteryStatus}}
+
+
+A struct to hold various battery status flags.  
+
+
+
+
+{\ttfamily \#include $<$Arduino\+SMBus.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a6502e9d037abb538c615e3c271595fb8}{over\+\_\+charged\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a766e5d0cb151db3cb05bd2bbe240a12b}{term\+\_\+charge\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_ab9611b61a331a5c0f0f61bfe9aec7fa7}{over\+\_\+temp\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a1cff539d49f3f370e4b1f53f5814edf9}{term\+\_\+discharge\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_ae38584d443567d0475c80ecca8cbef05}{rem\+\_\+capacity\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a7a8bf071476175b280a01879f5b68c84}{rem\+\_\+time\+\_\+alarm}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a32a4bd3cc43768159ced099c98c8fd4c}{initialized}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a7a5aad64f623505cdbee005467818cab}{discharging}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a335cdc9e227ae19e77b5c00175f70f2c}{fully\+\_\+charged}}
+\item 
+bool \mbox{\hyperlink{struct_battery_status_a02630221f4d76aed8f979767280c20f2}{fully\+\_\+discharged}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A struct to hold various battery status flags. 
+
+This struct holds various flags that represent the battery status. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_battery_status_a7a5aad64f623505cdbee005467818cab}\label{struct_battery_status_a7a5aad64f623505cdbee005467818cab} 
+\index{BatteryStatus@{BatteryStatus}!discharging@{discharging}}
+\index{discharging@{discharging}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{discharging}{discharging}}
+{\footnotesize\ttfamily bool Battery\+Status\+::discharging}
+
+True if the battery is discharging, false otherwise. Corresponds to bit 6 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a335cdc9e227ae19e77b5c00175f70f2c}\label{struct_battery_status_a335cdc9e227ae19e77b5c00175f70f2c} 
+\index{BatteryStatus@{BatteryStatus}!fully\_charged@{fully\_charged}}
+\index{fully\_charged@{fully\_charged}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{fully\_charged}{fully\_charged}}
+{\footnotesize\ttfamily bool Battery\+Status\+::fully\+\_\+charged}
+
+True if the battery is fully charged, false otherwise. Corresponds to bit 5 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a02630221f4d76aed8f979767280c20f2}\label{struct_battery_status_a02630221f4d76aed8f979767280c20f2} 
+\index{BatteryStatus@{BatteryStatus}!fully\_discharged@{fully\_discharged}}
+\index{fully\_discharged@{fully\_discharged}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{fully\_discharged}{fully\_discharged}}
+{\footnotesize\ttfamily bool Battery\+Status\+::fully\+\_\+discharged}
+
+True if the battery is fully discharged, false otherwise. Corresponds to bit 4 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a32a4bd3cc43768159ced099c98c8fd4c}\label{struct_battery_status_a32a4bd3cc43768159ced099c98c8fd4c} 
+\index{BatteryStatus@{BatteryStatus}!initialized@{initialized}}
+\index{initialized@{initialized}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool Battery\+Status\+::initialized}
+
+True if the battery is initialized, false otherwise. Corresponds to bit 7 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a6502e9d037abb538c615e3c271595fb8}\label{struct_battery_status_a6502e9d037abb538c615e3c271595fb8} 
+\index{BatteryStatus@{BatteryStatus}!over\_charged\_alarm@{over\_charged\_alarm}}
+\index{over\_charged\_alarm@{over\_charged\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{over\_charged\_alarm}{over\_charged\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::over\+\_\+charged\+\_\+alarm}
+
+True if the battery is overcharged, false otherwise. Corresponds to bit 15 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_ab9611b61a331a5c0f0f61bfe9aec7fa7}\label{struct_battery_status_ab9611b61a331a5c0f0f61bfe9aec7fa7} 
+\index{BatteryStatus@{BatteryStatus}!over\_temp\_alarm@{over\_temp\_alarm}}
+\index{over\_temp\_alarm@{over\_temp\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{over\_temp\_alarm}{over\_temp\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::over\+\_\+temp\+\_\+alarm}
+
+True if the battery temperature is over the limit, false otherwise. Corresponds to bit 12 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_ae38584d443567d0475c80ecca8cbef05}\label{struct_battery_status_ae38584d443567d0475c80ecca8cbef05} 
+\index{BatteryStatus@{BatteryStatus}!rem\_capacity\_alarm@{rem\_capacity\_alarm}}
+\index{rem\_capacity\_alarm@{rem\_capacity\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{rem\_capacity\_alarm}{rem\_capacity\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::rem\+\_\+capacity\+\_\+alarm}
+
+True if the remaining capacity alarm is set, false otherwise. Corresponds to bit 9 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a7a8bf071476175b280a01879f5b68c84}\label{struct_battery_status_a7a8bf071476175b280a01879f5b68c84} 
+\index{BatteryStatus@{BatteryStatus}!rem\_time\_alarm@{rem\_time\_alarm}}
+\index{rem\_time\_alarm@{rem\_time\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{rem\_time\_alarm}{rem\_time\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::rem\+\_\+time\+\_\+alarm}
+
+True if the remaining time alarm is set, false otherwise. Corresponds to bit 8 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a766e5d0cb151db3cb05bd2bbe240a12b}\label{struct_battery_status_a766e5d0cb151db3cb05bd2bbe240a12b} 
+\index{BatteryStatus@{BatteryStatus}!term\_charge\_alarm@{term\_charge\_alarm}}
+\index{term\_charge\_alarm@{term\_charge\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{term\_charge\_alarm}{term\_charge\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::term\+\_\+charge\+\_\+alarm}
+
+True if the termination charge alarm is set, false otherwise. Corresponds to bit 14 of the \doxylink{struct_battery_status}{Battery\+Status} register. \Hypertarget{struct_battery_status_a1cff539d49f3f370e4b1f53f5814edf9}\label{struct_battery_status_a1cff539d49f3f370e4b1f53f5814edf9} 
+\index{BatteryStatus@{BatteryStatus}!term\_discharge\_alarm@{term\_discharge\_alarm}}
+\index{term\_discharge\_alarm@{term\_discharge\_alarm}!BatteryStatus@{BatteryStatus}}
+\doxysubsubsection{\texorpdfstring{term\_discharge\_alarm}{term\_discharge\_alarm}}
+{\footnotesize\ttfamily bool Battery\+Status\+::term\+\_\+discharge\+\_\+alarm}
+
+True if the termination discharge alarm is set, false otherwise. Corresponds to bit 11 of the \doxylink{struct_battery_status}{Battery\+Status} register. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_arduino_s_m_bus_8h}{Arduino\+SMBus.\+h}}\end{DoxyCompactItemize}

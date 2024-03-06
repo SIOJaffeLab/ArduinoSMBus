@@ -2,8 +2,8 @@
  * @file main.cpp
  * @author Christopher Lee (clee@unitedconsulting.com)
  * @brief Example arduino code to read battery data from an SMBus battery and print to serial output.
- * @version 1.0
- * @date 2024-02-29
+ * @version 1.1
+ * @date 2024-03-06
  *
  * @copyright Copyright (c) 2024
  *
@@ -15,7 +15,7 @@
 ArduinoSMBus battery(0x0B); // Replace with your battery's address
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   Serial.print("Remaining Capacity Alarm: ");
   Serial.println(battery.remainingCapacityAlarm());
@@ -25,28 +25,20 @@ void setup() {
 
   Serial.print("Battery Modes:");
   BatteryMode mode = battery.batteryMode();
-
   Serial.print("\tInternal Charge Controller: ");
   Serial.println(mode.internal_charge_controller ? "Enabled" : "Disabled");
-
   Serial.print("\tPrimary Battery Support: ");
   Serial.println(mode.primary_battery_support ? "Enabled" : "Disabled");
-
   Serial.print("\tCondition Flag: ");
   Serial.println(mode.condition_flag ? "Set" : "Not Set");
-
-  Serial.print("\tCharge Controller Enabled: ");
+  Serial.print("\tCharge Controller: ");
   Serial.println(mode.charge_controller_enabled ? "Enabled" : "Disabled");
-
   Serial.print("\tPrimary Battery: ");
   Serial.println(mode.primary_battery ? "Enabled" : "Disabled");
-
   Serial.print("\tAlarm Mode: ");
   Serial.println(mode.alarm_mode ? "Set" : "Not Set");
-
   Serial.print("\tCharger Mode: ");
   Serial.println(mode.charger_mode ? "Set" : "Not Set");
-
   Serial.print("\tCapacity Mode: ");
   Serial.println(mode.capacity_mode ? "Set" : "Not Set");
 
@@ -91,9 +83,29 @@ void setup() {
 
   Serial.print("Average Time To Full: ");
   Serial.println(battery.avgTimeToFull());
-
-  Serial.print("Battery Status: ");
-  Serial.println(battery.batteryStatus());
+  
+  Serial.println("Battery Status:");
+  BatteryStatus status = battery.batteryStatus();
+  Serial.print("  Over Charged Alarm: ");
+  Serial.println(status.over_charged_alarm ? "True" : "False");
+  Serial.print("  Termination Charge Alarm: ");
+  Serial.println(status.term_charge_alarm ? "True" : "False");
+  Serial.print("  Over Temperature Alarm: ");
+  Serial.println(status.over_temp_alarm ? "True" : "False");
+  Serial.print("  Termination Discharge Alarm: ");
+  Serial.println(status.term_discharge_alarm ? "True" : "False");
+  Serial.print("  Remaining Capacity Alarm: ");
+  Serial.println(status.rem_capacity_alarm ? "True" : "False");
+  Serial.print("  Remaining Time Alarm: ");
+  Serial.println(status.rem_time_alarm ? "True" : "False");
+  Serial.print("  Initialized: ");
+  Serial.println(status.initialized ? "True" : "False");
+  Serial.print("  Discharging: ");
+  Serial.println(status.discharging ? "True" : "False");
+  Serial.print("  Fully Charged: ");
+  Serial.println(status.fully_charged ? "True" : "False");
+  Serial.print("  Fully Discharged: ");
+  Serial.println(status.fully_discharged ? "True" : "False");
 
   Serial.print("Charging Current: ");
   Serial.println(battery.chargingCurrent());
@@ -104,11 +116,6 @@ void setup() {
   Serial.print("Status OK: ");
   Serial.println(battery.statusOK());
 
-  Serial.print("Is Charging: ");
-  Serial.println(battery.isCharging());
-
-  Serial.print("Is Fully Charged: ");
-  Serial.println(battery.isFullyCharged());
 
   Serial.print("Cycle Count: ");
   Serial.println(battery.cycleCount());

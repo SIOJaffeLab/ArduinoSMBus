@@ -13,27 +13,25 @@ A struct to hold various battery mode flags.
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18}{internal\+\_\+charge\+\_\+controller}}
-\begin{DoxyCompactList}\small\item\em Indicates if the internal charge controller is supported. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_a499d80e723cddb451fb76255097adf79}{primary\+\_\+battery\+\_\+support}}
-\begin{DoxyCompactList}\small\item\em Indicates if the primary battery support is supported. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce}{condition\+\_\+flag}}
-\begin{DoxyCompactList}\small\item\em Indicates the condition flag. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_aef51574bfce388b478c8783e91a9907a}{charge\+\_\+controller\+\_\+enabled}}
-\begin{DoxyCompactList}\small\item\em Indicates if the charge controller is enabled. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60}{primary\+\_\+battery}}
-\begin{DoxyCompactList}\small\item\em Indicates if the primary battery is enabled. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_a99317f2ce2fc66a142056fe97d93461e}{alarm\+\_\+mode}}
-\begin{DoxyCompactList}\small\item\em Indicates the alarm mode. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce}{charger\+\_\+mode}}
-\begin{DoxyCompactList}\small\item\em Indicates the charger mode. \end{DoxyCompactList}\item 
+\item 
 bool \mbox{\hyperlink{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323}{capacity\+\_\+mode}}
-\begin{DoxyCompactList}\small\item\em Indicates the capacity mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A struct to hold various battery mode flags. 
-
-This struct holds various flags that represent the battery mode. 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{struct_battery_mode_a99317f2ce2fc66a142056fe97d93461e}\label{struct_battery_mode_a99317f2ce2fc66a142056fe97d93461e} 
@@ -42,82 +40,50 @@ This struct holds various flags that represent the battery mode.
 \doxysubsubsection{\texorpdfstring{alarm\_mode}{alarm\_mode}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::alarm\+\_\+mode}
 
-
-
-Indicates the alarm mode. 
-
-True -\/ enable alarm\+Warning broadcasts to host. False -\/ disable alarm\+Warning broadcasts to host. \Hypertarget{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323}\label{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323} 
+True to enable alarm\+Warning broadcasts to host, false to disable. \Hypertarget{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323}\label{struct_battery_mode_af0e4a9c984129e7adc8fd95a86b73323} 
 \index{BatteryMode@{BatteryMode}!capacity\_mode@{capacity\_mode}}
 \index{capacity\_mode@{capacity\_mode}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{capacity\_mode}{capacity\_mode}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::capacity\+\_\+mode}
 
-
-
-Indicates the capacity mode. 
-
-True -\/ report in mA or m\+Ah. False -\/ report in 10mW or 10m\+Wh. \Hypertarget{struct_battery_mode_aef51574bfce388b478c8783e91a9907a}\label{struct_battery_mode_aef51574bfce388b478c8783e91a9907a} 
+True to report in mA or m\+Ah, false to report in 10mW or 10m\+Wh units. \Hypertarget{struct_battery_mode_aef51574bfce388b478c8783e91a9907a}\label{struct_battery_mode_aef51574bfce388b478c8783e91a9907a} 
 \index{BatteryMode@{BatteryMode}!charge\_controller\_enabled@{charge\_controller\_enabled}}
 \index{charge\_controller\_enabled@{charge\_controller\_enabled}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{charge\_controller\_enabled}{charge\_controller\_enabled}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::charge\+\_\+controller\+\_\+enabled}
 
-
-
-Indicates if the charge controller is enabled. 
-
-This flag is true if the charge controller is enabled, and false otherwise. \Hypertarget{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce}\label{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce} 
+True if the charge controller is enabled, false otherwise. \Hypertarget{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce}\label{struct_battery_mode_a8051fbffeebeffa0ef8371b5ef505cce} 
 \index{BatteryMode@{BatteryMode}!charger\_mode@{charger\_mode}}
 \index{charger\_mode@{charger\_mode}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{charger\_mode}{charger\_mode}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::charger\+\_\+mode}
 
-
-
-Indicates the charger mode. 
-
-True -\/ enable charging\+Current and charging\+Voltage broadcasts to host. False -\/ disable charging\+Current and charging\+Voltage broadcasts to host. \Hypertarget{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce}\label{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce} 
+True to enable charging\+Current and charging\+Voltage broadcasts to host, false to disable. \Hypertarget{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce}\label{struct_battery_mode_a5fc81acfd1080b343a2a1f5f35f326ce} 
 \index{BatteryMode@{BatteryMode}!condition\_flag@{condition\_flag}}
 \index{condition\_flag@{condition\_flag}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{condition\_flag}{condition\_flag}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::condition\+\_\+flag}
 
-
-
-Indicates the condition flag. 
-
-False if condition is ok, true if battery conditioning cycle is needed \Hypertarget{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18}\label{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18} 
+False if condition is ok, true if battery conditioning cycle is needed. \Hypertarget{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18}\label{struct_battery_mode_a04e6aedd30cddfe87b90317c21c44f18} 
 \index{BatteryMode@{BatteryMode}!internal\_charge\_controller@{internal\_charge\_controller}}
 \index{internal\_charge\_controller@{internal\_charge\_controller}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{internal\_charge\_controller}{internal\_charge\_controller}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::internal\+\_\+charge\+\_\+controller}
 
-
-
-Indicates if the internal charge controller is supported. 
-
-This flag is true if the internal charge controller is supported, and false otherwise. \Hypertarget{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60}\label{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60} 
+True if the internal charge controller is supported, false otherwise. \Hypertarget{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60}\label{struct_battery_mode_aa02bd0122e4e6cd74d6022ba365ebb60} 
 \index{BatteryMode@{BatteryMode}!primary\_battery@{primary\_battery}}
 \index{primary\_battery@{primary\_battery}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{primary\_battery}{primary\_battery}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::primary\+\_\+battery}
 
-
-
-Indicates if the primary battery is enabled. 
-
-This flag is true if the primary battery is enabled, and false otherwise. \Hypertarget{struct_battery_mode_a499d80e723cddb451fb76255097adf79}\label{struct_battery_mode_a499d80e723cddb451fb76255097adf79} 
+True if the primary battery is enabled, false otherwise. \Hypertarget{struct_battery_mode_a499d80e723cddb451fb76255097adf79}\label{struct_battery_mode_a499d80e723cddb451fb76255097adf79} 
 \index{BatteryMode@{BatteryMode}!primary\_battery\_support@{primary\_battery\_support}}
 \index{primary\_battery\_support@{primary\_battery\_support}!BatteryMode@{BatteryMode}}
 \doxysubsubsection{\texorpdfstring{primary\_battery\_support}{primary\_battery\_support}}
 {\footnotesize\ttfamily bool Battery\+Mode\+::primary\+\_\+battery\+\_\+support}
 
-
-
-Indicates if the primary battery support is supported. 
-
-This flag is true if the primary battery support is supported, and false otherwise. 
+True if the primary battery support is supported, false otherwise. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Chris Lee/\+Sync/\+Personal Projects/p2024-\/005 -\/ Arduino\+SMBus/\+Arduino\+SMBus/src/\mbox{\hyperlink{_arduino_s_m_bus_8h}{Arduino\+SMBus.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{_arduino_s_m_bus_8h}{Arduino\+SMBus.\+h}}\end{DoxyCompactItemize}

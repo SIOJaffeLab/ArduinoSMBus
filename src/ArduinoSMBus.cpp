@@ -2,8 +2,8 @@
  * @file ArduinoSMBus.cpp
  * @author Christopher Lee (clee@unitedconsulting.com)
  * @brief Function definitions for the ArduinoSMBus class.
- * @version 1.0
- * @date 2024-02-29
+ * @version 1.1
+ * @date 2024-03-06
  * 
  * @copyright Copyright (c) 2024
  * 
@@ -220,15 +220,31 @@ uint16_t ArduinoSMBus::avgTimeToFull() {
 }
 
 /**
- * @brief Get the Status from the battery.
- * Returns the battery status register, which contains various alarm conditions and other status bits.
- * @return uint16_t 
+ * @brief Get the battery's status.
+ * 
+ * This function reads the BatteryStatus register and returns a struct with its value.
+ * The BatteryStatus register indicates various alarm conditions and states of the battery.
+ * These include over charge, termination charge, over temperature, termination discharge,
+ * remaining capacity, remaining time, initialization, discharging, fully charged, and fully discharged states.
+ * 
+ * @return BatteryStatus A struct containing the status of each bit in the BatteryStatus register.
  */
-uint16_t ArduinoSMBus::batteryStatus() {
-  uint8_t data[2];
-  readBlock(BATTERY_STATUS, data, 2);
-  uint16_t status = (data[1] << 8) | data[0];
-  return status;
+BatteryStatus ArduinoSMBus::batteryStatus() {
+  uint16_t status = readRegister(BATTERY_STATUS);
+  BatteryStatus batteryStatus;
+
+  batteryStatus.over_charged_alarm = status & (1 << 15);
+  batteryStatus.term_charge_alarm = status & (1 << 14);
+  batteryStatus.over_temp_alarm = status & (1 << 12);
+  batteryStatus.term_discharge_alarm = status & (1 << 11);
+  batteryStatus.rem_capacity_alarm = status & (1 << 9);
+  batteryStatus.rem_time_alarm = status & (1 << 8);
+  batteryStatus.initialized = status & (1 << 7);
+  batteryStatus.discharging = status & (1 << 6);
+  batteryStatus.fully_charged = status & (1 << 5);
+  batteryStatus.fully_discharged = status & (1 << 4);
+
+  return batteryStatus;
 }
 
 /**
@@ -252,34 +268,15 @@ uint16_t ArduinoSMBus::chargingVoltage() {
 
 /**
  * @brief Check if the battery status is OK.
- * Check for any alarm conditions in the battery status register. These include bits
- * 8, 9, 11, 12, 14, and 15. If any of these bits are set, the battery is not in error
- * @return bool 
+ * Check for any alarm conditions in the battery status. These include over charge, 
+ * termination charge, over temperature, termination discharge alarms. If any of these alarms are set, the battery is not OK.
+ * 
+ * @return bool True if the battery status is OK, false otherwise.
  */
 bool ArduinoSMBus::statusOK() {
-  uint16_t status = this->batteryStatus();
-  uint16_t mask = (1 << 15) | (1 << 14) | (1 << 12) | (1 << 11) | (1 << 9) | (1 << 8);
-  return (status & mask) != mask; // Trigger error state if any of the specified bits are set
-}
-
-/**
- * @brief Check if the battery is charging.
- * 
- * @return bool 
- */
-bool ArduinoSMBus::isCharging() {
-  uint16_t status = this->batteryStatus();
-  return ((status & (1 << 6)) == 0);
-}
-
-/**
- * @brief Check if the battery is fully charged.
- * 
- * @return bool 
- */
-bool ArduinoSMBus::isFullyCharged() {
-  uint16_t status = this->batteryStatus();
-  return ((status & (1 << 5)) != 0);
+  BatteryStatus status = this->batteryStatus();
+  return !(status.over_charged_alarm || status.term_charge_alarm || status.over_temp_alarm || 
+           status.term_discharge_alarm);
 }
 
 /**

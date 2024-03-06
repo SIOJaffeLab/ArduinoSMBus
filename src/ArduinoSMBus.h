@@ -2,8 +2,8 @@
  * @file ArduinoSMBus.h
  * @author Christopher Lee (clee@unitedconsulting.com)
  * @brief Function declarations for the ArduinoSMBus class.
- * @version 1.0
- * @date 2024-02-29
+ * @version 1.1
+ * @date 2024-03-06
  *
  * @copyright Copyright (c) 2024
  *
@@ -15,7 +15,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-//Usable Commands
+ //Usable Commands
 #define MANUFACTURER_ACCESS 0x00
 #define REMAINING_CAPACITY_ALARM 0x01
 #define REMAINING_TIME_ALARM 0x02
@@ -48,73 +48,40 @@
  /**
  * @struct BatteryMode
  * @brief A struct to hold various battery mode flags.
- * 
- * This struct holds various flags that represent the battery mode.
  */
 struct BatteryMode {
-  /**
-   * @brief Indicates if the internal charge controller is supported.
-   * 
-   * This flag is true if the internal charge controller is supported, and false otherwise.
-   */
-  bool internal_charge_controller;
+  bool internal_charge_controller;  /**< True if the internal charge controller is supported, false otherwise. */
+  bool primary_battery_support;     /**< True if the primary battery support is supported, false otherwise. */
+  bool condition_flag;              /**< False if condition is ok, true if battery conditioning cycle is needed. */
+  bool charge_controller_enabled;   /**< True if the charge controller is enabled, false otherwise. */
+  bool primary_battery;             /**< True if the primary battery is enabled, false otherwise. */
+  bool alarm_mode;                  /**< True to enable alarmWarning broadcasts to host, false to disable. */
+  bool charger_mode;                /**< True to enable chargingCurrent and chargingVoltage broadcasts to host, false to disable. */
+  bool capacity_mode;               /**< True to report in mA or mAh, false to report in 10mW or 10mWh units. */
+};
 
-  /**
-   * @brief Indicates if the primary battery support is supported.
-   * 
-   * This flag is true if the primary battery support is supported, and false otherwise.
-   */
-  bool primary_battery_support;
-
-  /**
-   * @brief Indicates the condition flag.
-   * 
-   * False if condition is ok, true if battery conditioning cycle is needed
-   */
-  bool condition_flag;
-
-  /**
-   * @brief Indicates if the charge controller is enabled.
-   * 
-   * This flag is true if the charge controller is enabled, and false otherwise.
-   */
-  bool charge_controller_enabled;
-
-  /**
-   * @brief Indicates if the primary battery is enabled.
-   * 
-   * This flag is true if the primary battery is enabled, and false otherwise.
-   */
-  bool primary_battery;
-
-  /**
-   * @brief Indicates the alarm mode.
-   * 
-   * True - enable alarmWarning broadcasts to host.
-   * False - disable alarmWarning broadcasts to host.
-   */
-  bool alarm_mode;
-
-  /**
-   * @brief Indicates the charger mode.
-   * 
-   * True - enable chargingCurrent and chargingVoltage broadcasts to host.
-   * False - disable chargingCurrent and chargingVoltage broadcasts to host.
-   */
-  bool charger_mode;
-
-  /**
-   * @brief Indicates the capacity mode.
-   * 
-   * True - report in mA or mAh.
-   * False - report in 10mW or 10mWh.
-   */
-  bool capacity_mode;
+/**
+ * @struct BatteryStatus
+ * @brief A struct to hold various battery status flags.
+ *
+ * This struct holds various flags that represent the battery status.
+ */
+struct BatteryStatus {
+  bool over_charged_alarm;      /**< True if the battery is overcharged, false otherwise. Corresponds to bit 15 of the BatteryStatus register. */
+  bool term_charge_alarm;       /**< True if the termination charge alarm is set, false otherwise. Corresponds to bit 14 of the BatteryStatus register. */
+  bool over_temp_alarm;         /**< True if the battery temperature is over the limit, false otherwise. Corresponds to bit 12 of the BatteryStatus register. */
+  bool term_discharge_alarm;    /**< True if the termination discharge alarm is set, false otherwise. Corresponds to bit 11 of the BatteryStatus register. */
+  bool rem_capacity_alarm;      /**< True if the remaining capacity alarm is set, false otherwise. Corresponds to bit 9 of the BatteryStatus register. */
+  bool rem_time_alarm;          /**< True if the remaining time alarm is set, false otherwise. Corresponds to bit 8 of the BatteryStatus register. */
+  bool initialized;             /**< True if the battery is initialized, false otherwise. Corresponds to bit 7 of the BatteryStatus register. */
+  bool discharging;             /**< True if the battery is discharging, false otherwise. Corresponds to bit 6 of the BatteryStatus register. */
+  bool fully_charged;           /**< True if the battery is fully charged, false otherwise. Corresponds to bit 5 of the BatteryStatus register. */
+  bool fully_discharged;        /**< True if the battery is fully discharged, false otherwise. Corresponds to bit 4 of the BatteryStatus register. */
 };
 
 class ArduinoSMBus {
 public:
- 
+
 
   BatteryMode battery_mode;
 
@@ -138,12 +105,10 @@ public:
   uint16_t runTimeToEmpty();
   uint16_t avgTimeToEmpty();
   uint16_t avgTimeToFull();
-  uint16_t batteryStatus();
+  BatteryStatus batteryStatus();
   uint16_t chargingCurrent();
   uint16_t chargingVoltage();
   bool statusOK();
-  bool isCharging();
-  bool isFullyCharged();
   uint16_t cycleCount();
   uint16_t designCapacity();
   uint16_t designVoltage();
