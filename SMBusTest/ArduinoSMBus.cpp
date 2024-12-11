@@ -387,6 +387,7 @@ uint16_t ArduinoSMBus::stateOfHealth() {
   return stateOfHealth;
 }
 
+//LTC1760 Specific Commands/Functions
 /**
  * @brief Get the battery system info.batteryStatus
  * Returns the general battery system info.batteryStatus
@@ -394,26 +395,59 @@ uint16_t ArduinoSMBus::stateOfHealth() {
  */
 uint16_t ArduinoSMBus::batterySystemInfo() {
   Wire.beginTransmission(_batteryAddress);
-  Wire.write(byte(BATTERY_SYSTEM_INFO));
+  Wire.write(BATTERY_SYSTEM_INFO);
   Wire.endTransmission(false);
 
-  delay(10);
 
-  uint8_t data[2];
+  Wire.requestFrom(_batteryAddress, 2); 
 
-  uint8_t count = Wire.requestFrom(_batteryAddress, 2); // Request one extra byte for the length
-
-  if (Wire.available()) {
-    count = Wire.read(); // The first byte is the length of the block
+  if(Wire.available()) {
+    return Wire.read() | Wire.read() << 8;
+  } else {
+    return 0;
   }
+}
 
-  for (uint8_t i = 0; i < count && i < 2; i++) {
-    if (Wire.available()) {
-      data[i] = Wire.read();
-    }
+uint16_t ArduinoSMBus::batterySystemState() {
+  Wire.beginTransmission(_batteryAddress);
+  Wire.write(BATTERY_SYSTEM_STATE);
+  Wire.endTransmission(false);
+
+  Wire.requestFrom(_batteryAddress, 2);
+
+   if(Wire.available()) {
+    return Wire.read() | Wire.read() << 8;
+  } else {
+    return 0;
   }
-  uint16_t battsystem = (data[1] << 8) | data[0];
-  return battsystem;
+}
+
+uint16_t ArduinoSMBus::batterySystemStateCont() {
+  Wire.beginTransmission(_batteryAddress);
+  Wire.write(BATTERY_SYSTEM_STATE_CONT);
+  Wire.endTransmission(false);
+
+  Wire.requestFrom(_batteryAddress, 2);
+
+   if(Wire.available()) {
+    return Wire.read() | Wire.read() << 8;
+  } else {
+    return 0;
+  }
+}
+
+uint16_t ArduinoSMBus::readLTC() {
+  Wire.beginTransmission(_batteryAddress);
+  Wire.write(LTC);
+  Wire.endTransmission(false);
+
+  Wire.requestFrom(_batteryAddress, 2);
+
+  if(Wire.available()) {
+  return Wire.read() | Wire.read() << 8;
+} else {
+  return 0;
+}
 }
 
 

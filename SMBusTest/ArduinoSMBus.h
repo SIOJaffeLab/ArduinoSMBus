@@ -44,7 +44,13 @@
 #define DEVICE_NAME 0x21
 #define DEVICE_CHEMISTRY 0x22
 #define STATE_OF_HEALTH 0x4f
+
+//LTC1760 Specific Commands
 #define BATTERY_SYSTEM_INFO 0x04
+#define BATTERY_SYSTEM_STATE 0x01
+#define BATTERY_SYSTEM_STATE_CONT 0x02
+#define LTC 0x3C
+
 
  /**
  * @struct BatteryMode
@@ -120,7 +126,11 @@ public:
   const char* deviceName();
   const char* deviceChemistry();
   uint16_t stateOfHealth();
+  //LTC1760 Commands
   uint16_t batterySystemInfo();
+  uint16_t batterySystemState();
+  uint16_t batterySystemStateCont();
+  uint16_t readLTC();
 
 private:
   uint8_t _batteryAddress;
