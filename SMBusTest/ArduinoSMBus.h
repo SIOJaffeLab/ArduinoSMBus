@@ -50,6 +50,7 @@
 #define BATTERY_SYSTEM_STATE 0x01
 #define BATTERY_SYSTEM_STATE_CONT 0x02
 #define LTC 0x3C
+#define VOLTAGE2 0x09
 
 
  /**
@@ -131,6 +132,7 @@ public:
   uint16_t batterySystemState();
   uint16_t batterySystemStateCont();
   uint16_t readLTC();
+  uint16_t voltage2();
 
 private:
   uint8_t _batteryAddress;

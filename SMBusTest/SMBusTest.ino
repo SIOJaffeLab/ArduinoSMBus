@@ -160,6 +160,8 @@ void loop() {
   Serial.println(battery.batterySystemStateCont(), BIN);
   Serial.print("LTC Command:  ");
   Serial.println(battery.readLTC(), BIN);
+  Serial.print("BatteryVoltage: ");
+  Serial.println(battery.voltage2());
   // Wire.beginTransmission(0x0A);
   // Wire.write(byte(0x04));
   // Wire.endTransmission(false);
