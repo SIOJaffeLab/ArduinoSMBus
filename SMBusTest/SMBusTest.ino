@@ -150,7 +150,9 @@ void setup() {
   Serial.println(battery.stateOfHealth());
 }
 
-void loop() {
+void loop() {}
+
+void loop2() {
   Serial.print("Battery System Info:  ");
   
   Serial.println(battery.batterySystemInfo(), BIN);

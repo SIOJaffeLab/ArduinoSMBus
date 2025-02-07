@@ -451,11 +451,11 @@ uint16_t ArduinoSMBus::readLTC() {
 }
 
 uint16_t ArduinoSMBus::voltage2() {
-  Wire.beginTransmission(0x0B);
+  Wire.beginTransmission(0x0A);
   Wire.write(VOLTAGE2);
   Wire.endTransmission(false);
 
-  Wire.requestFrom(0x0B, 2);
+  Wire.requestFrom(0x0A, 2);
 
   if(Wire.available()) {
   return Wire.read() | Wire.read() << 8;
